@@ -11,8 +11,7 @@
                     <h5 class="card-header">Our Story</h5>
                 </div>
                 <div class="col-6 card-header text-end">
-                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalCreate">Add New
-                        Story</button>
+                    <a href="{{ route('dashboard.our-story.create') }}" class="btn btn-success">Add New Story</a>
                 </div>
             </div>
             <div class="table-responsive text-nowrap">
@@ -22,7 +21,6 @@
                             <th>No</th>
                             <th>Foto</th>
                             <th>Title Story</th>
-                            <th>Description Story</th>
                             <th>Year Story</th>
                             <th>Actions</th>
                         </tr>
@@ -43,13 +41,12 @@
                                     @endif
                                 </td>
                                 <td>{{ $items->title_story ?? '-' }}</td>
-                                <td>{{ $items->description_story ?? '-' }}</td>
                                 <td>{{ $items->year_story ?? '-' }}</td>
                                 <td>
-                                    <button type="button" class="btn btn-sm btn-success" data-bs-toggle="modal"
-                                        data-bs-target="#modalEdit{{ $items->id }}">Edit</button>
-                                    <button type="button" class="btn btn-sm btn-info" data-bs-toggle="modal"
-                                        data-bs-target="#modalShow{{ $items->id }}">View</button>
+                                    <a href="{{ route('dashboard.our-story.edit', $items->id) }}"
+                                        class="btn btn-sm btn-success">Edit</a>
+                                    <a href="{{ route('dashboard.our-story.show', $items->id) }}"
+                                        class="btn btn-sm btn-info">View</a>
                                     <form action="{{ route('dashboard.our-story.destroy', $items->id) }}" method="POST"
                                         style="display: inline;">
                                         @csrf
@@ -61,7 +58,7 @@
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="6" style="text-align: center;">Empty</td>
+                                <td colspan="5" style="text-align: center;">Empty</td>
                             </tr>
                         @endforelse
                     </tbody>
@@ -69,7 +66,4 @@
             </div>
         </div>
     </div>
-
-    <!-- Modal -->
-    @include('pages.admin.layouts.our-story.modals')
 @endsection

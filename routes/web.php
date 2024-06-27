@@ -49,7 +49,10 @@ Route::prefix('dashboard')->name('dashboard.')->middleware('auth')->group(functi
     //Menu Our Story
     Route::controller(App\Http\Controllers\OurStoryController::class)->group(function () {
         Route::get('our-story', 'index')->name('our-story.index');
+        Route::get('our-story/create', 'create')->name('our-story.create');
         Route::post('our-story/store', 'store')->name('our-story.store');
+        Route::get('our-story/{id}', 'show')->name('our-story.show');
+        Route::get('our-story/{id}/edit', 'edit')->name('our-story.edit');
         Route::put('our-story/{id}', 'update')->name('our-story.update');
         Route::delete('our-story/delete/{id}', 'destroy')->name('our-story.destroy');
     });
@@ -57,7 +60,12 @@ Route::prefix('dashboard')->name('dashboard.')->middleware('auth')->group(functi
     //Menu Our Vision
     Route::controller(App\Http\Controllers\OurVisionController::class)->group(function () {
         Route::get('our-vision', 'index')->name('our-vision.index');
+        Route::get('our-vision/create', 'create')->name('our-vision.create');
+        Route::post('our-vision/store', 'store')->name('our-vision.store');
+        Route::get('our-vision/{id}', 'show')->name('our-vision.show');
+        Route::get('our-vision/{id}/edit', 'edit')->name('our-vision.edit');
         Route::put('our-vision/{id}', 'update')->name('our-vision.update');
+        Route::delete('our-vision/delete/{id}', 'destroy')->name('our-vision.destroy');
     });
 
     //Menu Awards
@@ -94,7 +102,10 @@ Route::prefix('dashboard')->name('dashboard.')->middleware('auth')->group(functi
     //Menu Experience
     Route::controller(App\Http\Controllers\ExperienceController::class)->group(function () {
         Route::get('experience', 'index')->name('experience.index');
+        Route::get('experience/create', 'create')->name('experience.create');
         Route::post('experience/store', 'store')->name('experience.store');
+        Route::get('experience/{id}', 'show')->name('experience.show');
+        Route::get('experience/{id}/edit', 'edit')->name('experience.edit');
         Route::put('experience/{id}', 'update')->name('experience.update');
         Route::delete('experience/delete/{id}', 'destroy')->name('experience.destroy');
     });
@@ -119,7 +130,10 @@ Route::prefix('dashboard')->name('dashboard.')->middleware('auth')->group(functi
     //Menu Resort
     Route::controller(App\Http\Controllers\ResortController::class)->group(function () {
         Route::get('resort', 'index')->name('resort.index');
+        Route::get('resort/create', 'create')->name('resort.create');
         Route::post('resort/store', 'store')->name('resort.store');
+        Route::get('resort/{id}', 'show')->name('resort.show');
+        Route::get('resort/{id}/edit', 'edit')->name('resort.edit');
         Route::put('resort/{id}', 'update')->name('resort.update');
         Route::delete('resort/delete/{id}', 'destroy')->name('resort.destroy');
     });
@@ -142,6 +156,13 @@ Route::prefix('dashboard')->name('dashboard.')->middleware('auth')->group(functi
         Route::put('our-distributor/{id}', 'update')->name('our-distributor.update');
         Route::delete('our-distributor/delete/{id}', 'destroy')->name('our-distributor.destroy');
     });
+
+
+
+
+
+    //Function CKEditor
+    Route::post('ckeditor/upload', [App\Http\Controllers\CKEditorController::class, 'upload'])->name('ckeditor.upload');
 });
 
 require __DIR__ . '/auth.php';

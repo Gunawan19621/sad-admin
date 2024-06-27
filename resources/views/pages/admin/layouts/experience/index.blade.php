@@ -11,8 +11,7 @@
                     <h5 class="card-header">Experience</h5>
                 </div>
                 <div class="col-6 card-header text-end">
-                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalCreate">Add New
-                        Experience</button>
+                    <a href="{{ route('dashboard.experience.create') }}" class="btn btn-success">Add New Experience</a>
                 </div>
             </div>
             <div class="table-responsive text-nowrap">
@@ -37,10 +36,10 @@
                                 <td>{{ $items->subtitle_experience ?? '-' }}</td>
                                 <td>{{ $items->description_experience ?? '-' }}</td>
                                 <td>
-                                    <button type="button" class="btn btn-sm btn-success" data-bs-toggle="modal"
-                                        data-bs-target="#modalEdit{{ $items->id }}">Edit</button>
-                                    <button type="button" class="btn btn-sm btn-info" data-bs-toggle="modal"
-                                        data-bs-target="#modalShow{{ $items->id }}">View</button>
+                                    <a href="{{ route('dashboard.experience.edit', $items->id) }}"
+                                        class="btn btn-sm btn-success">Edit</a>
+                                    <a href="{{ route('dashboard.experience.show', $items->id) }}"
+                                        class="btn btn-sm btn-info">View</a>
                                     <form action="{{ route('dashboard.experience.destroy', $items->id) }}" method="POST"
                                         style="display: inline;">
                                         @csrf
@@ -60,7 +59,4 @@
             </div>
         </div>
     </div>
-
-    <!-- Modal -->
-    @include('pages.admin.layouts.experience.modals')
 @endsection

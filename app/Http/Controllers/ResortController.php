@@ -14,20 +14,23 @@ class ResortController extends Controller
     public function index()
     {
         $data = [
-            // 'menuHeader' => MenuHeader::all(),
             'resort' => Resort::all(),
             'active' => 'resort',
         ];
         return view('pages.admin.layouts.resort.index', $data);
     }
 
-    // /**
-    //  * Show the form for creating a new resource.
-    //  */
-    // public function create()
-    // {
-    //     //
-    // }
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+        $data = [
+            'resort' => Resort::all(),
+            'active' => 'resort',
+        ];
+        return view('pages.admin.layouts.resort.create', $data);
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -49,27 +52,35 @@ class ResortController extends Controller
 
             Resort::create($validatedData);
 
-            return redirect()->back()->with('success', 'Data Resort add successfully');
+            return redirect()->route('dashboard.resort.index')->with('success', 'Data Resort add successfully');
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Data Resort failed to added');
         }
     }
 
-    // /**
-    //  * Display the specified resource.
-    //  */
-    // public function show(string $id)
-    // {
-    //     //
-    // }
+    /**
+     * Display the specified resource.
+     */
+    public function show(string $id)
+    {
+        $data = [
+            'resort' => Resort::findOrFail($id),
+            'active' => 'resort',
+        ];
+        return view('pages.admin.layouts.resort.show', $data);
+    }
 
-    // /**
-    //  * Show the form for editing the specified resource.
-    //  */
-    // public function edit(string $id)
-    // {
-    //     //
-    // }
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(string $id)
+    {
+        $data = [
+            'resort' => Resort::findOrFail($id),
+            'active' => 'resort',
+        ];
+        return view('pages.admin.layouts.resort.edit', $data);
+    }
 
     /**
      * Update the specified resource in storage.
@@ -92,7 +103,7 @@ class ResortController extends Controller
 
             $data->update($validatedData);
 
-            return redirect()->back()->with('success', 'Data Resort updated successfully');
+            return redirect()->route('dashboard.resort.index')->with('success', 'Data Resort updated successfully');
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Data Resort failed to update');
         }

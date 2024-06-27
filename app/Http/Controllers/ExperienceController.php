@@ -25,7 +25,11 @@ class ExperienceController extends Controller
      */
     public function create()
     {
-        //
+        $data = [
+            'experience' => Experience::all(),
+            'active' => 'experience',
+        ];
+        return view('pages.admin.layouts.experience.create', $data);
     }
 
     /**
@@ -48,7 +52,7 @@ class ExperienceController extends Controller
 
             Experience::create($validatedData);
 
-            return redirect()->back()->with('success', 'Data Experience add successfully');
+            return redirect()->route('dashboard.experience.index')->with('success', 'Data Experience add successfully');
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Data Experience failed to added');
         }
@@ -59,7 +63,11 @@ class ExperienceController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $data = [
+            'experience' => Experience::findOrFail($id),
+            'active' => 'experience',
+        ];
+        return view('pages.admin.layouts.experience.show', $data);
     }
 
     /**
@@ -67,7 +75,11 @@ class ExperienceController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $data = [
+            'experience' => Experience::findOrFail($id),
+            'active' => 'experience',
+        ];
+        return view('pages.admin.layouts.experience.edit', $data);
     }
 
     /**
@@ -91,7 +103,7 @@ class ExperienceController extends Controller
 
             $data->update($validatedData);
 
-            return redirect()->back()->with('success', 'Data Experience updated successfully');
+            return redirect()->route('dashboard.experience.index')->with('success', 'Data Experience updated successfully');
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Data Experience failed to update');
         }

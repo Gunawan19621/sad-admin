@@ -25,7 +25,11 @@ class OurStoryController extends Controller
      */
     public function create()
     {
-        //
+        $data = [
+            'ourStory' => OurStory::all(),
+            'active' => 'our-story',
+        ];
+        return view('pages.admin.layouts.our-story.create', $data);
     }
 
     /**
@@ -59,7 +63,7 @@ class OurStoryController extends Controller
 
             OurStory::create($validatedData);
 
-            return redirect()->back()->with('success', 'Data story add successfully');
+            return redirect()->route('dashboard.our-story.index')->with('success', 'Data story add successfully');
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Data story failed to added');
         }
@@ -70,7 +74,11 @@ class OurStoryController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $data = [
+            'ourStory' => OurStory::findOrFail($id),
+            'active' => 'our-story',
+        ];
+        return view('pages.admin.layouts.our-story.show', $data);
     }
 
     /**
@@ -78,7 +86,11 @@ class OurStoryController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $data = [
+            'ourStory' => OurStory::findOrFail($id),
+            'active' => 'our-story',
+        ];
+        return view('pages.admin.layouts.our-story.edit', $data);
     }
 
     /**
@@ -117,7 +129,7 @@ class OurStoryController extends Controller
 
             $data->update($validatedData);
 
-            return redirect()->back()->with('success', 'Data Story updated successfully');
+            return redirect()->route('dashboard.our-story.index')->with('success', 'Data Story updated successfully');
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Data Story failed to update');
         }

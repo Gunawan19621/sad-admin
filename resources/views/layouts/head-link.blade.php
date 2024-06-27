@@ -26,3 +26,8 @@
 
 <!-- config js -->
 <script src="{{ asset('assets/js/config.js') }}"></script>
+
+
+<script src="{{ asset('assets/vendor/libs/ckeditor/ckeditor.js') }}"></script>
+<script src="{{ asset('assets/vendor/libs/ckfinder/ckfinder.js') }}"></script>
+{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/ckfinder/3.5.1/ckfinder.js"></script> --}}

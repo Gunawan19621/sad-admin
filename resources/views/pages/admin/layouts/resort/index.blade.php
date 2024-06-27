@@ -11,8 +11,7 @@
                     <h5 class="card-header">Resort</h5>
                 </div>
                 <div class="col-6 card-header text-end">
-                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalCreate">Add New
-                        Resort</button>
+                    <a href="{{ route('dashboard.resort.create') }}" class="btn btn-success">Add New Resort</a>
                 </div>
             </div>
             <div class="table-responsive text-nowrap">
@@ -22,7 +21,6 @@
                             <th>No</th>
                             <th>Title</th>
                             <th>Subtitle</th>
-                            <th>Description</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -35,12 +33,11 @@
                                 <td>{{ $no++ }}</td>
                                 <td>{{ $items->title_resort ?? '-' }}</td>
                                 <td>{{ $items->subtitle_resort ?? '-' }}</td>
-                                <td>{{ $items->description_resort ?? '-' }}</td>
                                 <td>
-                                    <button type="button" class="btn btn-sm btn-success" data-bs-toggle="modal"
-                                        data-bs-target="#modalEdit{{ $items->id }}">Edit</button>
-                                    <button type="button" class="btn btn-sm btn-info" data-bs-toggle="modal"
-                                        data-bs-target="#modalShow{{ $items->id }}">View</button>
+                                    <a href="{{ route('dashboard.resort.edit', $items->id) }}"
+                                        class="btn btn-sm btn-success">Edit</a>
+                                    <a href="{{ route('dashboard.resort.show', $items->id) }}"
+                                        class="btn btn-sm btn-info">View</a>
                                     <form action="{{ route('dashboard.resort.destroy', $items->id) }}" method="POST"
                                         style="display: inline;">
                                         @csrf
@@ -52,7 +49,7 @@
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="5" style="text-align: center;">Empty</td>
+                                <td colspan="4" style="text-align: center;">Empty</td>
                             </tr>
                         @endforelse
                     </tbody>
@@ -60,7 +57,4 @@
             </div>
         </div>
     </div>
-
-    <!-- Modal -->
-    @include('pages.admin.layouts.resort.modals')
 @endsection

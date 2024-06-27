@@ -72,38 +72,3 @@
         </div>
     </div>
 @endforeach
-
-<!-- Modal Show -->
-@foreach ($ourTeam as $itemModals)
-    <div class="modal fade" id="modalShow{{ $itemModals->id }}" tabindex="-1" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Show ({{ $itemModals->name_team }})</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="mb-3">
-                        <label class="form-label" for="name_team">Name</label>
-                        <input class="form-control" id="name_team" value="{{ $itemModals->name_team }}" readonly />
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label" for="job_team">Job</label>
-                        <input class="form-control" id="job_team" value="{{ $itemModals->job_team }}" readonly />
-                    </div>
-                    <div class="">
-                        <label for="image_header" class="form-label">Image Header</label>
-                    </div>
-                    <div class="">
-                        <img src="{{ asset('images/' . $itemModals->image_team) }}" alt="Image Team"
-                            class="img-fluid" style="max-width: 100px;">
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-@endforeach
