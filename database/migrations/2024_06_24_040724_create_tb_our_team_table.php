@@ -14,10 +14,8 @@ return new class extends Migration
         Schema::create('tb_our_team', function (Blueprint $table) {
             $table->id();
             $table->string('name_team');
-            $table->string('position_team');
+            $table->string('job_team');
             $table->string('image_team');
-            $table->string('bio_team')->nullable();
-            $table->json('social_media_team')->nullable();
             $table->timestamps();
         });
     }

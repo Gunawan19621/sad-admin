@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('image_story');
             $table->string('title_story');
-            $table->string('subtitle_story');
+            $table->text('description_story');
+            $table->integer('year_story');
             $table->timestamps();
         });
     }

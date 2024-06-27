@@ -11,12 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tb_cart', function (Blueprint $table) {
+        Schema::create('tb_resorts_image', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_user');
-            $table->integer('id_product');
-            $table->integer('qty');
-            $table->integer('subtotal');
+            $table->integer('id_resort');
+            $table->string('image_resort');
             $table->timestamps();
         });
     }
@@ -26,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tb_cart');
+        Schema::dropIfExists('tb_resorts_image');
     }
 };

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('question1')->nullable();
             $table->string('question2')->nullable();
-            $table->string('cv_applicant');
+            $table->string('cv_applicant'); //
             $table->timestamps();
         });
     }

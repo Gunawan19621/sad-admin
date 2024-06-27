@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('tb_category_news_event', function (Blueprint $table) {
             $table->id();
             $table->string('name_category_news_event');
-            $table->string('description_category_news_event')->nullable();
             $table->timestamps();
         });
     }

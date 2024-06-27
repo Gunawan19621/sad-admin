@@ -16,7 +16,6 @@ return new class extends Migration
             $table->integer('id_category_news_event')->nullable();
             $table->string('image_news_event');
             $table->string('title_news_event');
-            $table->string('subtitle_news_event');
             $table->date('date_news_event')->nullable();
             $table->timestamps();
         });

@@ -13,12 +13,13 @@ return new class extends Migration
     {
         Schema::create('tb_contact_us', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
             $table->string('address');
             $table->string('operating_hours');
             $table->string('email')->nullable();
             $table->string('phone')->nullable();
+            $table->string('fax')->nullable();
             $table->json('social_media')->nullable();
+            $table->json('google_maps')->nullable();
             $table->timestamps();
         });
     }

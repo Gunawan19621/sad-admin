@@ -15,8 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string('image_awards');
             $table->string('title_awards')->nullable();
-            $table->string('subtitle_awards')->nullable();
-            $table->date('date_awards');
             $table->timestamps();
         });
     }

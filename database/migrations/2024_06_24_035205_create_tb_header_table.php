@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('tb_header', function (Blueprint $table) {
             $table->id();
+            $table->string('name_menu');
             $table->string('image_header');
             $table->string('title_header')->nullable();
             $table->string('subtitle_header')->nullable();

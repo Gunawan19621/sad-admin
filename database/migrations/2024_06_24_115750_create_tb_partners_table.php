@@ -15,8 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string('name_partner');
             $table->string('image_partner');
-            $table->string('address_partner')->nullable();
-            $table->string('description_partner')->nullable();
             $table->timestamps();
         });
     }

@@ -11,11 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tb_winery_tour', function (Blueprint $table) {
+        Schema::create('tb_category_faq', function (Blueprint $table) {
             $table->id();
-            $table->string('image_tour');
-            $table->string('title_tour');
-            $table->string('subtitle_tour');
+            $table->string('name_category_faq');
             $table->timestamps();
         });
     }
@@ -25,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tb_winery_tour');
+        Schema::dropIfExists('tb_category_faq');
     }
 };

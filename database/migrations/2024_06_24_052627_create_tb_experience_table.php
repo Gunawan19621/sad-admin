@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tb_activities', function (Blueprint $table) {
+        Schema::create('tb_experience', function (Blueprint $table) {
             $table->id();
-            $table->string('image_activities');
-            $table->string('title_activities');
-            $table->string('subtitle_activities');
+            $table->string('title_experience');
+            $table->string('subtitle_experience');
+            $table->text('description_experience');
             $table->timestamps();
         });
     }
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tb_activities');
+        Schema::dropIfExists('tb_experience');
     }
 };
