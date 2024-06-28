@@ -80,7 +80,13 @@
             $active == 'experiencePrice' ||
             $active == 'resort' ||
             $active == 'resortImage' ||
-            $active == 'our-Distributor'
+            $active == 'our-Distributor' ||
+            $active == 'category-product' ||
+            $active == 'product' ||
+            $active == 'partner' ||
+            $active == 'categoryNewsEvent' ||
+            $active == 'newsEvent' ||
+            $active == 'jobApplicant'
                 ? 'active open'
                 : '' }}">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
@@ -171,6 +177,42 @@
                 <li class="menu-item {{ $active == 'our-Distributor' ? 'active' : '' }}">
                     <a href="{{ route('dashboard.our-distributor.index') }}" class="menu-link">
                         <div data-i18n="Without menu">Our Distributor</div>
+                    </a>
+                </li>
+
+                <li class="menu-item {{ $active == 'category-product' ? 'active' : '' }}">
+                    <a href="{{ route('dashboard.category-product.index') }}" class="menu-link">
+                        <div data-i18n="Without menu">Category Product</div>
+                    </a>
+                </li>
+
+                <li class="menu-item {{ $active == 'product' ? 'active' : '' }}">
+                    <a href="{{ route('dashboard.product.index') }}" class="menu-link">
+                        <div data-i18n="Without menu">Product</div>
+                    </a>
+                </li>
+
+                <li class="menu-item {{ $active == 'partner' ? 'active' : '' }}">
+                    <a href="{{ route('dashboard.partner.index') }}" class="menu-link">
+                        <div data-i18n="Without menu">Partner</div>
+                    </a>
+                </li>
+
+                <li class="menu-item {{ $active == 'categoryNewsEvent' ? 'active' : '' }}">
+                    <a href="{{ route('dashboard.category-news-event.index') }}" class="menu-link">
+                        <div data-i18n="Without menu">Category News & Event</div>
+                    </a>
+                </li>
+
+                <li class="menu-item {{ $active == 'newsEvent' ? 'active' : '' }}">
+                    <a href="{{ route('dashboard.news-event.index') }}" class="menu-link">
+                        <div data-i18n="Without menu">News & Event</div>
+                    </a>
+                </li>
+
+                <li class="menu-item {{ $active == 'jobApplicant' ? 'active' : '' }}">
+                    <a href="{{ route('dashboard.job-applicant.index') }}" class="menu-link">
+                        <div data-i18n="Without menu">Job Applicant</div>
                     </a>
                 </li>
             </ul>

@@ -19,7 +19,7 @@
                         </select>
                     </div>
                     <div class="">
-                        <label for="image_resort" class="form-label">Foto</label>
+                        <label for="image_resort" class="form-label">Image</label>
                         <input class="form-control" type="file" id="image_resort" name="image_resort" />
                     </div>
                 </div>
@@ -59,7 +59,7 @@
                             </select>
                         </div>
                         <div class="">
-                            <label for="image_resort" class="form-label">Foto</label>
+                            <label for="image_resort" class="form-label">Image</label>
                             <input class="form-control" type="file" id="image_resort" name="image_resort" />
                         </div>
                     </div>
@@ -96,7 +96,7 @@
                         </select>
                     </div>
                     <div class="mb-2">
-                        <label for="image_resort" class="form-label">Foto</label>
+                        <label for="image_resort" class="form-label">Image</label>
                     </div>
                     <div class="">
                         <img src="{{ asset('images/' . $itemModals->image_resort) }}" alt="Image Resort"

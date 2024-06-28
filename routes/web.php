@@ -149,17 +149,69 @@ Route::prefix('dashboard')->name('dashboard.')->middleware('auth')->group(functi
     //Menu Our Distributor
     Route::controller(App\Http\Controllers\OurDistributorController::class)->group(function () {
         Route::get('our-distributor', 'index')->name('our-distributor.index');
-        // Route::get('our-distributor/create', 'create')->name('our-distributor.create');
         Route::post('our-distributor/store', 'store')->name('our-distributor.store');
-        // Route::get('our-distributor/{id}', 'show')->name('our-distributor.show');
-        // Route::get('our-distributor/{id}/edit', 'edit')->name('our-distributor.edit');
         Route::put('our-distributor/{id}', 'update')->name('our-distributor.update');
         Route::delete('our-distributor/delete/{id}', 'destroy')->name('our-distributor.destroy');
     });
 
+    //Product
+    //Menu Category Product
+    Route::controller(App\Http\Controllers\CategoryProductController::class)->group(function () {
+        Route::get('category-product', 'index')->name('category-product.index');
+        Route::get('category-product/create', 'create')->name('category-product.create');
+        Route::post('category-product/store', 'store')->name('category-product.store');
+        Route::get('category-product/{id}', 'show')->name('category-product.show');
+        Route::get('category-product/{id}/edit', 'edit')->name('category-product.edit');
+        Route::put('category-product/{id}', 'update')->name('category-product.update');
+        Route::delete('category-product/delete/{id}', 'destroy')->name('category-product.destroy');
+    });
 
+    //Menu Product
+    Route::controller(App\Http\Controllers\ProductController::class)->group(function () {
+        Route::get('product', 'index')->name('product.index');
+        Route::get('product/create', 'create')->name('product.create');
+        Route::post('product/store', 'store')->name('product.store');
+        Route::get('product/{id}', 'show')->name('product.show');
+        Route::get('product/{id}/edit', 'edit')->name('product.edit');
+        Route::put('product/{id}', 'update')->name('product.update');
+        Route::delete('product/delete/{id}', 'destroy')->name('product.destroy');
+    });
 
+    //Menu Partner
+    Route::controller(App\Http\Controllers\PartnerController::class)->group(function () {
+        Route::get('partner', 'index')->name('partner.index');
+        Route::post('partner/store', 'store')->name('partner.store');
+        Route::put('partner/{id}', 'update')->name('partner.update');
+        Route::delete('partner/delete/{id}', 'destroy')->name('partner.destroy');
+    });
 
+    //News & Event
+    //Menu category News $ Event
+    Route::controller(App\Http\Controllers\CategoryNewsEventController::class)->group(function () {
+        Route::get('category-news-event', 'index')->name('category-news-event.index');
+        Route::post('category-news-event/store', 'store')->name('category-news-event.store');
+        Route::put('category-news-event/{id}', 'update')->name('category-news-event.update');
+        Route::delete('category-news-event/delete/{id}', 'destroy')->name('category-news-event.destroy');
+    });
+
+    //Menu News & Event
+    Route::controller(App\Http\Controllers\NewsEventController::class)->group(function () {
+        Route::get('news-event', 'index')->name('news-event.index');
+        Route::post('news-event/store', 'store')->name('news-event.store');
+        Route::put('news-event/{id}', 'update')->name('news-event.update');
+        Route::delete('news-event/delete/{id}', 'destroy')->name('news-event.destroy');
+    });
+
+    //Menu Job Applicant
+    Route::controller(App\Http\Controllers\JobApplicantController::class)->group(function () {
+        Route::get('job-applicant', 'index')->name('job-applicant.index');
+        // Route::get('job-applicant/create', 'create')->name('job-applicant.create');
+        // Route::post('job-applicant/store', 'store')->name('job-applicant.store');
+        Route::get('job-applicant/{id}', 'show')->name('job-applicant.show');
+        Route::get('job-applicant/{id}/edit', 'edit')->name('job-applicant.edit');
+        Route::put('job-applicant/{id}', 'update')->name('job-applicant.update');
+        Route::delete('job-applicant/delete/{id}', 'destroy')->name('job-applicant.destroy');
+    });
 
     //Function CKEditor
     Route::post('ckeditor/upload', [App\Http\Controllers\CKEditorController::class, 'upload'])->name('ckeditor.upload');

@@ -1,5 +1,5 @@
 @extends('layouts.master-dashboard')
-@section('title', 'Our Distributor')
+@section('title', 'Category News & Event')
 @section('content')
     <!-- Alert -->
     @include('layouts.alert-component')
@@ -8,11 +8,11 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-6">
-                    <h5 class="card-header">Our Distributor</h5>
+                    <h5 class="card-header">Category News & Event</h5>
                 </div>
                 <div class="col-6 card-header text-end">
                     <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalCreate">Add New
-                        Distributor</button>
+                        Category</button>
                 </div>
             </div>
             <div class="table-responsive text-nowrap">
@@ -20,11 +20,7 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Image</th>
-                            <th>Name</th>
-                            <th>Address</th>
-                            <th>Name Person</th>
-                            <th>Phone</th>
+                            <th>Name Category</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -32,27 +28,14 @@
                         @php
                             $no = 1;
                         @endphp
-                        @forelse ($ourDistributor as $items)
+                        @forelse ($categoryNewsEvent as $items)
                             <tr>
                                 <td>{{ $no++ }}</td>
-                                <td>
-                                    @if (!empty($items->image_distributor))
-                                        <img src="{{ asset('images/' . $items->image_distributor) }}" alt="Image Team"
-                                            class="img-fluid" style="max-width: 50px;">
-                                    @else
-                                        -
-                                    @endif
-                                </td>
-                                <td>{{ $items->name_distributor ?? '-' }}</td>
-                                <td>{{ $items->address_distributor ?? '-' }}</td>
-                                <td>{{ $items->name_person_distributor ?? '-' }}</td>
-                                <td>{{ $items->phone_distributor ?? '-' }}</td>
+                                <td>{{ $items->name_category_news_event ?? '-' }}</td>
                                 <td>
                                     <button type="button" class="btn btn-sm btn-success" data-bs-toggle="modal"
                                         data-bs-target="#modalEdit{{ $items->id }}">Edit</button>
-                                    <button type="button" class="btn btn-sm btn-info" data-bs-toggle="modal"
-                                        data-bs-target="#modalShow{{ $items->id }}">View</button>
-                                    <form action="{{ route('dashboard.our-distributor.destroy', $items->id) }}"
+                                    <form action="{{ route('dashboard.category-news-event.destroy', $items->id) }}"
                                         method="POST" style="display: inline;">
                                         @csrf
                                         @method('DELETE')
@@ -63,7 +46,7 @@
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="7" style="text-align: center;">Empty</td>
+                                <td colspan="3" style="text-align: center;">Empty</td>
                             </tr>
                         @endforelse
                     </tbody>
@@ -73,5 +56,5 @@
     </div>
 
     <!-- Modal -->
-    @include('pages.admin.layouts.our-distributor.modals')
+    @include('pages.admin.layouts.news-event.category-news-event.modals')
 @endsection

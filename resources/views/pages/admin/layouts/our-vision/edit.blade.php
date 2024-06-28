@@ -16,7 +16,7 @@
                 <div class="row">
                     <div class="col-md-4 text-center">
                         <div class="">
-                            <label class="form-label">Foto Vision</label>
+                            <label class="form-label">Image Vision</label>
                         </div>
                         <div class="mb-3">
                             <img src="{{ asset('images/' . $ourVision->image_vision) }}" alt="Image Story" class="img-fluid"
@@ -30,7 +30,7 @@
                                 value="{{ $ourVision->title_vision }}" placeholder="Enter title vision" required />
                         </div>
                         <div class="">
-                            <label for="image_vision" class="form-label">Foto</label>
+                            <label for="image_vision" class="form-label">Image</label>
                             <input class="form-control" type="file" id="image_vision" name="image_vision" />
                         </div>
                     </div>

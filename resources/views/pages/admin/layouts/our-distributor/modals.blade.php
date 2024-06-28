@@ -30,7 +30,7 @@
                             placeholder="Enter Address Distributor" rows="3" required></textarea>
                     </div>
                     <div class="">
-                        <label for="image_distributor" class="form-label">Foto</label>
+                        <label for="image_distributor" class="form-label">Image</label>
                         <input class="form-control" type="file" id="image_distributor" name="image_distributor" />
                     </div>
                 </div>
@@ -82,7 +82,7 @@
                                 placeholder="Enter Address Distributor" rows="3" required>{{ $itemModals->address_distributor }}</textarea>
                         </div>
                         <div class="">
-                            <label for="image_distributor" class="form-label">Foto</label>
+                            <label for="image_distributor" class="form-label">Image</label>
                             <input class="form-control" type="file" id="image_distributor"
                                 name="image_distributor" />
                         </div>

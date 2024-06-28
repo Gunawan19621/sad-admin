@@ -1,5 +1,5 @@
 @extends('layouts.master-dashboard')
-@section('title', 'FAQ')
+@section('title', 'Product')
 @section('content')
     <!-- Alert -->
     @include('layouts.alert-component')
@@ -8,11 +8,10 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-6">
-                    <h5 class="card-header">FAQ</h5>
+                    <h5 class="card-header">Product</h5>
                 </div>
                 <div class="col-6 card-header text-end">
-                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalCreate">Add New
-                        question</button>
+                    <a href="{{ route('dashboard.product.create') }}" class="btn btn-success">Add New Product</a>
                 </div>
             </div>
             <div class="table-responsive text-nowrap">
@@ -20,9 +19,11 @@
                     <thead>
                         <tr>
                             <th>No</th>
+                            <th>Image</th>
+                            <th>Name</th>
                             <th>Category</th>
-                            <th>Question</th>
-                            <th>Answer</th>
+                            <th>price</th>
+                            <th>stock</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -30,16 +31,27 @@
                         @php
                             $no = 1;
                         @endphp
-                        @forelse ($faq as $items)
+                        @forelse ($product as $items)
                             <tr>
                                 <td>{{ $no++ }}</td>
-                                <td>{{ $items->name_category_faq ?? '-' }}</td>
-                                <td>{{ $items->question_faq ?? '-' }}</td>
-                                <td>{{ $items->answer_faq ?? '-' }}</td>
                                 <td>
-                                    <button type="button" class="btn btn-sm btn-success" data-bs-toggle="modal"
-                                        data-bs-target="#modalEdit{{ $items->id }}">Edit</button>
-                                    <form action="{{ route('dashboard.faq.destroy', $items->id) }}" method="POST"
+                                    @if (!empty($items->image_product))
+                                        <img src="{{ asset('images/' . $items->image_product) }}" alt="Image Resort"
+                                            class="img-fluid" style="max-width: 50px;">
+                                    @else
+                                        -
+                                    @endif
+                                </td>
+                                <td>{{ $items->name_product ?? '-' }}</td>
+                                <td>{{ $items->name_category_product ?? '-' }}</td>
+                                <td>{{ $items->price_product ?? '-' }}</td>
+                                <td>{{ $items->stock_product ?? '-' }}</td>
+                                <td>
+                                    <a href="{{ route('dashboard.product.edit', $items->id) }}"
+                                        class="btn btn-sm btn-success">Edit</a>
+                                    <a href="{{ route('dashboard.product.show', $items->id) }}"
+                                        class="btn btn-sm btn-info">View</a>
+                                    <form action="{{ route('dashboard.product.destroy', $items->id) }}" method="POST"
                                         style="display: inline;">
                                         @csrf
                                         @method('DELETE')
@@ -50,7 +62,7 @@
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="5" style="text-align: center;">Empty</td>
+                                <td colspan="7" style="text-align: center;">Empty</td>
                             </tr>
                         @endforelse
                     </tbody>
@@ -58,7 +70,4 @@
             </div>
         </div>
     </div>
-
-    <!-- Modal -->
-    @include('pages.admin.layouts.faq.modals')
 @endsection

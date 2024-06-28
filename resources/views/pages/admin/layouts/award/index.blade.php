@@ -20,7 +20,7 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Foto</th>
+                            <th>Image</th>
                             <th>Title</th>
                             <th>Actions</th>
                         </tr>

@@ -6,13 +6,14 @@
                 <h5 class="modal-title" id="exampleModalLabel">Create New Team</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="{{ route('dashboard.category-faq.store') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('dashboard.category-news-event.store') }}" method="POST"
+                enctype="multipart/form-data">
                 @csrf
                 <div class="modal-body">
                     <div class="mb-3">
-                        <label class="form-label" for="name_category_faq">Category FAQ</label>
-                        <input class="form-control" type="text" id="name_category_faq" name="name_category_faq"
-                            placeholder="Enter Name Category FAQ" required />
+                        <label class="form-label" for="name_category_news_event">Name Category</label>
+                        <input class="form-control" type="text" id="name_category_news_event"
+                            name="name_category_news_event" placeholder="Enter Name Category News & Event" required />
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -25,25 +26,25 @@
 </div>
 
 <!-- Modal Edit -->
-@foreach ($categoryFaq as $itemModals)
+@foreach ($categoryNewsEvent as $itemModals)
     <div class="modal fade" id="modalEdit{{ $itemModals->id }}" tabindex="-1" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Edit ({{ $itemModals->name_category_faq }})</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Edit Category</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form action="{{ route('dashboard.category-faq.update', $itemModals->id) }}" method="POST"
+                <form action="{{ route('dashboard.category-news-event.update', $itemModals->id) }}" method="POST"
                     enctype="multipart/form-data" id="inputanForm">
                     @csrf
                     @method('PUT')
                     <div class="modal-body">
                         <div class="mb-3">
-                            <label class="form-label" for="name_category_faq">Category Name</label>
-                            <input class="form-control" type="text" id="name_category_faq" name="name_category_faq"
-                                value="{{ $itemModals->name_category_faq }}" placeholder="Enter Name Category FAQ"
-                                required />
+                            <label class="form-label" for="name_category_news_event">Name Category</label>
+                            <input class="form-control" type="text" id="name_category_news_event"
+                                name="name_category_news_event" value="{{ $itemModals->name_category_news_event }}"
+                                placeholder="Enter Name Category News & Event" required />
                         </div>
                     </div>
                     <div class="modal-footer">

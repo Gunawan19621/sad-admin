@@ -21,7 +21,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="">
-                            <label for="image_vision" class="form-label">Foto</label>
+                            <label for="image_vision" class="form-label">Image</label>
                             <input class="form-control" type="file" id="image_vision" name="image_vision" />
                         </div>
                     </div>

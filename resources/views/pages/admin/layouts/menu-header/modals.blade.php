@@ -5,7 +5,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Edit ({{ $itemModals->name_menu }})</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Edit Header</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form action="{{ route('dashboard.menu-header.update', $itemModals->id) }}" method="POST"
@@ -50,7 +50,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Show ({{ $itemModals->name_menu }})</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Show Header</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">

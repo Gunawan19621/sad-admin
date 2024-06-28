@@ -1,27 +1,20 @@
 @extends('layouts.master-dashboard')
-@section('title', 'Resort Image')
+@section('title', 'Job Applicant')
 @section('content')
     <!-- Alert -->
     @include('layouts.alert-component')
 
     <div class="card">
         <div class="card-body">
-            <div class="row">
-                <div class="col-6">
-                    <h5 class="card-header">Resort Image</h5>
-                </div>
-                <div class="col-6 card-header text-end">
-                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalCreate">Add New
-                        image</button>
-                </div>
-            </div>
+            <h5 class="card-header">Job Applicant</h5>
             <div class="table-responsive text-nowrap">
                 <table class="table">
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Resort</th>
-                            <th>Image</th>
+                            <th>CV</th>
+                            <th>Name</th>
+                            <th>Email</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -29,24 +22,27 @@
                         @php
                             $no = 1;
                         @endphp
-                        @forelse ($resortImage as $items)
+                        @forelse ($jobApplicant as $items)
                             <tr>
                                 <td>{{ $no++ }}</td>
-                                <td>{{ $items->title_resort ?? '-' }}</td>
                                 <td>
-                                    @if (!empty($items->image_resort))
-                                        <img src="{{ asset('images/' . $items->image_resort) }}" alt="Image Resort"
+                                    @if (!empty($items->cv_applicant))
+                                        <img src="{{ asset('images/' . $items->cv_applicant) }}" alt="cv_applicant"
                                             class="img-fluid" style="max-width: 50px;">
                                     @else
                                         -
                                     @endif
                                 </td>
                                 <td>
-                                    <button type="button" class="btn btn-sm btn-success" data-bs-toggle="modal"
-                                        data-bs-target="#modalEdit{{ $items->id }}">Edit</button>
-                                    <button type="button" class="btn btn-sm btn-info" data-bs-toggle="modal"
-                                        data-bs-target="#modalShow{{ $items->id }}">View</button>
-                                    <form action="{{ route('dashboard.resort-image.destroy', $items->id) }}" method="POST"
+                                    {{ $items->firstname ?? '-' }} {{ $items->lastname ?? '-' }}
+                                </td>
+                                <td>{{ $items->email ?? '-' }}</td>
+                                <td>
+                                    <a href="{{ route('dashboard.job-applicant.edit', $items->id) }}"
+                                        class="btn btn-sm btn-success">Edit</a>
+                                    <a href="{{ route('dashboard.job-applicant.show', $items->id) }}"
+                                        class="btn btn-sm btn-info">View</a>
+                                    <form action="{{ route('dashboard.job-applicant.destroy', $items->id) }}" method="POST"
                                         style="display: inline;">
                                         @csrf
                                         @method('DELETE')
@@ -57,7 +53,7 @@
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="4" style="text-align: center;">Empty</td>
+                                <td colspan="5" style="text-align: center;">Empty</td>
                             </tr>
                         @endforelse
                     </tbody>
@@ -65,7 +61,4 @@
             </div>
         </div>
     </div>
-
-    <!-- Modal -->
-    @include('pages.admin.layouts.resort.resort-image.modals')
 @endsection

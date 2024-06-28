@@ -19,7 +19,7 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Foto</th>
+                            <th>Image</th>
                             <th>Title Story</th>
                             <th>Year Story</th>
                             <th>Actions</th>

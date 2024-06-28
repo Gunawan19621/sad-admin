@@ -11,8 +11,7 @@
                     <h5 class="card-header">Category Product</h5>
                 </div>
                 <div class="col-6 card-header text-end">
-                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalCreate">Add New
-                        Category</button>
+                    <a href="{{ route('dashboard.category-product.create') }}" class="btn btn-success">Add New Category</a>
                 </div>
             </div>
             <div class="table-responsive text-nowrap">
@@ -21,7 +20,6 @@
                         <tr>
                             <th>No</th>
                             <th>Category Product</th>
-                            <th>Description Product</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -32,12 +30,14 @@
                         @forelse ($categoryProduct as $items)
                             <tr>
                                 <td>{{ $no++ }}</td>
-                                <td>{{ $items->name_category_faq ?? '-' }}</td>
+                                <td>{{ $items->name_category_product ?? '-' }}</td>
                                 <td>
-                                    <button type="button" class="btn btn-sm btn-success" data-bs-toggle="modal"
-                                        data-bs-target="#modalEdit{{ $items->id }}">Edit</button>
-                                    <form action="{{ route('dashboard.category-faq.destroy', $items->id) }}" method="POST"
-                                        style="display: inline;">
+                                    <a href="{{ route('dashboard.category-product.edit', $items->id) }}"
+                                        class="btn btn-sm btn-success">Edit</a>
+                                    <a href="{{ route('dashboard.category-product.show', $items->id) }}"
+                                        class="btn btn-sm btn-info">View</a>
+                                    <form action="{{ route('dashboard.category-product.destroy', $items->id) }}"
+                                        method="POST" style="display: inline;">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-sm btn-danger"
@@ -55,7 +55,4 @@
             </div>
         </div>
     </div>
-
-    <!-- Modal -->
-    {{-- @include('pages.admin.layouts.faq.category-faq.modals') --}}
 @endsection

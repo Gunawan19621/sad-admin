@@ -20,7 +20,7 @@
                             placeholder="Enter job posotion" required />
                     </div>
                     <div class="">
-                        <label for="image_team" class="form-label">Foto</label>
+                        <label for="image_team" class="form-label">Image</label>
                         <input class="form-control" type="file" id="image_team" name="image_team" />
                     </div>
                 </div>
@@ -59,7 +59,7 @@
                                 value="{{ $itemModals->job_team }}" placeholder="Enter job posotion" required />
                         </div>
                         <div class="">
-                            <label for="image_team" class="form-label">Foto</label>
+                            <label for="image_team" class="form-label">Image</label>
                             <input class="form-control" type="file" id="image_team" name="image_team" />
                         </div>
                     </div>
