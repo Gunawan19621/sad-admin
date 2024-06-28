@@ -15,11 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('address');
             $table->string('operating_hours');
-            $table->string('email')->nullable();
-            $table->string('phone')->nullable();
-            $table->string('fax')->nullable();
+            $table->string('email');
+            $table->string('phone');
+            $table->string('fax');
             $table->json('social_media')->nullable();
-            $table->json('google_maps')->nullable();
+            $table->json('google_maps');
             $table->timestamps();
         });
     }

@@ -14,22 +14,25 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="mb-3">
-                            <label class="form-label" for="title_vision">Title Vision</label>
+                            <label class="form-label" for="title_vision">Title Vision <span
+                                    class="text-danger">*</span></label>
                             <input class="form-control" type="text" id="title_vision" name="title_vision"
                                 placeholder="Enter title vision" required />
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="">
-                            <label for="image_vision" class="form-label">Image</label>
-                            <input class="form-control" type="file" id="image_vision" name="image_vision" />
+                            <label for="image_vision" class="form-label">Image <span class="text-danger">*</span></label>
+                            <input class="form-control" type="file" id="image_vision" name="image_vision"
+                                accept="image/*" required />
                         </div>
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label" for="description_vision">Description Vision</label>
+                    <label class="form-label" for="description_vision">Description Vision <span
+                            class="text-danger">*</span></label>
                     <textarea id="description_vision" class="form-control" name="description_vision" placeholder="Enter description vision"
-                        rows="3"></textarea>
+                        rows="3" required></textarea>
                 </div>
                 <div class="text-center">
                     <a href="{{ route('dashboard.our-vision.index') }}" class="btn btn-secondary">Back</a>

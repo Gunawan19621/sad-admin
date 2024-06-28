@@ -58,8 +58,8 @@ class MenuHeaderController extends Controller
     public function update(Request $request, string $id)
     {
         $validasi = Validator::make($request->all(), [
-            'title_header' => 'nullable|string|max:255',
-            'subtitle_header' => 'nullable|string|max:255',
+            'title_header' => '',
+            'subtitle_header' => '',
             'image_header' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ], [
             'image_header.required' => 'Image header is required',

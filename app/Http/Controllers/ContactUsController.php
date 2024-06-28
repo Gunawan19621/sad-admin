@@ -17,7 +17,6 @@ class ContactUsController extends Controller
         $active = 'contact-us';
 
         foreach ($contacts as $contact) {
-            // Convert JSON fields to associative arrays if they are not null
             $contact->social_media = json_decode($contact->social_media, true);
             $contact->google_maps = json_decode($contact->google_maps, true);
         }
@@ -37,28 +36,10 @@ class ContactUsController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    // public function store(Request $request)
-    // {
-    //     $validasi = Validator::make($request->all(), [
-    //         'id_category_faq' => 'required',
-    //         'question_faq' => 'required',
-    //         'answer_faq' => 'required',
-    //     ], [
-    //         'id_category_faq.required' => 'Category FAQ is required',
-    //         'question_faq.required' => 'Question FAQ is required',
-    //         'answer_faq.required' => 'Answer FAQ is required',
-    //     ]);
-
-    //     try {
-    //         $validatedData = $validasi->validated();
-
-    //         FAQ::create($validatedData);
-
-    //         return redirect()->back()->with('success', 'Data FAQ add successfully');
-    //     } catch (\Exception $e) {
-    //         return redirect()->back()->with('error', 'Data FAQ failed to added');
-    //     }
-    // }
+    public function store(Request $request)
+    {
+        //
+    }
 
     /**
      * Display the specified resource.
@@ -79,46 +60,6 @@ class ContactUsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    // public function update(Request $request, $id)
-    // {
-    //     $validatedData = $request->validate([
-    //         'address' => 'required|string',
-    //         'operating_hours' => 'required|string',
-    //         'email' => 'required|string',
-    //         'phone' => 'required|string',
-    //         'fax' => 'required|string',
-    //         'social_media.linkedin' => 'nullable|string',
-    //         'social_media.instagram' => 'nullable|string',
-    //         'social_media.facebook' => 'nullable|string',
-    //         'social_media.youtube' => 'nullable|string',
-    //         'latitude' => 'required|string',
-    //         'longitude' => 'required|string',
-    //     ]);
-
-    //     try {
-    //         $contact = ContactUs::findOrFail($id);
-    //         $contact->address = $validatedData['address'];
-    //         $contact->operating_hours = $validatedData['operating_hours'];
-    //         $contact->email = $validatedData['email'];
-    //         $contact->phone = $validatedData['phone'];
-    //         $contact->fax = $validatedData['fax'];
-    //         $contact->social_media = [
-    //             'linkedin' => $validatedData['social_media']['linkedin'] ?? null,
-    //             'instagram' => $validatedData['social_media']['instagram'] ?? null,
-    //             'facebook' => $validatedData['social_media']['facebook'] ?? null,
-    //             'youtube' => $validatedData['social_media']['youtube'] ?? null,
-    //         ];
-    //         $contact->google_maps = [
-    //             'latitude' => $validatedData['latitude'],
-    //             'longitude' => $validatedData['longitude'],
-    //         ];
-    //         $contact->save();
-
-    //         return redirect()->back()->with('success', 'Contact updated successfully');
-    //     } catch (\Exception $e) {
-    //         return redirect()->back()->with('error', 'Failed to update contact: ' . $e->getMessage());
-    //     }
-    // }
     public function update(Request $request, $id)
     {
         $validatedData = $request->validate([

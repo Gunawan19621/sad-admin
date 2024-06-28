@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('tb_news_event', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_category_news_event')->nullable();
+            $table->integer('id_category_news_event');
             $table->string('image_news_event');
             $table->string('title_news_event');
-            $table->date('date_news_event')->nullable();
+            $table->date('date_news_event');
             $table->timestamps();
         });
     }

@@ -32,14 +32,14 @@
                         <label class="form-label" for="email">Email</label>
                         <input class="form-control" id="email" value="{{ $jobApplicant->email }}" readonly />
                     </div>
-                    <div class="mb-3">
-                        <label class="form-label" for="question1">Question 1</label>
-                        <input class="form-control" id="question1" value="{{ $jobApplicant->question1 }}" readonly />
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label" for="question2">Question 2</label>
-                        <input class="form-control" id="question2" value="{{ $jobApplicant->question2 }}" readonly />
-                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="question1">Question 1</label>
+                    <input class="form-control" id="question1" value="{{ $jobApplicant->question1 }}" readonly />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="question2">Question 2</label>
+                    <input class="form-control" id="question2" value="{{ $jobApplicant->question2 }}" readonly />
                 </div>
             </div>
             <div class="text-center">

@@ -3,14 +3,15 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Create New Team</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Create New FAQ</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form action="{{ route('dashboard.faq.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-body">
                     <div class="mb-3">
-                        <label class="form-label" for="id_category_faq">Category FAQ</label>
+                        <label class="form-label" for="id_category_faq">Category FAQ <span
+                                class="text-danger">*</span></label>
                         <select class="form-select" id="id_category_faq" name="id_category_faq" required>
                             <option disabled selected>Open this select menu</option>
                             @foreach ($categoryFaq as $data)
@@ -19,19 +20,19 @@
                         </select>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label" for="question_faq">Question</label>
+                        <label class="form-label" for="question_faq">Question <span class="text-danger">*</span></label>
                         <input type="text" class="form-control" id="question_faq" name="question_faq"
                             placeholder="Enter Question" required />
                     </div>
                     <div class="mb-3">
-                        <label class="form-label" for="answer_faq">Answer</label>
+                        <label class="form-label" for="answer_faq">Answer <span class="text-danger">*</span></label>
                         <input type="text" class="form-control" id="answer_faq" name="answer_faq"
                             placeholder="Enter job Answer Question" required />
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Save changes</button>
+                    <button type="submit" class="btn btn-primary">Save</button>
                 </div>
             </form>
         </div>
@@ -45,7 +46,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Edit ({{ $itemModals->question_faq }})</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Edit FAQ</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form action="{{ route('dashboard.faq.update', $itemModals->id) }}" method="POST"
@@ -54,7 +55,8 @@
                     @method('PUT')
                     <div class="modal-body">
                         <div class="mb-3">
-                            <label class="form-label" for="id_category_faq">Category FAQ</label>
+                            <label class="form-label" for="id_category_faq">Category FAQ <span
+                                    class="text-danger">*</span></label>
                             <select class="form-select" id="id_category_faq" name="id_category_faq" required>
                                 <option disabled selected>Open this select menu</option>
                                 @foreach ($categoryFaq as $data)
@@ -65,12 +67,13 @@
                             </select>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label" for="question_faq">Question</label>
+                            <label class="form-label" for="question_faq">Question <span
+                                    class="text-danger">*</span></label>
                             <input type="text" class="form-control" id="question_faq" name="question_faq"
                                 value="{{ $itemModals->question_faq }}" placeholder="Enter Question" required />
                         </div>
                         <div class="mb-3">
-                            <label class="form-label" for="answer_faq">Answer</label>
+                            <label class="form-label" for="answer_faq">Answer <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" id="answer_faq" name="answer_faq"
                                 value="{{ $itemModals->answer_faq }}" placeholder="Enter job Answer Question"
                                 required />
@@ -78,7 +81,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Save changes</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
                     </div>
                 </form>
             </div>

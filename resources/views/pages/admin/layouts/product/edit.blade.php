@@ -22,20 +22,16 @@
                             <img src="{{ asset('images/' . $product->image_product) }}" alt="image_product"
                                 class="img-fluid" style="max-width: 100%; max-height: 250px">
                         </div>
-                        <div class="mb-3">
-                            <label class="form-label" for="price_product">Price</label>
-                            <input class="form-control" type="number" id="price_product" name="price_product"
-                                value="{{ $product->price_product }}" placeholder="Enter Price Product" required />
-                        </div>
                     </div>
                     <div class="col-md-8">
                         <div class="mb-3">
-                            <label class="form-label" for="name_product">Name</label>
+                            <label class="form-label" for="name_product">Name <span class="text-danger">*</span></label>
                             <input class="form-control" type="text" id="name_product" name="name_product"
                                 value="{{ $product->name_product }}" placeholder="Enter Name Product" required />
                         </div>
                         <div class="mb-3">
-                            <label class="form-label" for="id_distributor">Name Distributor</label>
+                            <label class="form-label" for="id_distributor">Name Distributor <span
+                                    class="text-danger">*</span></label>
                             <select class="form-select" id="id_distributor" name="id_distributor" required>
                                 <option disabled selected>Open this select menu</option>
                                 @foreach ($distributor as $data)
@@ -46,7 +42,8 @@
                             </select>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label" for="id_category_product">Category Product</label>
+                            <label class="form-label" for="id_category_product">Category Product <span
+                                    class="text-danger">*</span></label>
                             <select class="form-select" id="id_category_product" name="id_category_product" required>
                                 <option disabled selected>Open this select menu</option>
                                 @foreach ($categoryProduct as $data)
@@ -57,18 +54,25 @@
                             </select>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label" for="stock_product">Stock</label>
+                            <label class="form-label" for="stock_product">Stock <span class="text-danger">*</span></label>
                             <input class="form-control" type="number" id="stock_product" name="stock_product"
                                 value="{{ $product->stock_product }}" placeholder="Enter Stock Product" required />
                         </div>
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label for="image_product" class="form-label">Image</label>
-                    <input class="form-control" type="file" id="image_product" name="image_product" />
+                    <label class="form-label" for="price_product">Price <span class="text-danger">*</span></label>
+                    <input class="form-control" type="number" id="price_product" name="price_product"
+                        value="{{ $product->price_product }}" placeholder="Enter Price Product" required />
+                </div>
+                <div class="mb-3">
+                    <label for="image_product" class="form-label">Image <span class="text-danger">*</span></label>
+                    <input class="form-control" type="file" id="image_product" name="image_product" accept="image/*"
+                        required />
                 </div>
                 <div class="mb-4">
-                    <label class="form-label" for="description_product">Description</label>
+                    <label class="form-label" for="description_product">Description <span
+                            class="text-danger">*</span></label>
                     <textarea id="description_product" class="form-control" name="description_product"
                         placeholder="Enter description Resort" rows="3" required>{{ $product->description_product }}</textarea>
                 </div>

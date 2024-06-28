@@ -35,13 +35,12 @@ class OurDistributorController extends Controller
     {
         $validasi = Validator::make($request->all(), [
             'name_distributor' => 'required',
-            'image_distributor' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image_distributor' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
             'address_distributor' => 'required',
             'name_person_distributor' => 'required',
             'phone_distributor' => 'required',
         ], [
             'name_distributor.required' => 'Name Distributor is required',
-            'image_distributor.required' => 'Image Distributor is required',
             'image_distributor.image' => 'Image Distributor must be an image',
             'image_distributor.mimes' => 'Image Distributor must be a file of type: jpeg, png, jpg, gif',
             'image_distributor.max' => 'Image Distributor must be a file of type: jpeg, png, jpg, gif and max 2048kb',
@@ -90,13 +89,12 @@ class OurDistributorController extends Controller
     {
         $validasi = Validator::make($request->all(), [
             'name_distributor' => 'required',
-            'image_distributor' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image_distributor' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
             'address_distributor' => 'required',
             'name_person_distributor' => 'required',
             'phone_distributor' => 'required',
         ], [
             'name_distributor.required' => 'Name Distributor is required',
-            'image_distributor.required' => 'Image Distributor is required',
             'image_distributor.image' => 'Image Distributor must be an image',
             'image_distributor.mimes' => 'Image Distributor must be a file of type: jpeg, png, jpg, gif',
             'image_distributor.max' => 'Image Distributor must be a file of type: jpeg, png, jpg, gif and max 2048kb',

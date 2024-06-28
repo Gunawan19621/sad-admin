@@ -3,14 +3,15 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Create New Team</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Create New Image</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form action="{{ route('dashboard.image-experience.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-body">
                     <div class="mb-3">
-                        <label class="form-label" for="id_experience">Experience Title</label>
+                        <label class="form-label" for="id_experience">Experience Title <span
+                                class="text-danger">*</span></label>
                         <select class="form-select" id="id_experience" name="id_experience" required>
                             <option disabled selected>Open this select menu</option>
                             @foreach ($experience as $data)
@@ -19,8 +20,10 @@
                         </select>
                     </div>
                     <div class="">
-                        <label for="image_experience" class="form-label">Image</label>
-                        <input class="form-control" type="file" id="image_experience" name="image_experience" />
+                        <label for="image_experience" class="form-label">Image <span
+                                class="text-danger">*</span></label>
+                        <input class="form-control" type="file" id="image_experience" name="image_experience"
+                            accept="image/*" required />
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -39,7 +42,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Edit</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Edit Image</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form action="{{ route('dashboard.image-experience.update', $itemModals->id) }}" method="POST"
@@ -48,7 +51,8 @@
                     @method('PUT')
                     <div class="modal-body">
                         <div class="mb-3">
-                            <label class="form-label" for="id_experience">Experience Title</label>
+                            <label class="form-label" for="id_experience">Experience Title <span
+                                    class="text-danger">*</span></label>
                             <select class="form-select" id="id_experience" name="id_experience" required>
                                 <option disabled selected>Open this select menu</option>
                                 @foreach ($experience as $data)
@@ -59,53 +63,17 @@
                             </select>
                         </div>
                         <div class="">
-                            <label for="image_experience" class="form-label">Image</label>
-                            <input class="form-control" type="file" id="image_experience" name="image_experience" />
+                            <label for="image_experience" class="form-label">Image <span
+                                    class="text-danger">*</span></label>
+                            <input class="form-control" type="file" id="image_experience" name="image_experience"
+                                accept="image/*" required />
                         </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Save changes</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
                     </div>
                 </form>
-            </div>
-        </div>
-    </div>
-@endforeach
-
-<!-- Modal Show -->
-@foreach ($imageExperience as $itemModals)
-    <div class="modal fade" id="modalShow{{ $itemModals->id }}" tabindex="-1" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Show</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="mb-3">
-                        <label class="form-label" for="id_experience">Experience Title</label>
-                        <select class="form-select" id="id_experience" disabled>
-                            <option disabled selected>Open this select menu</option>
-                            @foreach ($experience as $data)
-                                <option value="{{ $data->id }}"
-                                    {{ $itemModals->id_experience == $data->id ? 'selected' : '' }}>
-                                    {{ $data->title_experience }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="mb-2">
-                        <label for="image_experience" class="form-label">Image Story</label>
-                    </div>
-                    <div class="">
-                        <img src="{{ asset('images/' . $itemModals->image_experience) }}" alt="Image Experience"
-                            class="img-fluid" style="max-width: 100px;">
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
             </div>
         </div>
     </div>

@@ -37,8 +37,6 @@
                                 <td>
                                     <button type="button" class="btn btn-sm btn-success" data-bs-toggle="modal"
                                         data-bs-target="#modalEditHeader{{ $items->id }}">Edit</button>
-                                    <button type="button" class="btn btn-sm btn-info" data-bs-toggle="modal"
-                                        data-bs-target="#modalShowHeader{{ $items->id }}">View</button>
                                 </td>
                             </tr>
                         @empty

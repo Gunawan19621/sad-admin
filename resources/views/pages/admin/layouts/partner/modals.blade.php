@@ -3,25 +3,26 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Create New Parner</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Create New Partner</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form action="{{ route('dashboard.partner.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-body">
                     <div class="mb-3">
-                        <label class="form-label" for="name_partner">Name</label>
+                        <label class="form-label" for="name_partner">Name <span class="text-danger">*</span></label>
                         <input class="form-control" type="text" id="name_partner" name="name_partner"
                             placeholder="Enter Name Partner" required />
                     </div>
                     <div class="">
-                        <label for="image_partner" class="form-label">Image</label>
-                        <input class="form-control" type="file" id="image_partner" name="image_partner" />
+                        <label for="image_partner" class="form-label">Image <span class="text-danger">*</span></label>
+                        <input class="form-control" type="file" id="image_partner" name="image_partner"
+                            accept="image/*" required />
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Save changes</button>
+                    <button type="submit" class="btn btn-primary">Save</button>
                 </div>
             </form>
         </div>
@@ -35,7 +36,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Edit</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Edit Partner</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form action="{{ route('dashboard.partner.update', $itemModals->id) }}" method="POST"
@@ -44,18 +45,20 @@
                     @method('PUT')
                     <div class="modal-body">
                         <div class="mb-3">
-                            <label class="form-label" for="name_partner">Name</label>
+                            <label class="form-label" for="name_partner">Name <span class="text-danger">*</span></label>
                             <input class="form-control" type="text" id="name_partner" name="name_partner"
                                 value="{{ $itemModals->name_partner }}" placeholder="Enter Team Name" required />
                         </div>
                         <div class="">
-                            <label for="image_partner" class="form-label">Image</label>
-                            <input class="form-control" type="file" id="image_partner" name="image_partner" />
+                            <label for="image_partner" class="form-label">Image <span
+                                    class="text-danger">*</span></label>
+                            <input class="form-control" type="file" id="image_partner" name="image_partner"
+                                accept="image/*" required />
                         </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Save changes</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
                     </div>
                 </form>
             </div>

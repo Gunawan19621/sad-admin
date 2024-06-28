@@ -21,7 +21,6 @@
                             <th>No</th>
                             <th>Title</th>
                             <th>Subtitle</th>
-                            <th>Description</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -34,7 +33,6 @@
                                 <td>{{ $no++ }}</td>
                                 <td>{{ $items->title_experience ?? '-' }}</td>
                                 <td>{{ $items->subtitle_experience ?? '-' }}</td>
-                                <td>{{ $items->description_experience ?? '-' }}</td>
                                 <td>
                                     <a href="{{ route('dashboard.experience.edit', $items->id) }}"
                                         class="btn btn-sm btn-success">Edit</a>

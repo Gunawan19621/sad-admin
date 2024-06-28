@@ -34,10 +34,9 @@ class AwardController extends Controller
     public function store(Request $request)
     {
         $validasi = Validator::make($request->all(), [
-            'title_awards' => 'required',
+            'title_awards' => '',
             'image_awards' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ], [
-            'title_awards.required' => 'Title Awards is required',
             'image_awards.required' => 'Image Awards is required',
             'image_awards.image' => 'Image Awards must be an image',
             'image_awards.mimes' => 'Image Awards must be a file of type: jpeg, png, jpg, gif',
@@ -83,10 +82,9 @@ class AwardController extends Controller
     public function update(Request $request, string $id)
     {
         $validasi = Validator::make($request->all(), [
-            'title_awards' => 'required',
+            'title_awards' => '',
             'image_awards' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ], [
-            'title_awards.required' => 'Title Awards is required',
             'image_awards.required' => 'Image Awards is required',
             'image_awards.image' => 'Image Awards must be an image',
             'image_awards.mimes' => 'Image Awards must be a file of type: jpeg, png, jpg, gif',

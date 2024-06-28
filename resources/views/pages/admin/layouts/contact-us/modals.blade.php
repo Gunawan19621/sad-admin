@@ -5,7 +5,7 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Edit</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Edit Contact</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form action="{{ route('dashboard.contact-us.update', $contact->id) }}" method="POST"
@@ -16,28 +16,33 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="mb-3">
-                                    <label class="form-label" for="address">Address</label>
+                                    <label class="form-label" for="address">Address <span
+                                            class="text-danger">*</span></label>
                                     <textarea id="address" class="form-control" name="address" placeholder="Enter Address" rows="3" required>{{ $contact->address }}</textarea>
                                 </div>
                                 <div class="mb-3">
-                                    <label class="form-label" for="email">Email</label>
+                                    <label class="form-label" for="email">Email <span
+                                            class="text-danger">*</span></label>
                                     <input type="text" class="form-control" id="email" name="email"
                                         value="{{ $contact->email }}" placeholder="Enter Email" required />
                                 </div>
                                 <div class="mb-3">
-                                    <label class="form-label" for="phone">Phone</label>
+                                    <label class="form-label" for="phone">Phone <span
+                                            class="text-danger">*</span></label>
                                     <input type="text" class="form-control" id="phone" name="phone"
                                         value="{{ $contact->phone }}" placeholder="Enter Phone" required />
                                 </div>
                                 <div class="mb-3">
-                                    <label class="form-label" for="fax">Fax</label>
+                                    <label class="form-label" for="fax">Fax <span
+                                            class="text-danger">*</span></label>
                                     <input type="text" class="form-control" id="fax" name="fax"
                                         value="{{ $contact->fax }}" placeholder="Enter Fax" required />
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="mb-3">
-                                    <label class="form-label" for="operating_hours">Operating Hours</label>
+                                    <label class="form-label" for="operating_hours">Operating Hours <span
+                                            class="text-danger">*</span></label>
                                     <textarea id="operating_hours" class="form-control" name="operating_hours" placeholder="Enter Operating Hours"
                                         rows="3" required>{{ $contact->operating_hours }}</textarea>
                                 </div>
@@ -86,14 +91,16 @@
                             <label class="form-label">Maps</label>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <label class="form-label" for="google_maps_latitude">Latitude</label>
+                                    <label class="form-label" for="google_maps_latitude">Latitude <span
+                                            class="text-danger">*</span></label>
                                     <input type="text" class="form-control" id="google_maps_latitude"
                                         name="google_maps_latitude"
                                         value="{{ isset($contact->google_maps['latitude']) ? $contact->google_maps['latitude'] : '' }}"
                                         placeholder="Enter Latitude" required />
                                 </div>
                                 <div class="col-md-6">
-                                    <label class="form-label" for="google_maps_longitude">Longitude</label>
+                                    <label class="form-label" for="google_maps_longitude">Longitude <span
+                                            class="text-danger">*</span></label>
                                     <input type="text" class="form-control" id="google_maps_longitude"
                                         name="google_maps_longitude"
                                         value="{{ isset($contact->google_maps['longitude']) ? $contact->google_maps['longitude'] : '' }}"
@@ -104,7 +111,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Save changes</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
                     </div>
                 </form>
             </div>
@@ -119,7 +126,7 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Show</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Show Contact</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">

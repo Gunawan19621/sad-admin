@@ -6,7 +6,7 @@
 
     <div class="card mb-4">
         <div class="card-header d-flex justify-content-between align-items-center">
-            <h5 class="mb-0">Edit Category Product</h5>
+            <h5 class="mb-0">Edit Category</h5>
         </div>
         <div class="card-body">
             <form action="{{ route('dashboard.category-product.update', $categoryProduct->id) }}" method="POST"
@@ -14,12 +14,14 @@
                 @csrf
                 @method('PUT')
                 <div class="mb-3">
-                    <label class="form-label" for="name_category_product">Name Category</label>
+                    <label class="form-label" for="name_category_product">Name Category <span
+                            class="text-danger">*</span></label>
                     <input class="form-control" type="text" id="name_category_product" name="name_category_product"
                         value="{{ $categoryProduct->name_category_product }}" placeholder="Enter Name Category" required />
                 </div>
                 <div class="mb-4">
-                    <label class="form-label" for="description_category_product">Description</label>
+                    <label class="form-label" for="description_category_product">Description <span
+                            class="text-danger">*</span></label>
                     <textarea id="description_category_product" class="form-control" name="description_category_product"
                         placeholder="Enter description Resort" rows="3" required>{{ $categoryProduct->description_category_product }}</textarea>
                 </div>

@@ -16,23 +16,26 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="mb-3">
-                            <label class="form-label" for="title_experience">Title</label>
+                            <label class="form-label" for="title_experience">Title <span
+                                    class="text-danger">*</span></label>
                             <input class="form-control" type="text" id="title_experience" name="title_experience"
                                 placeholder="Enter Title Experience" value="{{ $experience->title_experience }}" required />
                         </div>
                     </div>
                     <div class="col-md-8">
                         <div class="mb-3">
-                            <label class="form-label" for="subtitle_experience">Subtitle</label>
+                            <label class="form-label" for="subtitle_experience">Subtitle <span
+                                    class="text-danger">*</span></label>
                             <textarea id="subtitle_experience" class="form-control" name="subtitle_experience"
                                 placeholder="Enter Subtitle Experience" rows="3" required>{{ $experience->subtitle_experience }}</textarea>
                         </div>
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label" for="description_experience">Description</label>
+                    <label class="form-label" for="description_experience">Description <span
+                            class="text-danger">*</span></label>
                     <textarea id="description_experience" class="form-control" name="description_experience"
-                        placeholder="Enter description story" rows="3">{{ $experience->description_experience }}</textarea>
+                        placeholder="Enter description story" rows="3" required>{{ $experience->description_experience }}</textarea>
                 </div>
                 <div class="text-center">
                     <a href="{{ route('dashboard.experience.index') }}" class="btn btn-secondary">Back</a>

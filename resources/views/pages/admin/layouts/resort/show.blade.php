@@ -31,7 +31,7 @@
     </div>
 
     <script>
-        CKEDITOR.replace('description_experience', {
+        CKEDITOR.replace('description_resort', {
             filebrowserUploadUrl: "{{ route('dashboard.ckeditor.upload', ['_token' => csrf_token()]) }}",
             filebrowserUploadMethod: 'form'
         });

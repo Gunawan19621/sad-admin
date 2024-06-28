@@ -15,10 +15,6 @@
                         <img src="{{ asset('images/' . $product->image_product) }}" alt="image_product" class="img-fluid"
                             style="max-width: 100%; max-height: 250px">
                     </div>
-                    <div class="mb-3">
-                        <label class="form-label" for="price_product">Price</label>
-                        <input class="form-control" id="price_product" value="{{ $product->price_product }}" readonly />
-                    </div>
                 </div>
                 <div class="col-md-8">
                     <div class="mb-3">
@@ -52,6 +48,10 @@
                         <input class="form-control" id="stock_product" value="{{ $product->stock_product }}" readonly />
                     </div>
                 </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="price_product">Price</label>
+                <input class="form-control" id="price_product" value="{{ $product->price_product }}" readonly />
             </div>
             <div class="mb-4">
                 <label class="form-label" for="description_product">Description</label>

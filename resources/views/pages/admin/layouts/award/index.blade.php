@@ -44,8 +44,6 @@
                                 <td>
                                     <button type="button" class="btn btn-sm btn-success" data-bs-toggle="modal"
                                         data-bs-target="#modalEdit{{ $items->id }}">Edit</button>
-                                    <button type="button" class="btn btn-sm btn-info" data-bs-toggle="modal"
-                                        data-bs-target="#modalShow{{ $items->id }}">View</button>
                                     <form action="{{ route('dashboard.award.destroy', $items->id) }}" method="POST"
                                         style="display: inline;">
                                         @csrf
