@@ -13,17 +13,14 @@ class HeaderSeeder extends Seeder
      */
     public function run(): void
     {
-        MenuHeader::create([
-            'name_menu' => 'ABOUT',
-            'image_header' => 'NO.JPG',
-            'title_header' => '',
-            'subtitle_header' => '',
-        ]);
-        MenuHeader::create([
-            'name_menu' => 'EXPERIENCE',
-            'image_header' => 'NO.JPG',
-            'title_header' => '',
-            'subtitle_header' => '',
-        ]);
+        // Menyisipkan beberapa data pengguna biasa menggunakan loop
+        for ($i = 1; $i <= 10; $i++) {
+            MenuHeader::create([
+                'name_menu' => 'Menu ' . $i,
+                'image_header' => 'image' . $i . '.jpg',
+                'title_header' => 'Title ' . $i,
+                'subtitle_header' => 'Subtitle ' . $i,
+            ]);
+        }
     }
 }
