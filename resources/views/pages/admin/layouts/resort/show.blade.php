@@ -1,5 +1,14 @@
 @extends('layouts.master-dashboard')
 @section('title', 'Show Resort')
+
+@section('breadcrumb')
+    @parent
+    <li class="breadcrumb-item">
+        <a href="{{ route('dashboard.resort.index') }}">Resort</a>
+    </li>
+    <li class="breadcrumb-item active">Show Resort</li>
+@endsection
+
 @section('content')
     <div class="card mb-4">
         <div class="card-header d-flex justify-content-between align-items-center">

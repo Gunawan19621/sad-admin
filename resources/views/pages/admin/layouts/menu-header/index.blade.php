@@ -1,5 +1,9 @@
 @extends('layouts.master-dashboard')
 @section('title', 'Menu Header')
+@section('breadcrumb')
+    @parent
+    <li class="breadcrumb-item active">Menu Header</li>
+@endsection
 @section('content')
     <!-- Alert -->
     @include('layouts.alert-component')

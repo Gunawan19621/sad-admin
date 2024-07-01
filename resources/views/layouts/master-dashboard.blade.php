@@ -26,6 +26,15 @@
 
                     <!-- Content -->
                     <div class="container-xxl flex-grow-1 container-p-y">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb breadcrumb-style1">
+                                @section('breadcrumb')
+                                    <li class="breadcrumb-item">
+                                        <a href="route('dashboard')">Home</a>
+                                    </li>
+                                @show
+                            </ol>
+                        </nav>
                         @yield('content')
                     </div>
 

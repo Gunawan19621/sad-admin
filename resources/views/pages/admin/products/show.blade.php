@@ -1,5 +1,14 @@
 @extends('layouts.master-dashboard')
 @section('title', 'Show Product')
+
+@section('breadcrumb')
+    @parent
+    <li class="breadcrumb-item">
+        <a href="{{ route('dashboard.product.index') }}">Product</a>
+    </li>
+    <li class="breadcrumb-item active">Show Product</li>
+@endsection
+
 @section('content')
     <div class="card mb-4">
         <div class="card-header d-flex justify-content-between align-items-center">

@@ -1,5 +1,9 @@
 @extends('layouts.master-dashboard')
 @section('title', 'Contact Us')
+@section('breadcrumb')
+    @parent
+    <li class="breadcrumb-item active">Enquiry</li>
+@endsection
 @section('content')
     <!-- Alert -->
     @include('layouts.alert-component')

@@ -1,5 +1,14 @@
 @extends('layouts.master-dashboard')
 @section('title', 'Create Resort')
+
+@section('breadcrumb')
+    @parent
+    <li class="breadcrumb-item">
+        <a href="{{ route('dashboard.resort.index') }}">Resort</a>
+    </li>
+    <li class="breadcrumb-item active">Create Resort</li>
+@endsection
+
 @section('content')
     <!-- Alert -->
     @include('layouts.alert-component')

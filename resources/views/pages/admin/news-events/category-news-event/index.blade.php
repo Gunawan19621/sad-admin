@@ -1,5 +1,11 @@
 @extends('layouts.master-dashboard')
 @section('title', 'Category News & Event')
+
+@section('breadcrumb')
+    @parent
+    <li class="breadcrumb-item active">Category News & Event</li>
+@endsection
+
 @section('content')
     <!-- Alert -->
     @include('layouts.alert-component')

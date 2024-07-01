@@ -1,9 +1,17 @@
 @extends('layouts.master-dashboard')
 @section('title', 'Edit Job Applicant')
+
+@section('breadcrumb')
+    @parent
+    <li class="breadcrumb-item">
+        <a href="{{ route('dashboard.our-vision.index') }}">Work With Us</a>
+    </li>
+    <li class="breadcrumb-item active"> Edit Job Applicant</li>
+@endsection
+
 @section('content')
     <!-- Alert -->
     @include('layouts.alert-component')
-
     <div class="card mb-4">
         <div class="card-header d-flex justify-content-between align-items-center">
             <h5 class="mb-0">Edit Job Applicant</h5>

@@ -1,5 +1,11 @@
 @extends('layouts.master-dashboard')
 @section('title', 'Experience Price')
+
+@section('breadcrumb')
+    @parent
+    <li class="breadcrumb-item active">Experience Price</li>
+@endsection
+
 @section('content')
     <!-- Alert -->
     @include('layouts.alert-component')

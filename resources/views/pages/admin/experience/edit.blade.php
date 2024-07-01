@@ -1,5 +1,14 @@
 @extends('layouts.master-dashboard')
 @section('title', 'Edit Experience')
+
+@section('breadcrumb')
+    @parent
+    <li class="breadcrumb-item">
+        <a href="{{ route('dashboard.experience.index') }}">Experience</a>
+    </li>
+    <li class="breadcrumb-item active">Edit Experience</li>
+@endsection
+
 @section('content')
     <!-- Alert -->
     @include('layouts.alert-component')

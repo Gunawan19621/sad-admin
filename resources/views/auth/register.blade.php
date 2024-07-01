@@ -77,9 +77,9 @@
                     @enderror
                 </div>
                 <div class="mb-3">
-                    <label for="date" class="form-label">Date of birth</label>
+                    <label for="date" class="form-label">Date of birth <span class="text-danger">*</span></label>
                     <input type="date" class="form-control @error('date') is-invalid @enderror" id="date"
-                        name="date" placeholder="Enter your date of birth" value="{{ old('date') }}" />
+                        name="date" placeholder="Enter your date of birth" value="{{ old('date') }}" required />
                     @error('date')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror

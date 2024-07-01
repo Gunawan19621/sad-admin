@@ -1,5 +1,14 @@
 @extends('layouts.master-dashboard')
 @section('title', 'Show Job Applicant')
+
+@section('breadcrumb')
+    @parent
+    <li class="breadcrumb-item">
+        <a href="{{ route('dashboard.our-vision.index') }}">Work With Us</a>
+    </li>
+    <li class="breadcrumb-item active">Show Job Applicant</li>
+@endsection
+
 @section('content')
     <!-- Alert -->
     @include('layouts.alert-component')

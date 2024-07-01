@@ -1,5 +1,14 @@
 @extends('layouts.master-dashboard')
 @section('title', 'Create Our Vision')
+
+@section('breadcrumb')
+    @parent
+    <li class="breadcrumb-item">
+        <a href="{{ route('dashboard.our-vision.index') }}">Our Vision</a>
+    </li>
+    <li class="breadcrumb-item active">Create Vision</li>
+@endsection
+
 @section('content')
     <!-- Alert -->
     @include('layouts.alert-component')

@@ -1,5 +1,11 @@
 @extends('layouts.master-dashboard')
 @section('title', 'Our Distributor')
+
+@section('breadcrumb')
+    @parent
+    <li class="breadcrumb-item active">Distributor</li>
+@endsection
+
 @section('content')
     <!-- Alert -->
     @include('layouts.alert-component')
@@ -8,7 +14,7 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-6">
-                    <h5 class="card-header">Our Distributor</h5>
+                    <h5 class="card-header">Distributor</h5>
                 </div>
                 <div class="col-6 card-header text-end">
                     <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalCreate">Add New

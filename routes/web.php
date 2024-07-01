@@ -28,8 +28,11 @@ Route::get('/dashboard', function () {
 Route::prefix('dashboard')->name('dashboard.')->middleware('auth')->group(function () {
     //Profile
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::get('/profile/updatePassword', [ProfileController::class, 'updatePassword'])->name('profile.updatePassword');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::patch('/profile/{id}/updateFoto', [ProfileController::class, 'updateFoto'])->name('profile.updateFoto');
+    Route::patch('profile/{id}/reset-foto', [ProfileController::class, 'resetFoto'])->name('profile.resetFoto');
 
     //Layouts
     //Menu Header

@@ -1,5 +1,11 @@
 @extends('layouts.master-dashboard')
 @section('title', 'Image Experience')
+
+@section('breadcrumb')
+    @parent
+    <li class="breadcrumb-item active">Image Experience</li>
+@endsection
+
 @section('content')
     <!-- Alert -->
     @include('layouts.alert-component')

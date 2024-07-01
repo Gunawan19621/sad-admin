@@ -54,7 +54,9 @@
     </div>
 
     <div class="menu-inner-shadow"></div>
-
+    @php
+        $active = $active ?? '';
+    @endphp
     <ul class="menu-inner py-1">
         <!-- Dashboard -->
         <li class="menu-item {{ $active == 'dashboard' ? 'active' : '' }}">
@@ -89,12 +91,6 @@
                 <li class="menu-item {{ $active == 'resortImage' ? 'active' : '' }}">
                     <a href="{{ route('dashboard.resort-image.index') }}" class="menu-link">
                         <div data-i18n="Without menu">Resort Image</div>
-                    </a>
-                </li>
-
-                <li class="menu-item {{ $active == 'jobApplicant' ? 'active' : '' }}">
-                    <a href="{{ route('dashboard.job-applicant.index') }}" class="menu-link">
-                        <div data-i18n="Without menu">Job Applicant</div>
                     </a>
                 </li>
             </ul>
