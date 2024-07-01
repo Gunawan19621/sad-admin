@@ -17,7 +17,7 @@ class OurDistributorController extends Controller
             'ourDistributor' => OurDistributor::all(),
             'active' => 'our-Distributor',
         ];
-        return view('pages.admin.layouts.our-distributor.index', $data);
+        return view('pages.admin.distributors.index', $data);
     }
 
     // /**

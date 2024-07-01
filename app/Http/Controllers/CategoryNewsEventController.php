@@ -17,7 +17,7 @@ class CategoryNewsEventController extends Controller
             'categoryNewsEvent' => CategoryNewsEvent::all(),
             'active' => 'categoryNewsEvent'
         ];
-        return view('pages.admin.layouts.news-event.category-news-event.index', $data);
+        return view('pages.admin.news-events.category-news-event.index', $data);
     }
 
     // /**

@@ -17,7 +17,7 @@ class AwardController extends Controller
             'award' => Award::all(),
             'active' => 'award',
         ];
-        return view('pages.admin.layouts.award.index', $data);
+        return view('pages.admin.about.awards.index', $data);
     }
 
     /**

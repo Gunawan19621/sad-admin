@@ -17,7 +17,7 @@ class CategoryFaqController extends Controller
             'categoryFaq' => CategoryFaq::all(),
             'active' => 'category-faq'
         ];
-        return view('pages.admin.layouts.faq.category-faq.index', $data);
+        return view('pages.admin.about.faq.category-faq.index', $data);
     }
 
     /**

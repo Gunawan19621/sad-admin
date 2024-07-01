@@ -99,6 +99,18 @@ Route::prefix('dashboard')->name('dashboard.')->middleware('auth')->group(functi
         Route::put('contact-us/{id}', 'update')->name('contact-us.update');
     });
 
+    //Menu Enquiry
+    Route::controller(App\Http\Controllers\EnquiryController::class)->group(function () {
+        Route::get('enquiry', 'index')->name('enquiry.index');
+        // Route::get('enquiry/create', 'create')->name('enquiry.create');
+        // Route::post('enquiry/store', 'store')->name('enquiry.store');
+        // Route::get('enquiry/{id}', 'show')->name('enquiry.show');
+        // Route::get('enquiry/{id}/edit', 'edit')->name('enquiry.edit');
+        Route::put('enquiry/{id}', 'update')->name('enquiry.update');
+        // Route::delete('enquiry/delete/{id}', 'destroy')->name('enquiry.destroy');
+    });
+
+
     //Menu Experience
     Route::controller(App\Http\Controllers\ExperienceController::class)->group(function () {
         Route::get('experience', 'index')->name('experience.index');
@@ -205,8 +217,6 @@ Route::prefix('dashboard')->name('dashboard.')->middleware('auth')->group(functi
     //Menu Job Applicant
     Route::controller(App\Http\Controllers\JobApplicantController::class)->group(function () {
         Route::get('job-applicant', 'index')->name('job-applicant.index');
-        // Route::get('job-applicant/create', 'create')->name('job-applicant.create');
-        // Route::post('job-applicant/store', 'store')->name('job-applicant.store');
         Route::get('job-applicant/{id}', 'show')->name('job-applicant.show');
         Route::get('job-applicant/{id}/edit', 'edit')->name('job-applicant.edit');
         Route::put('job-applicant/{id}', 'update')->name('job-applicant.update');

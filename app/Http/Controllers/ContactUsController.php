@@ -21,7 +21,7 @@ class ContactUsController extends Controller
             $contact->google_maps = json_decode($contact->google_maps, true);
         }
 
-        return view('pages.admin.layouts.contact-us.index', compact('contacts', 'active'));
+        return view('pages.admin.about.contact-us.index', compact('contacts', 'active'));
     }
 
 

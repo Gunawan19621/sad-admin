@@ -17,7 +17,7 @@ class CategoryProductController extends Controller
             'categoryProduct' => CategoryProduct::all(),
             'active' => 'category-product'
         ];
-        return view('pages.admin.layouts.product.category-product.index', $data);
+        return view('pages.admin.products.category-product.index', $data);
     }
 
     /**
@@ -29,7 +29,7 @@ class CategoryProductController extends Controller
             'categoryProduct' => CategoryProduct::all(),
             'active' => 'category-product'
         ];
-        return view('pages.admin.layouts.product.category-product.create', $data);
+        return view('pages.admin.products.category-product.create', $data);
     }
 
     /**
@@ -65,7 +65,7 @@ class CategoryProductController extends Controller
             'categoryProduct' => CategoryProduct::findOrFail($id),
             'active' => 'category-product'
         ];
-        return view('pages.admin.layouts.product.category-product.show', $data);
+        return view('pages.admin.products.category-product.show', $data);
     }
 
     /**
@@ -77,7 +77,7 @@ class CategoryProductController extends Controller
             'categoryProduct' => CategoryProduct::findOrFail($id),
             'active' => 'category-product'
         ];
-        return view('pages.admin.layouts.product.category-product.edit', $data);
+        return view('pages.admin.products.category-product.edit', $data);
     }
 
     /**

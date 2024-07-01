@@ -25,7 +25,7 @@ class ImageExperienceController extends Controller
             'experience' => Experience::all(),
             'active' => 'imageExperience'
         ];
-        return view('pages.admin.layouts.experience.image-experience.index', $data);
+        return view('pages.admin.experience.image-experience.index', $data);
     }
 
     // /**

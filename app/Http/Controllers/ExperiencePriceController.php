@@ -25,7 +25,7 @@ class ExperiencePriceController extends Controller
             'experience' => Experience::all(),
             'active' => 'experiencePrice'
         ];
-        return view('pages.admin.layouts.experience.experience-price.index', $data);
+        return view('pages.admin.experience.experience-price.index', $data);
     }
 
     // /**

@@ -25,7 +25,7 @@ class ProductController extends Controller
             'product' => $product,
             'active' => 'product',
         ];
-        return view('pages.admin.layouts.product.index', $data);
+        return view('pages.admin.products.index', $data);
     }
 
     /**
@@ -39,7 +39,7 @@ class ProductController extends Controller
             'product' => Product::all(),
             'active' => 'product',
         ];
-        return view('pages.admin.layouts.product.create', $data);
+        return view('pages.admin.products.create', $data);
     }
 
     /**
@@ -96,7 +96,7 @@ class ProductController extends Controller
             'product' => Product::findOrFail($id),
             'active' => 'product',
         ];
-        return view('pages.admin.layouts.product.show', $data);
+        return view('pages.admin.products.show', $data);
     }
 
     /**
@@ -110,7 +110,7 @@ class ProductController extends Controller
             'product' => Product::findOrFail($id),
             'active' => 'product',
         ];
-        return view('pages.admin.layouts.product.edit', $data);
+        return view('pages.admin.products.edit', $data);
     }
 
     /**

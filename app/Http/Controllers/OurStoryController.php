@@ -17,7 +17,7 @@ class OurStoryController extends Controller
             'ourStory' => OurStory::all(),
             'active' => 'our-story',
         ];
-        return view('pages.admin.layouts.our-story.index', $data);
+        return view('pages.admin.about.our-story.index', $data);
     }
 
     /**
@@ -29,7 +29,7 @@ class OurStoryController extends Controller
             'ourStory' => OurStory::all(),
             'active' => 'our-story',
         ];
-        return view('pages.admin.layouts.our-story.create', $data);
+        return view('pages.admin.about.our-story.create', $data);
     }
 
     /**
@@ -78,7 +78,7 @@ class OurStoryController extends Controller
             'ourStory' => OurStory::findOrFail($id),
             'active' => 'our-story',
         ];
-        return view('pages.admin.layouts.our-story.show', $data);
+        return view('pages.admin.about.our-story.show', $data);
     }
 
     /**
@@ -90,7 +90,7 @@ class OurStoryController extends Controller
             'ourStory' => OurStory::findOrFail($id),
             'active' => 'our-story',
         ];
-        return view('pages.admin.layouts.our-story.edit', $data);
+        return view('pages.admin.about.our-story.edit', $data);
     }
 
     /**

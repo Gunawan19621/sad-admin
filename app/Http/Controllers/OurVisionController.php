@@ -17,7 +17,7 @@ class OurVisionController extends Controller
             'ourVision' => OurVision::all(),
             'active' => 'our-vision',
         ];
-        return view('pages.admin.layouts.our-vision.index', $data);
+        return view('pages.admin.about.our-vision.index', $data);
     }
 
     /**
@@ -29,7 +29,7 @@ class OurVisionController extends Controller
             'ourVision' => OurVision::all(),
             'active' => 'our-vision',
         ];
-        return view('pages.admin.layouts.our-vision.create', $data);
+        return view('pages.admin.about.our-vision.create', $data);
     }
 
     /**
@@ -76,7 +76,7 @@ class OurVisionController extends Controller
             'ourVision' => OurVision::findOrFail($id),
             'active' => 'our-vision',
         ];
-        return view('pages.admin.layouts.our-vision.show', $data);
+        return view('pages.admin.about.our-vision.show', $data);
     }
 
     /**
@@ -88,7 +88,7 @@ class OurVisionController extends Controller
             'ourVision' => OurVision::findOrFail($id),
             'active' => 'our-vision',
         ];
-        return view('pages.admin.layouts.our-vision.edit', $data);
+        return view('pages.admin.about.our-vision.edit', $data);
     }
 
     /**

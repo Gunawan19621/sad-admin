@@ -17,7 +17,7 @@ class JobApplicantController extends Controller
             'jobApplicant' => JobApplicant::all(),
             'active' => 'jobApplicant',
         ];
-        return view('pages.admin.layouts.job-applicacant.index', $data);
+        return view('pages.admin.work-with-us.index', $data);
     }
 
     // /**
@@ -49,7 +49,7 @@ class JobApplicantController extends Controller
             'jobApplicant' => JobApplicant::findOrFail($id),
             'active' => 'jobApplicant',
         ];
-        return view('pages.admin.layouts.job-applicacant.show', $data);
+        return view('pages.admin.work-with-us.show', $data);
     }
 
     /**
@@ -61,7 +61,7 @@ class JobApplicantController extends Controller
             'jobApplicant' => JobApplicant::findOrFail($id),
             'active' => 'jobApplicant',
         ];
-        return view('pages.admin.layouts.job-applicacant.edit', $data);
+        return view('pages.admin.work-with-us.edit', $data);
     }
 
     /**

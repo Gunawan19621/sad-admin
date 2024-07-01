@@ -17,7 +17,7 @@ class ExperienceController extends Controller
             'experience' => Experience::all(),
             'active' => 'experience',
         ];
-        return view('pages.admin.layouts.experience.index', $data);
+        return view('pages.admin.experience.index', $data);
     }
 
     /**
@@ -29,7 +29,7 @@ class ExperienceController extends Controller
             'experience' => Experience::all(),
             'active' => 'experience',
         ];
-        return view('pages.admin.layouts.experience.create', $data);
+        return view('pages.admin.experience.create', $data);
     }
 
     /**
@@ -67,7 +67,7 @@ class ExperienceController extends Controller
             'experience' => Experience::findOrFail($id),
             'active' => 'experience',
         ];
-        return view('pages.admin.layouts.experience.show', $data);
+        return view('pages.admin.experience.show', $data);
     }
 
     /**
@@ -79,7 +79,7 @@ class ExperienceController extends Controller
             'experience' => Experience::findOrFail($id),
             'active' => 'experience',
         ];
-        return view('pages.admin.layouts.experience.edit', $data);
+        return view('pages.admin.experience.edit', $data);
     }
 
     /**

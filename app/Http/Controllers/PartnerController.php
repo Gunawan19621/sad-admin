@@ -17,7 +17,7 @@ class PartnerController extends Controller
             'partner' => Partner::all(),
             'active' => 'partner',
         ];
-        return view('pages.admin.layouts.partner.index', $data);
+        return view('pages.admin.partners.index', $data);
     }
 
     // /**

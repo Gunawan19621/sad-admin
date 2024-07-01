@@ -19,7 +19,7 @@ class OurTeamController extends Controller
             'ourTeam' => OurTeam::all(),
             'active' => 'our-team',
         ];
-        return view('pages.admin.layouts.our-team.index', $data);
+        return view('pages.admin.about.our-team.index', $data);
     }
 
     /**
