@@ -1,0 +1,275 @@
+@font-face {
+    font-family: "colus";
+    src: url("assets/Font/Colus-Regular.otf") format("opentype");
+}
+
+body {
+    background-color: #FDF9EF;
+    background-repeat: no-repeat;
+    background-position: center 30px;
+    background-size: 70%;
+    font-family: "colus";
+}
+
+.container {
+    margin-top: 100px;
+}
+
+.logo2 {
+    width: 150px;
+}
+
+.sound {
+    width: 25px;
+}
+
+.list-inline {
+    border-top: #B99B4E 2px solid;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+
+}
+
+.list-inline-item {
+    position: relative;
+    /* Untuk mengatur posisi garis */
+    flex-grow: 1;
+    /* Memastikan lebar antar menu sama */
+    text-align: center;
+    /* Untuk mengatur teks di tengah */
+    padding-top: 20px;
+}
+
+.list-inline-item a {
+    color: #B99B4E;
+    text-decoration: none;
+    width: 100%;
+}
+
+.list-inline-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    right: -5px;
+    /* Menyesuaikan posisi garis */
+    width: 2px;
+    height: 100%;
+    /* Panjang garis */
+    background-color: #B99B4E;
+    /* Warna garis */
+    transform: translateY(-50%);
+    /* Untuk posisi vertikal garis */
+}
+
+.discover {
+    padding: 10px;
+    font-size: 14px;
+    color: #B99B4E;
+}
+
+.skip {
+    color: #B99B4E;
+    text-decoration: none;
+    border-radius: 20px;
+    border: 1px solid #B99B4E;
+    padding: 10px 20px;
+}
+
+.video-container {
+    position: relative;
+    width: 50%;
+    overflow: hidden;
+}
+
+.video-container img.logo2 {
+    position: absolute;
+    top: 10%;
+    /* Posisi vertikal logo di tengah */
+    left: 10%;
+    /* Posisi horizontal logo di tengah */
+    transform: translate(-50%, -50%);
+    /* Untuk mengatur posisi logo di tengah */
+    z-index: 10;
+    /* Untuk menempatkan logo di atas video */
+}
+
+.video-container .container {
+    position: absolute;
+    top: 75%;
+    /* Posisi vertikal logo di tengah */
+    left: 50%;
+    /* Posisi horizontal logo di tengah */
+    transform: translate(-50%, -50%);
+    /* Untuk mengatur posisi logo di tengah */
+    z-index: 10;
+    /* Untuk menempatkan logo di atas video */
+}
+
+.hide-container {
+    animation: fade 1.5s ease-in-out infinite;
+    display: none;
+}
+
+
+
+@keyframes fade {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+#menu {
+    visibility: hidden;
+}
+
+.main {
+    margin-top: 30px;
+    margin-right: 30px;
+    margin-left: 30px;
+    display: flex;
+    justify-content: center;
+    height: 750px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* mengatur animasi Lingkaran besar */
+.lingkaran-besar {
+    width: 1200px;
+    height: 1200px;
+    border-radius: 100%;
+    position: absolute;
+    animation: berputar-besar 150s linear infinite;
+    border: 5px dotted #d0c7b5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes berputar-besar {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* mengatur animasi Lingkaran Sedang */
+.lingkaran-sedang {
+    width: 1000px;
+    height: 1000px;
+    border-radius: 100%;
+    position: absolute;
+    animation: berputar-sedang 100s linear infinite;
+    border: 5px dotted #d0c7b5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes berputar-sedang {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+/* mengatur animasi Lingkaran kecil */
+.lingkaran-kecil {
+    width: 880px;
+    height: 880px;
+    border-radius: 100%;
+    position: absolute;
+    border: 5px dotted #d0c7b5;
+    animation: berputar-kecil 100s linear infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes berputar-kecil {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Konten di dalam lingkaran kecil */
+.maincontent {
+    position: absolute;
+    text-align: center;
+    width: 95%;
+    height: 95%;
+    bottom: 0;
+    z-index: 1;
+    color: white;
+    font-size: 24px;
+}
+
+.logo {
+    margin-top: 30px;
+    width: 330px;
+}
+
+.start {
+    width: 100px;
+}
+
+.sound {
+    margin-right: 50px;
+    width: 25px;
+}
+
+.list-inline {
+    border-top: #B99B4E 2px solid;
+    display: flex;
+    font-size: 17px;
+    justify-content: space-evenly;
+
+}
+
+.list-inline-item {
+    position: relative;
+    /* Untuk mengatur posisi garis */
+    flex-grow: 1;
+    /* Memastikan lebar antar menu sama */
+    text-align: center;
+    /* Untuk mengatur teks di tengah */
+    padding-top: 10px;
+}
+
+.list-inline-item a {
+    color: #B99B4E;
+    text-decoration: none;
+    width: 100%;
+}
+
+.list-inline-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    right: -5px;
+    /* Menyesuaikan posisi garis */
+    width: 2px;
+    height: 100%;
+    /* Panjang garis */
+    background-color: #B99B4E;
+    /* Warna garis */
+    transform: translateY(-50%);
+    /* Untuk posisi vertikal garis */
+}

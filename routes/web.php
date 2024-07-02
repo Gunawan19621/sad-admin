@@ -2,6 +2,15 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\web_aboutcontroller;
+use App\Http\Controllers\web_distributorscontroller;
+use App\Http\Controllers\web_experiencecontroller;
+use App\Http\Controllers\web_newseventcontroller;
+use App\Http\Controllers\web_partnerscontroller;
+use App\Http\Controllers\web_productscontroller;
+use App\Http\Controllers\web_shopcontroller;
+use App\Http\Controllers\web_startcontroller;
+use App\Http\Controllers\web_workwithuscontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,8 +24,38 @@ use App\Http\Controllers\ProfileController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('pages.web.index');
 });
+
+Route::get('/start', [web_startcontroller::class,'index'])->name('start');
+Route::get('/about', [web_aboutcontroller::class,'index'])->name('about');
+Route::get('/about/our-story', [web_aboutcontroller::class,'our_story'])->name('our_story');
+Route::get('/about/our-team', [web_aboutcontroller::class,'our_team'])->name('our_team');
+Route::get('/about/our-vision', [web_aboutcontroller::class,'our_vision'])->name('our_vision');
+Route::get('/about/awads', [web_aboutcontroller::class,'awards'])->name('awards');
+Route::get('/about/faq', [web_aboutcontroller::class,'faq'])->name('faq');
+Route::get('/about/contact-us', [web_aboutcontroller::class,'contact_us'])->name('contact_us');
+
+
+Route::get('/experience', [web_experiencecontroller::class,'index'])->name('experience');
+Route::get('/experience/{id}', [web_experiencecontroller::class,'show'])->name('experience.show');
+
+Route::get('/products', [web_productscontroller::class,'index'])->name('products');
+Route::get('/products/{id}', [web_productscontroller::class,'show'])->name('products.show');
+
+Route::get('/news-event', [web_newseventcontroller::class,'index'])->name('news-event');
+Route::get('/news-event/{id}', [web_newseventcontroller::class,'show'])->name('news-event.show');
+
+Route::get('/work-with-us', [web_workwithuscontroller::class,'index'])->name('work-with-us');
+
+Route::get('/distributors', [web_distributorscontroller::class,'index'])->name('distributors');
+Route::get('/distributors/{id}', [web_distributorscontroller::class,'show'])->name('distributors.show');
+
+Route::get('/partner', [web_partnerscontroller::class,'index'])->name('partners');
+Route::get('/partner/{id}', [web_partnerscontroller::class,'show'])->name('partners.show');
+
+Route::get('/shop', [web_shopcontroller::class,'index'])->name('shop');
+Route::get('/shop/{id}', [web_shopcontroller::class,'show'])->name('shop.show');
 
 Route::get('/dashboard', function () {
     $data = [
