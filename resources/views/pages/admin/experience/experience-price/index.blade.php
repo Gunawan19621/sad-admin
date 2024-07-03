@@ -27,7 +27,6 @@
                         <tr>
                             <th>No</th>
                             <th>Name</th>
-                            <th>Title</th>
                             <th>Price</th>
                             <th>Unit</th>
                             <th>Actions</th>
@@ -40,7 +39,6 @@
                         @forelse ($experiencePrice as $items)
                             <tr>
                                 <td>{{ $no++ }}</td>
-                                <td>{{ $items->name_experience ?? '-' }}</td>
                                 <td>{{ $items->title_experience ?? '-' }}</td>
                                 <td>{{ $items->price_experience ?? '-' }}</td>
                                 <td>{{ $items->unit_experience ?? '-' }}</td>

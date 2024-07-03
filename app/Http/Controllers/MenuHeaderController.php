@@ -55,6 +55,9 @@ class MenuHeaderController extends Controller
     /**
      * Update the specified resource in storage.
      */
+    /**
+     * Update the specified resource in storage.
+     */
     public function update(Request $request, string $id)
     {
         $validasi = Validator::make($request->all(), [
@@ -67,6 +70,10 @@ class MenuHeaderController extends Controller
             'image_header.mimes' => 'Image header must be a file of type: jpeg, png, jpg, gif',
             'image_header.max' => 'Image header must be a file with a maximum size of 2048 kilobytes',
         ]);
+
+        if ($validasi->fails()) {
+            return redirect()->back()->withErrors($validasi)->withInput();
+        }
 
         try {
             $data = MenuHeader::findOrFail($id);
@@ -89,7 +96,6 @@ class MenuHeaderController extends Controller
             return redirect()->back()->with('error', 'Data header failed to update');
         }
     }
-
 
     /**
      * Remove the specified resource from storage.

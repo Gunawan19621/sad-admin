@@ -78,6 +78,10 @@ class EnquiryController extends Controller
             ]
         );
 
+        if ($validasi->fails()) {
+            return redirect()->back()->withErrors($validasi)->withInput();
+        }
+
         try {
             $data = Enquiry::findOrFail($id);
             $validatedData = $validasi->validated();

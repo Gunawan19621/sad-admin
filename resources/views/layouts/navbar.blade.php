@@ -37,8 +37,10 @@
                                     </div>
                                 </div>
                                 <div class="flex-grow-1">
-                                    <span class="fw-semibold d-block">John Doe</span>
-                                    <small class="text-muted">Admin</small>
+                                    @php
+                                        $first_name = explode(' ', Auth::user()->name)[0];
+                                    @endphp
+                                    <span class="fw-semibold d-block">{{ $first_name }}</span>
                                 </div>
                             </div>
                         </a>

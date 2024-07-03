@@ -35,6 +35,7 @@ class DatabaseSeeder extends Seeder
             ExperiencePriceSeeder::class,
             ResortSeeder::class,
             ResortImageSeeder::class,
+            EnquirySeeder::class,
         ]);
     }
 }

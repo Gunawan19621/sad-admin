@@ -10,12 +10,7 @@
                 @csrf
                 <div class="modal-body">
                     <div class="mb-3">
-                        <label class="form-label" for="name_experience">Name <span class="text-danger">*</span></label>
-                        <input class="form-control" type="text" id="name_experience" name="name_experience"
-                            placeholder="Enter Experience Name" required />
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label" for="id_experience">Title <span class="text-danger">*</span></label>
+                        <label class="form-label" for="id_experience">Name <span class="text-danger">*</span></label>
                         <select class="form-select" id="id_experience" name="id_experience" required>
                             <option disabled selected>Select one</option>
                             @foreach ($experience as $data)
@@ -60,14 +55,7 @@
                     @method('PUT')
                     <div class="modal-body">
                         <div class="mb-3">
-                            <label class="form-label" for="name_experience">Name <span
-                                    class="text-danger">*</span></label>
-                            <input class="form-control" type="text" id="name_experience" name="name_experience"
-                                value="{{ $itemModals->name_experience }}" placeholder="Enter Experience Name"
-                                required />
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label" for="id_experience">Title <span
+                            <label class="form-label" for="id_experience">Name <span
                                     class="text-danger">*</span></label>
                             <select class="form-select" id="id_experience" name="id_experience" required>
                                 <option disabled selected>Select one</option>

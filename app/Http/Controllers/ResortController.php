@@ -17,7 +17,7 @@ class ResortController extends Controller
             'resort' => Resort::all(),
             'active' => 'resort',
         ];
-        return view('pages.admin.layouts.resort.index', $data);
+        return view('pages.admin.experience.resort.index', $data);
     }
 
     /**
@@ -29,7 +29,7 @@ class ResortController extends Controller
             'resort' => Resort::all(),
             'active' => 'resort',
         ];
-        return view('pages.admin.layouts.resort.create', $data);
+        return view('pages.admin.experience.resort.create', $data);
     }
 
     /**
@@ -46,6 +46,10 @@ class ResortController extends Controller
             'subtitle_resort.required' => 'Subtitle Resort is required',
             'description_resort.required' => 'Description Resort is required',
         ]);
+
+        if ($validasi->fails()) {
+            return redirect()->back()->withErrors($validasi)->withInput();
+        }
 
         try {
             $validatedData = $validasi->validated();
@@ -67,7 +71,7 @@ class ResortController extends Controller
             'resort' => Resort::findOrFail($id),
             'active' => 'resort',
         ];
-        return view('pages.admin.layouts.resort.show', $data);
+        return view('pages.admin.experience.resort.show', $data);
     }
 
     /**
@@ -79,7 +83,7 @@ class ResortController extends Controller
             'resort' => Resort::findOrFail($id),
             'active' => 'resort',
         ];
-        return view('pages.admin.layouts.resort.edit', $data);
+        return view('pages.admin.experience.resort.edit', $data);
     }
 
     /**
@@ -96,6 +100,10 @@ class ResortController extends Controller
             'subtitle_resort.required' => 'Subtitle Resort is required',
             'description_resort.required' => 'Description Resort is required',
         ]);
+
+        if ($validasi->fails()) {
+            return redirect()->back()->withErrors($validasi)->withInput();
+        }
 
         try {
             $data = Resort::findOrFail($id);

@@ -43,15 +43,19 @@ class ExperiencePriceController extends Controller
     {
         $validasi = Validator::make($request->all(), [
             'id_experience' => 'required',
-            'name_experience' => 'required',
+            // 'name_experience' => 'required',
             'price_experience' => 'required',
             'unit_experience' => 'required',
         ], [
             'id_experience.required' => 'Experience is required',
-            'name_experience.required' => 'Name Experience is required',
+            // 'name_experience.required' => 'Name Experience is required',
             'price_experience.required' => 'Price Experience is required',
             'unit_experience.required' => 'Unit Experience is required',
         ]);
+
+        if ($validasi->fails()) {
+            return redirect()->back()->withErrors($validasi)->withInput();
+        }
 
         try {
             $validatedData = $validasi->validated();
@@ -87,15 +91,19 @@ class ExperiencePriceController extends Controller
     {
         $validasi = Validator::make($request->all(), [
             'id_experience' => 'required',
-            'name_experience' => 'required',
+            // 'name_experience' => 'required',
             'price_experience' => 'required',
             'unit_experience' => 'required',
         ], [
             'id_experience.required' => 'Experience is required',
-            'name_experience.required' => 'Name Experience is required',
+            // 'name_experience.required' => 'Name Experience is required',
             'price_experience.required' => 'Price Experience is required',
             'unit_experience.required' => 'Unit Experience is required',
         ]);
+
+        if ($validasi->fails()) {
+            return redirect()->back()->withErrors($validasi)->withInput();
+        }
 
         try {
             $data = ExperiencePrice::findOrFail($id);

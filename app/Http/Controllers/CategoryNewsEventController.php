@@ -39,6 +39,10 @@ class CategoryNewsEventController extends Controller
             'name_category_news_event.required' => 'Name Category News & Event is required',
         ]);
 
+        if ($validasi->fails()) {
+            return redirect()->back()->withErrors($validasi)->withInput();
+        }
+
         try {
             $validatedData = $validasi->validated();
 
@@ -76,6 +80,10 @@ class CategoryNewsEventController extends Controller
         ], [
             'name_category_news_event.required' => 'Name Category News & Event is required',
         ]);
+
+        if ($validasi->fails()) {
+            return redirect()->back()->withErrors($validasi)->withInput();
+        }
 
         try {
             $data = CategoryNewsEvent::findOrFail($id);

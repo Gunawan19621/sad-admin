@@ -49,6 +49,10 @@ class OurDistributorController extends Controller
             'phone_distributor.required' => 'Phone Distributor is required',
         ]);
 
+        if ($validasi->fails()) {
+            return redirect()->back()->withErrors($validasi)->withInput();
+        }
+
         try {
             $validatedData = $validasi->validated();
 
@@ -102,6 +106,10 @@ class OurDistributorController extends Controller
             'name_person_distributor.required' => 'Name Person Distributor is required',
             'phone_distributor.required' => 'Phone Distributor is required',
         ]);
+
+        if ($validasi->fails()) {
+            return redirect()->back()->withErrors($validasi)->withInput();
+        }
 
         try {
             $data = OurDistributor::findOrFail($id);

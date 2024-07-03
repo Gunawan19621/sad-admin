@@ -52,6 +52,10 @@ class OurStoryController extends Controller
             'image_story.max' => 'Image Story must be a file of type: jpeg, png, jpg, gif and max 2048kb',
         ]);
 
+        if ($validasi->fails()) {
+            return redirect()->back()->withErrors($validasi)->withInput();
+        }
+
         try {
             $validatedData = $validasi->validated();
 
@@ -112,6 +116,10 @@ class OurStoryController extends Controller
             'image_story.mimes' => 'Image Story must be a file of type: jpeg, png, jpg, gif',
             'image_story.max' => 'Image Story must be a file of type: jpeg, png, jpg, gif and max 2048kb',
         ]);
+
+        if ($validasi->fails()) {
+            return redirect()->back()->withErrors($validasi)->withInput();
+        }
 
         try {
             $data = OurStory::findOrFail($id);

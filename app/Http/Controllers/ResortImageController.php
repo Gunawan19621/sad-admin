@@ -25,7 +25,7 @@ class ResortImageController extends Controller
             'resort' => Resort::all(),
             'active' => 'resortImage'
         ];
-        return view('pages.admin.layouts.resort.resort-image.index', $data);
+        return view('pages.admin.experience.resort.resort-image.index', $data);
     }
 
     // /**
@@ -51,6 +51,10 @@ class ResortImageController extends Controller
             'image_resort.mimes' => 'Image Resort must be a file of type: jpeg, png, jpg, gif',
             'image_resort.max' => 'Image Resort must be a file of type: jpeg, png, jpg, gif and max 2048kb',
         ]);
+
+        if ($validasi->fails()) {
+            return redirect()->back()->withErrors($validasi)->withInput();
+        }
 
         try {
             $validatedData = $validasi->validated();
@@ -100,6 +104,10 @@ class ResortImageController extends Controller
             'image_resort.mimes' => 'Image Resort must be a file of type: jpeg, png, jpg, gif',
             'image_resort.max' => 'Image Resort must be a file of type: jpeg, png, jpg, gif and max 2048kb',
         ]);
+
+        if ($validasi->fails()) {
+            return redirect()->back()->withErrors($validasi)->withInput();
+        }
 
         try {
             $data = ResortImage::findOrFail($id);

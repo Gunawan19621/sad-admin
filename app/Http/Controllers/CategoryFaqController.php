@@ -39,6 +39,10 @@ class CategoryFaqController extends Controller
             'name_category_faq.required' => 'Name Category FAQ is required',
         ]);
 
+        if ($validasi->fails()) {
+            return redirect()->back()->withErrors($validasi)->withInput();
+        }
+
         try {
             $validatedData = $validasi->validated();
 
@@ -76,6 +80,10 @@ class CategoryFaqController extends Controller
         ], [
             'name_category_faq.required' => 'Name Category FAQ is required',
         ]);
+
+        if ($validasi->fails()) {
+            return redirect()->back()->withErrors($validasi)->withInput();
+        }
 
         try {
             $data = CategoryFaq::findOrFail($id);

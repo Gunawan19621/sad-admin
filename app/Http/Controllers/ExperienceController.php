@@ -47,6 +47,10 @@ class ExperienceController extends Controller
             'description_experience.required' => 'Description Experience is required',
         ]);
 
+        if ($validasi->fails()) {
+            return redirect()->back()->withErrors($validasi)->withInput();
+        }
+
         try {
             $validatedData = $validasi->validated();
 
@@ -96,6 +100,10 @@ class ExperienceController extends Controller
             'subtitle_experience.required' => 'Subtitle Experience is required',
             'description_experience.required' => 'Description Experience is required',
         ]);
+
+        if ($validasi->fails()) {
+            return redirect()->back()->withErrors($validasi)->withInput();
+        }
 
         try {
             $data = Experience::findOrFail($id);

@@ -45,6 +45,10 @@ class CategoryProductController extends Controller
             'description_category_product.required' => 'Description Category Product is required',
         ]);
 
+        if ($validasi->fails()) {
+            return redirect()->back()->withErrors($validasi)->withInput();
+        }
+
         try {
             $validatedData = $validasi->validated();
 
@@ -92,6 +96,10 @@ class CategoryProductController extends Controller
             'name_category_product.required' => 'Name Category Product is required',
             'description_category_product.required' => 'Description Category Product is required',
         ]);
+
+        if ($validasi->fails()) {
+            return redirect()->back()->withErrors($validasi)->withInput();
+        }
 
         try {
             $data = CategoryProduct::findOrFail($id);

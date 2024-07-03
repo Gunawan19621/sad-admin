@@ -44,6 +44,10 @@ class PartnerController extends Controller
             'image_partner.max' => 'Image Partner must be a file of type: jpeg, png, jpg, gif and max 2048kb',
         ]);
 
+        if ($validasi->fails()) {
+            return redirect()->back()->withErrors($validasi)->withInput();
+        }
+
         try {
             $validatedData = $validasi->validated();
 
@@ -92,6 +96,10 @@ class PartnerController extends Controller
             'image_partner.mimes' => 'Image Partner must be a file of type: jpeg, png, jpg, gif',
             'image_partner.max' => 'Image Partner must be a file of type: jpeg, png, jpg, gif and max 2048kb',
         ]);
+
+        if ($validasi->fails()) {
+            return redirect()->back()->withErrors($validasi)->withInput();
+        }
 
         try {
             $data = Partner::findOrFail($id);

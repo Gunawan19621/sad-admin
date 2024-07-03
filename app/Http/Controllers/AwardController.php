@@ -43,6 +43,10 @@ class AwardController extends Controller
             'image_awards.max' => 'Image Awards must be a file of type: jpeg, png, jpg, gif and max 2048kb',
         ]);
 
+        if ($validasi->fails()) {
+            return redirect()->back()->withErrors($validasi)->withInput();
+        }
+
         try {
             $validatedData = $validasi->validated();
 
@@ -90,6 +94,10 @@ class AwardController extends Controller
             'image_awards.mimes' => 'Image Awards must be a file of type: jpeg, png, jpg, gif',
             'image_awards.max' => 'Image Awards must be a file of type: jpeg, png, jpg, gif and max 2048kb',
         ]);
+
+        if ($validasi->fails()) {
+            return redirect()->back()->withErrors($validasi)->withInput();
+        }
 
         try {
             $data = Award::findOrFail($id);

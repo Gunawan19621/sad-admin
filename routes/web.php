@@ -27,35 +27,35 @@ Route::get('/', function () {
     return view('pages.web.index');
 });
 
-Route::get('/start', [web_startcontroller::class,'index'])->name('start');
-Route::get('/about', [web_aboutcontroller::class,'index'])->name('about');
-Route::get('/about/our-story', [web_aboutcontroller::class,'our_story'])->name('our_story');
-Route::get('/about/our-team', [web_aboutcontroller::class,'our_team'])->name('our_team');
-Route::get('/about/our-vision', [web_aboutcontroller::class,'our_vision'])->name('our_vision');
-Route::get('/about/awads', [web_aboutcontroller::class,'awards'])->name('awards');
-Route::get('/about/faq', [web_aboutcontroller::class,'faq'])->name('faq');
-Route::get('/about/contact-us', [web_aboutcontroller::class,'contact_us'])->name('contact_us');
+Route::get('/start', [web_startcontroller::class, 'index'])->name('start');
+Route::get('/about', [web_aboutcontroller::class, 'index'])->name('about');
+Route::get('/about/our-story', [web_aboutcontroller::class, 'our_story'])->name('our_story');
+Route::get('/about/our-team', [web_aboutcontroller::class, 'our_team'])->name('our_team');
+Route::get('/about/our-vision', [web_aboutcontroller::class, 'our_vision'])->name('our_vision');
+Route::get('/about/awads', [web_aboutcontroller::class, 'awards'])->name('awards');
+Route::get('/about/faq', [web_aboutcontroller::class, 'faq'])->name('faq');
+Route::get('/about/contact-us', [web_aboutcontroller::class, 'contact_us'])->name('contact_us');
 
 
-Route::get('/experience', [web_experiencecontroller::class,'index'])->name('experience');
-Route::get('/experience/{id}', [web_experiencecontroller::class,'show'])->name('experience.show');
+Route::get('/experience', [web_experiencecontroller::class, 'index'])->name('experience');
+Route::get('/experience/{id}', [web_experiencecontroller::class, 'show'])->name('experience.show');
 
-Route::get('/products', [web_productscontroller::class,'index'])->name('products');
-Route::get('/products/{id}', [web_productscontroller::class,'show'])->name('products.show');
+Route::get('/products', [web_productscontroller::class, 'index'])->name('products');
+Route::get('/products/{id}', [web_productscontroller::class, 'show'])->name('products.show');
 
-Route::get('/news-event', [web_newseventcontroller::class,'index'])->name('news-event');
-Route::get('/news-event/{id}', [web_newseventcontroller::class,'show'])->name('news-event.show');
+Route::get('/news-event', [web_newseventcontroller::class, 'index'])->name('news-event');
+Route::get('/news-event/{id}', [web_newseventcontroller::class, 'show'])->name('news-event.show');
 
-Route::get('/work-with-us', [web_workwithuscontroller::class,'index'])->name('work-with-us');
+Route::get('/work-with-us', [web_workwithuscontroller::class, 'index'])->name('work-with-us');
 
-Route::get('/distributors', [web_distributorscontroller::class,'index'])->name('distributors');
-Route::get('/distributors/{id}', [web_distributorscontroller::class,'show'])->name('distributors.show');
+Route::get('/distributors', [web_distributorscontroller::class, 'index'])->name('distributors');
+Route::get('/distributors/{id}', [web_distributorscontroller::class, 'show'])->name('distributors.show');
 
-Route::get('/partner', [web_partnerscontroller::class,'index'])->name('partners');
-Route::get('/partner/{id}', [web_partnerscontroller::class,'show'])->name('partners.show');
+Route::get('/partner', [web_partnerscontroller::class, 'index'])->name('partners');
+Route::get('/partner/{id}', [web_partnerscontroller::class, 'show'])->name('partners.show');
 
-Route::get('/shop', [web_shopcontroller::class,'index'])->name('shop');
-Route::get('/shop/{id}', [web_shopcontroller::class,'show'])->name('shop.show');
+Route::get('/shop', [web_shopcontroller::class, 'index'])->name('shop');
+Route::get('/shop/{id}', [web_shopcontroller::class, 'show'])->name('shop.show');
 
 Route::get('/dashboard', function () {
     $data = [
@@ -144,10 +144,6 @@ Route::prefix('dashboard')->name('dashboard.')->middleware('auth')->group(functi
     //Menu Enquiry
     Route::controller(App\Http\Controllers\EnquiryController::class)->group(function () {
         Route::get('enquiry', 'index')->name('enquiry.index');
-        // Route::get('enquiry/create', 'create')->name('enquiry.create');
-        // Route::post('enquiry/store', 'store')->name('enquiry.store');
-        // Route::get('enquiry/{id}', 'show')->name('enquiry.show');
-        // Route::get('enquiry/{id}/edit', 'edit')->name('enquiry.edit');
         Route::put('enquiry/{id}', 'update')->name('enquiry.update');
         // Route::delete('enquiry/delete/{id}', 'destroy')->name('enquiry.destroy');
     });
@@ -264,6 +260,18 @@ Route::prefix('dashboard')->name('dashboard.')->middleware('auth')->group(functi
         Route::put('job-applicant/{id}', 'update')->name('job-applicant.update');
         Route::delete('job-applicant/delete/{id}', 'destroy')->name('job-applicant.destroy');
     });
+
+    //Menu Gallery
+    Route::controller(App\Http\Controllers\GalleryController::class)->group(function () {
+        Route::get('gallery', 'index')->name('gallery.index');
+        // Route::get('gallery/create', 'create')->name('gallery.create');
+        Route::post('gallery/store', 'store')->name('gallery.store');
+        // Route::get('gallery/{id}', 'show')->name('gallery.show');
+        // Route::get('gallery/{id}/edit', 'edit')->name('gallery.edit');
+        Route::put('gallery/{id}', 'update')->name('gallery.update');
+        Route::delete('gallery/delete/{id}', 'destroy')->name('gallery.destroy');
+    });
+
 
     //Function CKEditor
     Route::post('ckeditor/upload', [App\Http\Controllers\CKEditorController::class, 'upload'])->name('ckeditor.upload');

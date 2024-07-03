@@ -51,6 +51,10 @@ class FAQController extends Controller
             'answer_faq.required' => 'Answer FAQ is required',
         ]);
 
+        if ($validasi->fails()) {
+            return redirect()->back()->withErrors($validasi)->withInput();
+        }
+
         try {
             $validatedData = $validasi->validated();
 
@@ -92,6 +96,10 @@ class FAQController extends Controller
             'question_faq.required' => 'Question FAQ is required',
             'answer_faq.required' => 'Answer FAQ is required',
         ]);
+
+        if ($validasi->fails()) {
+            return redirect()->back()->withErrors($validasi)->withInput();
+        }
 
         try {
             $data = FAQ::findOrFail($id);

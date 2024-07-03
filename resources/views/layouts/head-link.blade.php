@@ -1,5 +1,5 @@
 <!-- Favicon -->
-<link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="{{ asset('assets/image/favicon/Logo-sad-oval.png') }}" />
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -27,7 +27,6 @@
 <!-- config js -->
 <script src="{{ asset('assets/js/config.js') }}"></script>
 
-
+<!-- CKEditor -->
 <script src="{{ asset('assets/vendor/libs/ckeditor/ckeditor.js') }}"></script>
 <script src="{{ asset('assets/vendor/libs/ckfinder/ckfinder.js') }}"></script>
-{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/ckfinder/3.5.1/ckfinder.js"></script> --}}

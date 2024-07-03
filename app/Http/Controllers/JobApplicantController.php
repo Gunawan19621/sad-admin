@@ -86,6 +86,10 @@ class JobApplicantController extends Controller
             'cv_applicant.max' => 'CV Applicant must be a file of type: jpeg, png, jpg, gif and max 2048kb',
         ]);
 
+        if ($validasi->fails()) {
+            return redirect()->back()->withErrors($validasi)->withInput();
+        }
+
         try {
             $data = JobApplicant::findOrFail($id);
             $validatedData = $validasi->validated();
