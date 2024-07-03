@@ -18,7 +18,7 @@ class ContactUsController extends Controller
 
         foreach ($contacts as $contact) {
             $contact->social_media = json_decode($contact->social_media, true);
-            $contact->google_maps = json_decode($contact->google_maps, true);
+            // $contact->google_maps = json_decode($contact->google_maps, true);
         }
 
         return view('pages.admin.about.contact-us.index', compact('contacts', 'active'));
@@ -72,8 +72,7 @@ class ContactUsController extends Controller
             'social_media_instagram' => 'nullable|string',
             'social_media_facebook' => 'nullable|string',
             'social_media_youtube' => 'nullable|string',
-            'google_maps_latitude' => 'required|string',
-            'google_maps_longitude' => 'required|string',
+            'google_maps' => 'required',
         ]);
 
         try {
@@ -89,10 +88,7 @@ class ContactUsController extends Controller
                 'facebook' => $validatedData['social_media_facebook'] ?? null,
                 'youtube' => $validatedData['social_media_youtube'] ?? null,
             ];
-            $contact->google_maps = [
-                'latitude' => $validatedData['google_maps_latitude'],
-                'longitude' => $validatedData['google_maps_longitude'],
-            ];
+            $contact->google_maps = $validatedData['google_maps'];
             $contact->save();
 
             return redirect()->back()->with('success', 'Contact updated successfully');

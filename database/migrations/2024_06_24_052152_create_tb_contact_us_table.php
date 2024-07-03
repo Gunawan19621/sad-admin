@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('phone');
             $table->string('fax');
             $table->json('social_media')->nullable();
-            $table->json('google_maps');
+            $table->text('google_maps');
             $table->timestamps();
         });
     }

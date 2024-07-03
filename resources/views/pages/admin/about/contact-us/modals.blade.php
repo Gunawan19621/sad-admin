@@ -88,8 +88,11 @@
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Maps</label>
-                            <div class="row">
+                            <label class="form-label" for="google_maps">Maps <span
+                                    class="text-danger">*</span></label>
+                            <textarea name="google_maps" id="google_maps" class="form-control" cols="30" rows="3"
+                                placeholder="Enter Your Location" required>{{ $contact->google_maps }}</textarea>
+                            {{-- <div class="row">
                                 <div class="col-md-6">
                                     <label class="form-label" for="google_maps_latitude">Latitude <span
                                             class="text-danger">*</span></label>
@@ -106,7 +109,7 @@
                                         value="{{ isset($contact->google_maps['longitude']) ? $contact->google_maps['longitude'] : '' }}"
                                         placeholder="Enter Longitude" required />
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -196,7 +199,9 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Maps</label>
-                        <div class="row">
+                        <textarea name="google_maps" id="google_maps" class="form-control" cols="30" rows="3"
+                            placeholder="Enter Your Location" readonly>{{ $itemModals->google_maps }}</textarea>
+                        {{-- <div class="row">
                             <div class="col-md-6">
                                 <label class="form-label" for="google_maps_latitude">Latitude</label>
                                 <input class="form-control" id="google_maps_latitude"
@@ -209,7 +214,7 @@
                                     value="{{ isset($itemModals->google_maps['longitude']) ? $itemModals->google_maps['longitude'] : '' }}"
                                     readonly />
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <div class="modal-footer">

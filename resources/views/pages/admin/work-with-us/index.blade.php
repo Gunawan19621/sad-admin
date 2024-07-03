@@ -9,7 +9,6 @@
     <!-- Alert -->
     @include('layouts.alert-component')
 
-
     <div class="card">
         <div class="card-body">
             <h5 class="card-header">Job Applicant</h5>
