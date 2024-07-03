@@ -5,14 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class CategoryProduct extends Model
+class Activiti extends Model
 {
     use HasFactory;
-    protected $table = 'tb_category_product';
+    protected $table = 'tb_activiti';
     protected $fillable = [
-        'name_category_product',
-        'description_category_product',
-        'subtitle_category',
+        'image_activiti',
+        'title_activiti',
+        'date_activiti',
         'created_at',
         'updated_at',
     ];

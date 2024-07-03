@@ -40,9 +40,11 @@ class CategoryProductController extends Controller
         $validasi = Validator::make($request->all(), [
             'name_category_product' => 'required',
             'description_category_product' => 'required',
+            'subtitle_category' => 'required',
         ], [
             'name_category_product.required' => 'Name Category Product is required',
             'description_category_product.required' => 'Description Category Product is required',
+            'subtitle_category.required' => 'Subtitle Category is required',
         ]);
 
         if ($validasi->fails()) {
@@ -92,9 +94,11 @@ class CategoryProductController extends Controller
         $validasi = Validator::make($request->all(), [
             'name_category_product' => 'required',
             'description_category_product' => 'required',
+            'subtitle_category' => 'required',
         ], [
             'name_category_product.required' => 'Name Category Product is required',
             'description_category_product.required' => 'Description Category Product is required',
+            'subtitle_category.required' => 'Subtitle Category is required',
         ]);
 
         if ($validasi->fails()) {

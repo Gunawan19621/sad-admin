@@ -196,6 +196,15 @@ Route::prefix('dashboard')->name('dashboard.')->middleware('auth')->group(functi
         Route::delete('resort-image/delete/{id}', 'destroy')->name('resort-image.destroy');
     });
 
+    //Menu Activiti
+    Route::controller(App\Http\Controllers\ActivitiController::class)->group(function () {
+        Route::get('activiti', 'index')->name('activiti.index');
+        Route::post('activiti/store', 'store')->name('activiti.store');
+        Route::put('activiti/{id}', 'update')->name('activiti.update');
+        Route::delete('activiti/delete/{id}', 'destroy')->name('activiti.destroy');
+    });
+
+
     //Menu Our Distributor
     Route::controller(App\Http\Controllers\OurDistributorController::class)->group(function () {
         Route::get('our-distributor', 'index')->name('our-distributor.index');
@@ -215,6 +224,18 @@ Route::prefix('dashboard')->name('dashboard.')->middleware('auth')->group(functi
         Route::put('category-product/{id}', 'update')->name('category-product.update');
         Route::delete('category-product/delete/{id}', 'destroy')->name('category-product.destroy');
     });
+
+    //Menu Sub Category Product
+    Route::controller(App\Http\Controllers\SubCategoryController::class)->group(function () {
+        Route::get('sub-category-product', 'index')->name('sub-category-product.index');
+        // Route::get('sub-category-product/create', 'create')->name('sub-category-product.create');
+        Route::post('sub-category-product/store', 'store')->name('sub-category-product.store');
+        // Route::get('sub-category-product/{id}', 'show')->name('sub-category-product.show');
+        // Route::get('sub-category-product/{id}/edit', 'edit')->name('sub-category-product.edit');
+        Route::put('sub-category-product/{id}', 'update')->name('sub-category-product.update');
+        Route::delete('sub-category-product/delete/{id}', 'destroy')->name('sub-category-product.destroy');
+    });
+
 
     //Menu Product
     Route::controller(App\Http\Controllers\ProductController::class)->group(function () {
@@ -264,10 +285,7 @@ Route::prefix('dashboard')->name('dashboard.')->middleware('auth')->group(functi
     //Menu Gallery
     Route::controller(App\Http\Controllers\GalleryController::class)->group(function () {
         Route::get('gallery', 'index')->name('gallery.index');
-        // Route::get('gallery/create', 'create')->name('gallery.create');
         Route::post('gallery/store', 'store')->name('gallery.store');
-        // Route::get('gallery/{id}', 'show')->name('gallery.show');
-        // Route::get('gallery/{id}/edit', 'edit')->name('gallery.edit');
         Route::put('gallery/{id}', 'update')->name('gallery.update');
         Route::delete('gallery/delete/{id}', 'destroy')->name('gallery.destroy');
     });

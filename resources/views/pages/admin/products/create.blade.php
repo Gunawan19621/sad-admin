@@ -45,12 +45,12 @@
                     </div>
                     <div class="col-md-6">
                         <div class="mb-3">
-                            <label class="form-label" for="id_category_product">Category Product <span
+                            <label class="form-label" for="id_sub_category">Sub Category <span
                                     class="text-danger">*</span></label>
-                            <select class="form-select" id="id_category_product" name="id_category_product" required>
+                            <select class="form-select" id="id_sub_category" name="id_sub_category" required>
                                 <option disabled selected>Select one</option>
-                                @foreach ($categoryProduct as $data)
-                                    <option value="{{ $data->id }}">{{ $data->name_category_product }}</option>
+                                @foreach ($subCategory as $data)
+                                    <option value="{{ $data->id }}">{{ $data->name_sub_category }}</option>
                                 @endforeach
                             </select>
                         </div>

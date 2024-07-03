@@ -42,13 +42,14 @@
                         </select>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label" for="id_category_product">Category Product</label>
-                        <select class="form-select" id="id_category_product" disabled>
+                        <label class="form-label" for="id_sub_category">Sub Category <span
+                                class="text-danger">*</span></label>
+                        <select class="form-select" id="id_sub_category" disabled>
                             <option disabled selected>Select one</option>
-                            @foreach ($categoryProduct as $data)
+                            @foreach ($subCategory as $data)
                                 <option value="{{ $data->id }}"
-                                    {{ $product->id_category_product == $data->id ? 'selected' : '' }}>
-                                    {{ $data->name_category_product }}</option>
+                                    {{ $product->id_sub_category == $data->id ? 'selected' : '' }}>
+                                    {{ $data->name_sub_category }}</option>
                             @endforeach
                         </select>
                     </div>

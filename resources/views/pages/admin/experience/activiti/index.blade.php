@@ -1,9 +1,9 @@
 @extends('layouts.master-dashboard')
-@section('title', 'Product')
+@section('title', 'Activiti')
 
 @section('breadcrumb')
     @parent
-    <li class="breadcrumb-item active">Product</li>
+    <li class="breadcrumb-item active">Activiti</li>
 @endsection
 
 @section('content')
@@ -14,10 +14,11 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-6">
-                    <h5 class="card-header">Product</h5>
+                    <h5 class="card-header">Activiti</h5>
                 </div>
                 <div class="col-6 card-header text-end">
-                    <a href="{{ route('dashboard.product.create') }}" class="btn btn-success">Add New Product</a>
+                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalCreate">Add New
+                        Activiti</button>
                 </div>
             </div>
             <div class="table-responsive text-nowrap">
@@ -26,10 +27,8 @@
                         <tr>
                             <th>No</th>
                             <th>Image</th>
-                            <th>Name</th>
-                            <th>Sub Category</th>
-                            <th>price</th>
-                            <th>stock</th>
+                            <th>Title</th>
+                            <th>Date</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -37,27 +36,23 @@
                         @php
                             $no = 1;
                         @endphp
-                        @forelse ($product as $items)
+                        @forelse ($activiti as $items)
                             <tr>
                                 <td>{{ $no++ }}</td>
                                 <td>
-                                    @if (!empty($items->image_product))
-                                        <img src="{{ asset('images/' . $items->image_product) }}" alt="Image Resort"
+                                    @if (!empty($items->image_activiti))
+                                        <img src="{{ asset('images/' . $items->image_activiti) }}" alt="Image Activiti"
                                             class="img-fluid" style="max-width: 50px;">
                                     @else
                                         -
                                     @endif
                                 </td>
-                                <td>{{ $items->name_product ?? '-' }}</td>
-                                <td>{{ $items->name_sub_category ?? '-' }}</td>
-                                <td>{{ $items->price_product ?? '-' }}</td>
-                                <td>{{ $items->stock_product ?? '-' }}</td>
+                                <td>{{ $items->title_activiti ?? '-' }}</td>
+                                <td>{{ $items->date_activiti ?? '-' }}</td>
                                 <td>
-                                    <a href="{{ route('dashboard.product.edit', $items->id) }}"
-                                        class="btn btn-sm btn-success">Edit</a>
-                                    <a href="{{ route('dashboard.product.show', $items->id) }}"
-                                        class="btn btn-sm btn-info">View</a>
-                                    <form action="{{ route('dashboard.product.destroy', $items->id) }}" method="POST"
+                                    <button type="button" class="btn btn-sm btn-success" data-bs-toggle="modal"
+                                        data-bs-target="#modalEdit{{ $items->id }}">Edit</button>
+                                    <form action="{{ route('dashboard.news-event.destroy', $items->id) }}" method="POST"
                                         style="display: inline;">
                                         @csrf
                                         @method('DELETE')
@@ -68,7 +63,7 @@
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="7" style="text-align: center;">Empty</td>
+                                <td colspan="5" style="text-align: center;">Empty</td>
                             </tr>
                         @endforelse
                     </tbody>
@@ -76,4 +71,7 @@
             </div>
         </div>
     </div>
+
+    <!-- Modal -->
+    @include('pages.admin.experience.activiti.modals')
 @endsection

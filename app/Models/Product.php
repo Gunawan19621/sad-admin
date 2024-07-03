@@ -11,7 +11,7 @@ class Product extends Model
     protected $table = 'tb_product';
     protected $fillable = [
         'id_distributor',
-        'id_category_product',
+        'id_sub_category',
         'image_product',
         'name_product',
         'description_product',

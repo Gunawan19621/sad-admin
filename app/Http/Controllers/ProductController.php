@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Models\OurDistributor;
-use App\Models\CategoryProduct;
+use App\Models\SubCategory;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
@@ -17,8 +17,8 @@ class ProductController extends Controller
     public function index()
     {
         $product = DB::table('tb_product')
-            ->leftJoin('tb_category_product', 'tb_product.id_category_product', '=', 'tb_category_product.id')
-            ->select('tb_product.*', 'tb_category_product.name_category_product')
+            ->leftJoin('tb_sub_category', 'tb_product.id_sub_category', '=', 'tb_sub_category.id')
+            ->select('tb_product.*', 'tb_sub_category.name_sub_category')
             ->get();
 
         $data = [
@@ -35,7 +35,7 @@ class ProductController extends Controller
     {
         $data = [
             'distributor' => OurDistributor::all(),
-            'categoryProduct' => CategoryProduct::all(),
+            'subCategory' => SubCategory::all(),
             'product' => Product::all(),
             'active' => 'product',
         ];
@@ -47,9 +47,10 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->all());
         $validasi = Validator::make($request->all(), [
             'id_distributor' => 'required',
-            'id_category_product' => 'required',
+            'id_sub_category' => 'required',
             'name_product' => 'required',
             'description_product' => 'required',
             'price_product' => 'required',
@@ -57,7 +58,7 @@ class ProductController extends Controller
             'image_product' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ], [
             'id_distributor.required' => 'Distributor is required',
-            'id_category_product.required' => 'Category Product is required',
+            'id_sub_category.required' => 'Sub Category is required',
             'name_product.required' => 'Name Product is required',
             'description_product.required' => 'Description Product is required',
             'price_product.required' => 'Price Product is required',
@@ -96,7 +97,7 @@ class ProductController extends Controller
     {
         $data = [
             'distributor' => OurDistributor::all(),
-            'categoryProduct' => CategoryProduct::all(),
+            'subCategory' => SubCategory::all(),
             'product' => Product::findOrFail($id),
             'active' => 'product',
         ];
@@ -110,7 +111,7 @@ class ProductController extends Controller
     {
         $data = [
             'distributor' => OurDistributor::all(),
-            'categoryProduct' => CategoryProduct::all(),
+            'subCategory' => SubCategory::all(),
             'product' => Product::findOrFail($id),
             'active' => 'product',
         ];
@@ -124,7 +125,7 @@ class ProductController extends Controller
     {
         $validasi = Validator::make($request->all(), [
             'id_distributor' => 'required',
-            'id_category_product' => 'required',
+            'id_sub_category' => 'required',
             'name_product' => 'required',
             'description_product' => 'required',
             'price_product' => 'required',
@@ -132,7 +133,7 @@ class ProductController extends Controller
             'image_product' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ], [
             'id_distributor.required' => 'Distributor is required',
-            'id_category_product.required' => 'Category Product is required',
+            'id_sub_category.required' => 'Sub Category is required',
             'name_product.required' => 'Name Product is required',
             'description_product.required' => 'Description Product is required',
             'price_product.required' => 'Price Product is required',

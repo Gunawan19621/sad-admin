@@ -28,6 +28,12 @@
                     <input class="form-control" type="text" id="name_category_product" name="name_category_product"
                         value="{{ $categoryProduct->name_category_product }}" placeholder="Enter Name Category" required />
                 </div>
+                <div class="mb-3">
+                    <label class="form-label" for="subtitle_category">Name Category <span
+                            class="text-danger">*</span></label>
+                    <textarea class="form-control" name="subtitle_category" id="subtitle_category" cols="30" rows="3"
+                        placeholder="Enter Subtitle Category" required>{{ $categoryProduct->subtitle_category }}</textarea>
+                </div>
                 <div class="mb-4">
                     <label class="form-label" for="description_category_product">Description <span
                             class="text-danger">*</span></label>

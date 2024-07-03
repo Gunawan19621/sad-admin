@@ -26,6 +26,7 @@
                         <tr>
                             <th>No</th>
                             <th>Category Product</th>
+                            <th>Subtitle</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -37,6 +38,7 @@
                             <tr>
                                 <td>{{ $no++ }}</td>
                                 <td>{{ $items->name_category_product ?? '-' }}</td>
+                                <td>{{ $items->subtitle_category ?? '-' }}</td>
                                 <td>
                                     <a href="{{ route('dashboard.category-product.edit', $items->id) }}"
                                         class="btn btn-sm btn-success">Edit</a>

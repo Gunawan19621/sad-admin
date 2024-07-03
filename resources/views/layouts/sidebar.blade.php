@@ -129,7 +129,8 @@
             $active == 'imageExperience' ||
             $active == 'experiencePrice' ||
             $active == 'resort' ||
-            $active == 'resortImage'
+            $active == 'resortImage' ||
+            $active == 'activiti'
                 ? 'active open'
                 : '' }}">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
@@ -170,11 +171,17 @@
                         </li>
                     </ul>
                 </li>
+                <li class="menu-item {{ $active == 'activiti' ? 'active' : '' }}">
+                    <a href="{{ route('dashboard.activiti.index') }}" class="menu-link">
+                        <div data-i18n="activiti">Activiti</div>
+                    </a>
+                </li>
             </ul>
         </li>
 
         <!-- Product -->
-        <li class="menu-item {{ $active == 'product' || $active == 'category-product' ? 'active open' : '' }}">
+        <li
+            class="menu-item {{ $active == 'product' || $active == 'category-product' || $active == 'subCategory' ? 'active open' : '' }}">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-package"></i>
                 <div data-i18n="product"> Product </div>
@@ -188,6 +195,11 @@
                 <li class="menu-item {{ $active == 'category-product' ? 'active' : '' }}">
                     <a href="{{ route('dashboard.category-product.index') }}" class="menu-link">
                         <div data-i18n="category-product">Category Product</div>
+                    </a>
+                </li>
+                <li class="menu-item {{ $active == 'subCategory' ? 'active' : '' }}">
+                    <a href="{{ route('dashboard.sub-category-product.index') }}" class="menu-link">
+                        <div data-i18n="category-product">Sub Category</div>
                     </a>
                 </li>
             </ul>

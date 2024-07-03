@@ -20,6 +20,10 @@
                 <input class="form-control" id="name_category_product" value="{{ $categoryProduct->name_category_product }}"
                     readonly />
             </div>
+            <div class="mb-3">
+                <label class="form-label" for="subtitle_category">Name Category <span class="text-danger">*</span></label>
+                <textarea class="form-control" id="subtitle_category" cols="30" rows="3" readonly>{{ $categoryProduct->subtitle_category }}</textarea>
+            </div>
             <div class="mb-4">
                 <label class="form-label" for="description_category_product">Description</label>
                 <textarea id="description_category_product" class="form-control" readonly rows="3">{{ $categoryProduct->description_category_product }}</textarea>
