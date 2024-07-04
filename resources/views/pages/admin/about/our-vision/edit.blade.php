@@ -28,8 +28,12 @@
                             <label class="form-label">Image Vision</label>
                         </div>
                         <div class="mb-3">
-                            <img src="{{ asset('images/' . $ourVision->image_vision) }}" alt="Image Story" class="img-fluid"
-                                style="max-width: 100%; max-height: 250px">
+                            @if ($ourVision->image_vision)
+                                <img src="{{ asset('images/' . $ourVision->image_vision) }}" alt="Image Story"
+                                    class="img-fluid" style="max-width: 100%; max-height: 250px">
+                            @else
+                                <i class="menu-icon tf-icons bx bx-image" style="font-size: 150px;"></i>
+                            @endif
                         </div>
                     </div>
                     <div class="col-md-8">

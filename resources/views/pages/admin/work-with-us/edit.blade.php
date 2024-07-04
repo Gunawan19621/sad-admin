@@ -23,12 +23,16 @@
                 @method('PUT')
                 <div class="row">
                     <div class="col-md-4 text-center">
-                        <div class="">
+                        <div class=" mb-1 text-center">
                             <label class="form-label">CV</label>
                         </div>
                         <div class="mb-3">
-                            <img src="{{ asset('images/' . $jobApplicant->cv_applicant) }}" alt="cv_applicant"
-                                class="img-fluid" style="max-width: 100%; max-height: 250px">
+                            @if ($jobApplicant->cv_applicant)
+                                <img src="{{ asset('images/' . $jobApplicant->cv_applicant) }}" alt="CV"
+                                    class="img-fluid" style="max-width: 100%; max-height: 250px">
+                            @else
+                                <i class="menu-icon tf-icons bx bx-image" style="font-size: 150px;"></i>
+                            @endif
                         </div>
                     </div>
                     <div class="col-md-8">

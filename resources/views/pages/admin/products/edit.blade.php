@@ -23,13 +23,17 @@
                 @csrf
                 @method('PUT')
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-4 text-center">
                         <div class=" mb-1 text-center">
                             <label class="form-label">Image Product</label>
                         </div>
                         <div class="mb-3">
-                            <img src="{{ asset('images/' . $product->image_product) }}" alt="image_product"
-                                class="img-fluid" style="max-width: 100%; max-height: 250px">
+                            @if ($product->image_product)
+                                <img src="{{ asset('images/' . $product->image_product) }}" alt="Image Story"
+                                    class="img-fluid" style="max-width: 100%; max-height: 250px">
+                            @else
+                                <i class="menu-icon tf-icons bx bx-image" style="font-size: 150px;"></i>
+                            @endif
                         </div>
                     </div>
                     <div class="col-md-8">
