@@ -21,8 +21,12 @@
                         <label for="image_story" class="form-label">Image Story</label>
                     </div>
                     <div class="mb-3">
-                        <img src="{{ asset('images/' . $ourStory->image_story) }}" alt="Image Story" class="img-fluid"
-                            style="max-width: 100%; max-height: 250px">
+                        @if ($ourStory->image_story)
+                            <img src="{{ asset('images/' . $ourStory->image_story) }}" alt="Image Story" class="img-fluid"
+                                style="max-width: 100%; max-height: 250px">
+                        @else
+                            <i class="menu-icon tf-icons bx bx-image" style="font-size: 150px;"></i>
+                        @endif
                     </div>
                 </div>
                 <div class="col-md-8">

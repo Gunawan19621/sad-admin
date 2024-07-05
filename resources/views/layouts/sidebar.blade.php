@@ -244,7 +244,7 @@
         <!-- Work With Us -->
         <li class="menu-item {{ $active == 'jobApplicant' ? 'active' : '' }}">
             <a href="{{ route('dashboard.job-applicant.index') }}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-group"></i>
+                <i class="menu-icon tf-icons bx bx-file"></i>
                 <div data-i18n="work-with-us">Work With Us</div>
             </a>
         </li>
@@ -270,14 +270,6 @@
                     </a>
                 </li>
             </ul>
-        </li>
-
-        <!-- About -->
-        <li class="menu-item">
-            <a href="javascript:void(0);" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-box"></i>
-                <div data-i18n="distributor">About</div>
-            </a>
         </li>
     </ul>
 </aside>
