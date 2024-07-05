@@ -16,4 +16,11 @@ class CategoryProduct extends Model
         'created_at',
         'updated_at',
     ];
+
+    public function subcategories()
+    {
+        return $this->hasMany(Subcategory::class, 'id_category_product');
+    }
+
+    
 }

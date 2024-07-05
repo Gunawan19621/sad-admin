@@ -54,24 +54,7 @@
         });
         </script>
 
-        <script>
-        const soundImage = document.getElementById('sound-image');
-        const audio = new Audio('{{ asset('assets-web/img/audio.m4a') }}')'; // Path to your audio file
-        audio.play();
-        audio.loop = true;
-        // Fungsi untuk mengganti ikon suara dan mengatur audio
-        function toggleSound() {
-        if (soundImage.classList.contains('sound-on')) {
-            soundImage.src = '{{ asset('assets-web/img/mute.png')}}';
-            soundImage.classList.remove('sound-on');
-            audio.pause(); // Pause the audio
-        } else {
-            soundImage.src = '{{ asset('assets-web/img/sound.png')}}';
-            soundImage.classList.add('sound-on');
-            audio.play(); // Play the audio
-        }
-    }
-    </script>
+        
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>

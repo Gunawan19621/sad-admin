@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Award;
+use App\Models\FAQ;
 use App\Models\MenuHeader;
+use App\Models\OurTeam;
 use Illuminate\Http\Request;
 
 class web_aboutcontroller extends Controller
@@ -15,6 +18,17 @@ class web_aboutcontroller extends Controller
         //
         $headers=MenuHeader::find(1);
         return view('pages.web.layouts.about.index',compact('headers'));
+    }
+
+
+    public function about()
+    {
+        //
+        $headers=MenuHeader::find(2);
+        $teams=OurTeam::take(4)->get();
+        $awards=Award::take(5)->get();  
+        $faqs=FAQ::take(4)->get();      
+        return view('pages.web.layouts.about.about',compact('headers','teams','awards','faqs'));
     }
 
 

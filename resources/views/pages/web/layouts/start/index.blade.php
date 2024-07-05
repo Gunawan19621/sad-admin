@@ -10,7 +10,7 @@
             <div class="row" style="display: flex; align-items: center;">
                 <div class="col-md-3 text-right">
                     <img src="{{ asset('assets-web/img/sound.png') }}" alt="logo" class="img-fluid sound" id="sound-image"
-                        onclick="toggleSound()">
+                        onclick="toggleSound();">
                 </div>
                 <div class="col-md-6 text-center">
                     <div class="row" >
@@ -40,4 +40,24 @@
         </div>
     </div>
 </div>
+
+
+<script>
+    const soundImage = document.getElementById('sound-image');
+    const audio = new Audio("{{ asset('assets-web/img/audio.m4a') }}"); // Path to your audio file
+    audio.play();
+    audio.loop = true;
+    // Fungsi untuk mengganti ikon suara dan mengatur audio
+    function toggleSound() {
+    if (soundImage.classList.contains('sound-on')) {
+        soundImage.src = "{{ asset('assets-web/img/mute.png')}}";
+        soundImage.classList.remove('sound-on');
+        audio.pause(); // Pause the audio
+    } else {
+        soundImage.src = "{{ asset('assets-web/img/sound.png')}}";
+        soundImage.classList.add('sound-on');
+        audio.play(); // Play the audio
+    }
+}
+</script>
 @endsection

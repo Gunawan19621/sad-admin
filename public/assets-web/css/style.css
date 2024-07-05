@@ -135,6 +135,7 @@ body {
 .text-size-heading {
   font-size: 32px;
   text-transform: uppercase;
+  padding: 20px;
 }
 
 .text-size-title {
@@ -378,6 +379,13 @@ label {
   /* Jarak antar kolom */
   padding: 10px;
   /* Padding di dalam container */
+}
+
+.description-experience {
+  max-height: calc(1.2em * 5);
+  /* 1.2em (line-height) times 5 lines */
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* PRICE */
@@ -768,9 +776,38 @@ footer {
   margin: 10px 0;
 }
 
-.faq.active {
+/* .faq.active {
   border: 1px solid rgba(0, 0, 0, 0.2);
+} */
+
+/* PAGGING */
+.pagination-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
 }
+
+.page-item.disabled .page-link {
+  color: #365168;
+  background-color: #FDF9EF;
+  border: none;
+}
+
+.page-item.active .page-link {
+  color: #365168;
+  background-color: #FDF9EF;
+  border: #B99B4E solid 1px;
+}
+
+
+.page-link {
+  color: #365168;
+  background-color: #FDF9EF;
+  border: none;
+}
+
+
 
 
 

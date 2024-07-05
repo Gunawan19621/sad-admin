@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\MenuHeader;
 use Illuminate\Http\Request;
 
 class web_workwithuscontroller extends Controller
@@ -10,7 +11,9 @@ class web_workwithuscontroller extends Controller
     public function index()
     {
         //
-        return view('pages.web.layouts.workwithus.index');
+        $headers=MenuHeader::find(8); 
+        return view('pages.web.layouts.workwithus.index',compact('headers'));
+
     }
 
     public function show()

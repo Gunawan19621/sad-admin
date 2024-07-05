@@ -14,4 +14,9 @@ class SubCategory extends Model
         'name_sub_category',
         'image_sub_category'
     ];
+
+    public function category()
+    {
+        return $this->belongsTo(CategoryProduct::class);
+    }
 }
