@@ -17,9 +17,20 @@ return new class extends Migration
             $table->integer('id_sub_category');
             $table->string('image_product');
             $table->string('name_product');
+            $table->string('sub_product');
             $table->text('description_product');
-            $table->integer('price_product');
-            $table->integer('stock_product');
+            $table->integer('year_product');
+            $table->decimal('alcohol', 10, 2);
+            $table->integer('temperature');
+            $table->string('cellaring');
+            $table->decimal('total_acidity', 10, 2);
+            $table->decimal('ressidual_sugar', 10, 2);
+            $table->integer('bottle_produced');
+            $table->string('size_bottle');
+            $table->integer('award_won');
+            $table->text('characteristics');
+            $table->text('testing_note');
+            $table->text('food_pairing');
             $table->timestamps();
         });
     }

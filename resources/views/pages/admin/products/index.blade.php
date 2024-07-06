@@ -27,9 +27,8 @@
                             <th>No</th>
                             <th>Image</th>
                             <th>Name</th>
-                            <th>Sub Category</th>
-                            <th>price</th>
-                            <th>stock</th>
+                            <th>Subtitle</th>
+                            <th>Size</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -49,9 +48,8 @@
                                     @endif
                                 </td>
                                 <td>{{ $items->name_product ?? '-' }}</td>
-                                <td>{{ $items->name_sub_category ?? '-' }}</td>
-                                <td>{{ $items->price_product ?? '-' }}</td>
-                                <td>{{ $items->stock_product ?? '-' }}</td>
+                                <td>{{ $items->sub_product ?? '-' }}</td>
+                                <td>{{ $items->size_bottle ?? '-' }}</td>
                                 <td>
                                     <a href="{{ route('dashboard.product.edit', $items->id) }}"
                                         class="btn btn-sm btn-success">Edit</a>
@@ -68,7 +66,7 @@
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="7" style="text-align: center;">Empty</td>
+                                <td colspan="6" style="text-align: center;">Empty</td>
                             </tr>
                         @endforelse
                     </tbody>

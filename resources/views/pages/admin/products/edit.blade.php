@@ -36,12 +36,59 @@
                             @endif
                         </div>
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-md-4">
                         <div class="mb-3">
-                            <label class="form-label" for="name_product">Name <span class="text-danger">*</span></label>
-                            <input class="form-control" type="text" id="name_product" name="name_product"
-                                value="{{ $product->name_product }}" placeholder="Enter Name Product" required />
+                            <label class="form-label" for="year_product">Year Product <span
+                                    class="text-danger">*</span></label>
+                            <input class="form-control" type="number" id="year_product" name="year_product"
+                                value="{{ $product->year_product }}" placeholder="Enter Year Product" required />
                         </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="alcohol">Alcohol <span class="text-danger">*</span></label>
+                            <input class="form-control" type="number" id="alcohol" name="alcohol"
+                                value="{{ $product->alcohol }}" placeholder="Enter Alcohol Content" required />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="temperature">Serving Temperature <span
+                                    class="text-danger">*</span></label>
+                            <input class="form-control" type="number" id="temperature" name="temperature"
+                                value="{{ $product->temperature }}" placeholder="Enter Serving Temperature" required />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="size_bottle">Size Bottle <span
+                                    class="text-danger">*</span></label>
+                            <input class="form-control" type="text" id="size_bottle" name="size_bottle"
+                                value="{{ $product->size_bottle }}" placeholder="Enter Size Bottle" required />
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="mb-3">
+                            <label class="form-label" for="total_acidity">Total Acidity <span
+                                    class="text-danger">*</span></label>
+                            <input class="form-control" type="number" id="total_acidity" name="total_acidity"
+                                value="{{ $product->total_acidity }}" placeholder="Enter Total Acidity" required />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="ressidual_sugar">Residual Sugar <span
+                                    class="text-danger">*</span></label>
+                            <input class="form-control" type="number" id="ressidual_sugar" name="ressidual_sugar"
+                                value="{{ $product->ressidual_sugar }}" placeholder="Enter Residual Sugar" required />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="bottle_produced">Bottle Produced <span
+                                    class="text-danger">*</span></label>
+                            <input class="form-control" type="number" id="bottle_produced" name="bottle_produced"
+                                value="{{ $product->bottle_produced }}" placeholder="Enter Bottle Produced" required />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="award_won">Award Won <span class="text-danger">*</span></label>
+                            <input class="form-control" type="number" id="award_won" name="award_won"
+                                value="{{ $product->award_won }}" placeholder="Enter Award Won" required />
+                        </div>
+                    </div>
+                </div>
+                <div class="row g-3">
+                    <div class="col-md-6">
                         <div class="mb-3">
                             <label class="form-label" for="id_distributor">Name Distributor <span
                                     class="text-danger">*</span></label>
@@ -54,6 +101,8 @@
                                 @endforeach
                             </select>
                         </div>
+                    </div>
+                    <div class="col-md-6">
                         <div class="mb-3">
                             <label class="form-label" for="id_sub_category">Sub Category <span
                                     class="text-danger">*</span></label>
@@ -66,28 +115,70 @@
                                 @endforeach
                             </select>
                         </div>
+                    </div>
+                    <div class="col-md-6">
                         <div class="mb-3">
-                            <label class="form-label" for="stock_product">Stock <span class="text-danger">*</span></label>
-                            <input class="form-control" type="number" id="stock_product" name="stock_product"
-                                value="{{ $product->stock_product }}" placeholder="Enter Stock Product" required />
+                            <label class="form-label" for="name_product">Name <span class="text-danger">*</span></label>
+                            <input class="form-control" type="text" id="name_product" name="name_product"
+                                value="{{ $product->name_product }}" placeholder="Enter Name Product" required />
                         </div>
                     </div>
-                </div>
-                <div class="mb-3">
-                    <label class="form-label" for="price_product">Price <span class="text-danger">*</span></label>
-                    <input class="form-control" type="number" id="price_product" name="price_product"
-                        value="{{ $product->price_product }}" placeholder="Enter Price Product" required />
-                </div>
-                <div class="mb-3">
-                    <label for="image_product" class="form-label">Image <span class="text-danger">*</span></label>
-                    <input class="form-control" type="file" id="image_product" name="image_product" accept="image/*"
-                        required />
-                </div>
-                <div class="mb-4">
-                    <label class="form-label" for="description_product">Description <span
-                            class="text-danger">*</span></label>
-                    <textarea id="description_product" class="form-control" name="description_product"
-                        placeholder="Enter description Resort" rows="3" required>{{ $product->description_product }}</textarea>
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label" for="sub_product">Subtitle Product <span
+                                    class="text-danger">*</span></label>
+                            <input class="form-control" type="text" id="sub_product" name="sub_product"
+                                value="{{ $product->sub_product }}" placeholder="Enter Subtitle Product" required />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label" for="cellaring">Cellaring <span
+                                    class="text-danger">*</span></label>
+                            <input class="form-control" type="text" id="cellaring" name="cellaring"
+                                value="{{ $product->cellaring }}" placeholder="Enter Cellaring" required />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="image_product" class="form-label">Image <span
+                                    class="text-danger">*</span></label>
+                            <input class="form-control" type="file" id="image_product" name="image_product"
+                                accept="image/*" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label" for="characteristics">Characteristics <span
+                                    class="text-danger">*</span></label>
+                            <textarea id="characteristics" class="form-control" name="characteristics"
+                                placeholder="Enter Characteristics Product" rows="3" required>{{ $product->characteristics }}</textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label" for="testing_note">Testing Note <span
+                                    class="text-danger">*</span></label>
+                            <textarea id="testing_note" class="form-control" name="testing_note" placeholder="Enter Testing Note"
+                                rows="3" required>{{ $product->testing_note }}</textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label" for="food_pairing">Food Pairing <span
+                                    class="text-danger">*</span></label>
+                            <textarea id="food_pairing" class="form-control" name="food_pairing" placeholder="Enter Food Pairing"
+                                rows="3" required>{{ $product->food_pairing }}</textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label" for="description_product">Description <span
+                                    class="text-danger">*</span></label>
+                            <textarea id="description_product" class="form-control" name="description_product"
+                                placeholder="Enter Description Product" rows="3" required>{{ $product->description_product }}</textarea>
+                        </div>
+                    </div>
                 </div>
                 <div class="text-center">
                     <a href="{{ route('dashboard.product.index') }}" class="btn btn-secondary">Back</a>
@@ -97,10 +188,6 @@
         </div>
     </div>
 
-    <script>
-        CKEDITOR.replace('description_product', {
-            filebrowserUploadUrl: "{{ route('dashboard.ckeditor.upload', ['_token' => csrf_token()]) }}",
-            filebrowserUploadMethod: 'form'
-        });
-    </script>
+    <!-- Script CK Editor -->
+    @include('pages.admin.products.script')
 @endsection

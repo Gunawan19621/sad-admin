@@ -47,48 +47,91 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->all());
-        $validasi = Validator::make($request->all(), [
-            'id_distributor' => 'required',
-            'id_sub_category' => 'required',
-            'name_product' => 'required',
-            'description_product' => 'required',
-            'price_product' => 'required',
-            'stock_product' => 'required',
-            'image_product' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-        ], [
-            'id_distributor.required' => 'Distributor is required',
-            'id_sub_category.required' => 'Sub Category is required',
-            'name_product.required' => 'Name Product is required',
-            'description_product.required' => 'Description Product is required',
-            'price_product.required' => 'Price Product is required',
-            'stock_product.required' => 'Stock Product is required',
-            'image_product.required' => 'Image Product is required',
-            'image_product.image' => 'Image Product must be an image',
-            'image_product.mimes' => 'Image Product must be a file of type: jpeg, png, jpg, gif',
-            'image_product.max' => 'Image Product must be a file of type: jpeg, png, jpg, gif and max 2048kb',
-        ]);
+        $validasi = Validator::make(
+            $request->all(),
+            [
+                'id_distributor' => 'required',
+                'id_sub_category' => 'required',
+                'name_product' => 'required',
+                'sub_product' => 'required',
+                'year_product' => 'required|integer',
+                'alcohol' => 'required|numeric',
+                'temperature' => 'required|integer',
+                'cellaring' => 'required',
+                'total_acidity' => 'required|numeric',
+                'ressidual_sugar' => 'required|numeric',
+                'bottle_produced' => 'required|integer',
+                'size_bottle' => 'required',
+                'award_won' => 'required',
+                'characteristics' => 'required',
+                'testing_note' => 'required',
+                'food_pairing' => 'required',
+                'description_product' => 'required',
+                'image_product' => 'required|mimes:jpeg,png,jpg|max:2048',
+            ],
+            [
+                'id_distributor.required' => 'Distributor is required',
+                'id_sub_category.required' => 'Sub Category is required',
+                'name_product.required' => 'Name Product is required',
+                'sub_product.required' => 'Sub Product is required',
+                'year_product.required' => 'Year Product is required',
+                'alcohol.required' => 'Alcohol is required',
+                'temperature.required' => 'Temperature is required',
+                'cellaring.required' => 'Cellaring is required',
+                'total_acidity.required' => 'Total Acidity is required',
+                'ressidual_sugar.required' => 'Ressidual Sugar is required',
+                'bottle_produced.required' => 'Bottle Produced is required',
+                'size_bottle.required' => 'Size Bottle is required',
+                'award_won.required' => 'Award Won is required',
+                'characteristics.required' => 'Characteristics is required',
+                'testing_note.required' => 'Testing Note is required',
+                'food_pairing.required' => 'Food Pairing is required',
+                'description_product.required' => 'Description Product is required',
+                'image_product.required' => 'Image Product is required',
+                'image_product.mimes' => 'Image Product must be a file of type: jpeg, png, jpg',
+                'image_product.max' => 'Image Product must be a file of type: jpeg, png, jpg and max 2048kb',
+            ]
+        );
 
         if ($validasi->fails()) {
             return redirect()->back()->withErrors($validasi)->withInput();
         }
 
         try {
-            $validatedData = $validasi->validated();
-
+            $imagePath = null;
             if ($request->hasFile('image_product')) {
                 $imageName = time() . '.' . $request->image_product->extension();
                 $request->image_product->move(public_path('images'), $imageName);
-                $validatedData['image_product'] = $imageName;
+                $imagePath = $imageName;
             }
 
-            Product::create($validatedData);
+            Product::create([
+                'id_distributor' => $request->id_distributor,
+                'id_sub_category' => $request->id_sub_category,
+                'name_product' => $request->name_product,
+                'sub_product' => $request->sub_product,
+                'year_product' => $request->year_product,
+                'alcohol' => $request->alcohol,
+                'temperature' => $request->temperature,
+                'cellaring' => $request->cellaring,
+                'total_acidity' => $request->total_acidity,
+                'ressidual_sugar' => $request->ressidual_sugar,
+                'bottle_produced' => $request->bottle_produced,
+                'size_bottle' => $request->size_bottle,
+                'award_won' => $request->award_won,
+                'characteristics' => $request->characteristics,
+                'testing_note' => $request->testing_note,
+                'food_pairing' => $request->food_pairing,
+                'description_product' => $request->description_product,
+                'image_product' => $imagePath,
+            ]);
 
             return redirect()->route('dashboard.product.index')->with('success', 'Data Product add successfully');
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Data Product failed to added');
         }
     }
+
 
     /**
      * Display the specified resource.
@@ -123,46 +166,90 @@ class ProductController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $validasi = Validator::make($request->all(), [
-            'id_distributor' => 'required',
-            'id_sub_category' => 'required',
-            'name_product' => 'required',
-            'description_product' => 'required',
-            'price_product' => 'required',
-            'stock_product' => 'required',
-            'image_product' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-        ], [
-            'id_distributor.required' => 'Distributor is required',
-            'id_sub_category.required' => 'Sub Category is required',
-            'name_product.required' => 'Name Product is required',
-            'description_product.required' => 'Description Product is required',
-            'price_product.required' => 'Price Product is required',
-            'stock_product.required' => 'Stock Product is required',
-            'image_product.required' => 'Image Product is required',
-            'image_product.image' => 'Image Product must be an image',
-            'image_product.mimes' => 'Image Product must be a file of type: jpeg, png, jpg, gif',
-            'image_product.max' => 'Image Product must be a file of type: jpeg, png, jpg, gif and max 2048kb',
-        ]);
+        $validasi = Validator::make(
+            $request->all(),
+            [
+                'id_distributor' => 'required',
+                'id_sub_category' => 'required',
+                'name_product' => 'required',
+                'sub_product' => 'required',
+                'year_product' => 'required|integer',
+                'alcohol' => 'required|numeric',
+                'temperature' => 'required|integer',
+                'cellaring' => 'required',
+                'total_acidity' => 'required|numeric',
+                'ressidual_sugar' => 'required|numeric',
+                'bottle_produced' => 'required|integer',
+                'size_bottle' => 'required',
+                'award_won' => 'required',
+                'characteristics' => 'required',
+                'testing_note' => 'required',
+                'food_pairing' => 'required',
+                'description_product' => 'required',
+                'image_product' => 'mimes:jpeg,png,jpg|max:2048',
+            ],
+            [
+                'id_distributor.required' => 'Distributor is required',
+                'id_sub_category.required' => 'Sub Category is required',
+                'name_product.required' => 'Name Product is required',
+                'sub_product.required' => 'Sub Product is required',
+                'year_product.required' => 'Year Product is required',
+                'alcohol.required' => 'Alcohol is required',
+                'temperature.required' => 'Temperature is required',
+                'cellaring.required' => 'Cellaring is required',
+                'total_acidity.required' => 'Total Acidity is required',
+                'ressidual_sugar.required' => 'Ressidual Sugar is required',
+                'bottle_produced.required' => 'Bottle Produced is required',
+                'size_bottle.required' => 'Size Bottle is required',
+                'award_won.required' => 'Award Won is required',
+                'characteristics.required' => 'Characteristics is required',
+                'testing_note.required' => 'Testing Note is required',
+                'food_pairing.required' => 'Food Pairing is required',
+                'description_product.required' => 'Description Product is required',
+                'image_product.mimes' => 'Image Product must be a file of type: jpeg, png, jpg',
+                'image_product.max' => 'Image Product must be a file of type: jpeg, png, jpg and max 2048kb',
+            ]
+        );
 
         if ($validasi->fails()) {
             return redirect()->back()->withErrors($validasi)->withInput();
         }
 
         try {
-            $data = Product::findOrFail($id);
-            $validatedData = $validasi->validated();
+            $product = Product::findOrFail($id);
 
             if ($request->hasFile('image_product')) {
-                if ($data->image_product && file_exists(public_path('images/' . $data->image_product))) {
-                    unlink(public_path('images/' . $data->image_product));
+                // Hapus gambar lama jika ada
+                if ($product->image_product && file_exists(public_path('images/' . $product->image_product))) {
+                    unlink(public_path('images/' . $product->image_product));
                 }
 
+                // Upload gambar baru
                 $imageName = time() . '.' . $request->image_product->extension();
                 $request->image_product->move(public_path('images'), $imageName);
-                $validatedData['image_product'] = $imageName;
+                $product->image_product = $imageName;
             }
 
-            $data->update($validatedData);
+            $product->update([
+                'id_distributor' => $request->id_distributor,
+                'id_sub_category' => $request->id_sub_category,
+                'name_product' => $request->name_product,
+                'sub_product' => $request->sub_product,
+                'year_product' => $request->year_product,
+                'alcohol' => $request->alcohol,
+                'temperature' => $request->temperature,
+                'cellaring' => $request->cellaring,
+                'total_acidity' => $request->total_acidity,
+                'ressidual_sugar' => $request->ressidual_sugar,
+                'bottle_produced' => $request->bottle_produced,
+                'size_bottle' => $request->size_bottle,
+                'award_won' => $request->award_won,
+                'characteristics' => $request->characteristics,
+                'testing_note' => $request->testing_note,
+                'food_pairing' => $request->food_pairing,
+                'description_product' => $request->description_product,
+                'image_product' => $product->image_product,
+            ]);
 
             return redirect()->route('dashboard.product.index')->with('success', 'Data Product updated successfully');
         } catch (\Exception $e) {
