@@ -29,10 +29,9 @@
                                 rows="3">{{ $itemModals->subtitle_header }}</textarea>
                         </div>
                         <div class="">
-                            <label for="image_header" class="form-label">Image Header <span
-                                    class="text-danger">*</span></label>
+                            <label for="image_header" class="form-label">Image</label>
                             <input class="form-control" type="file" id="image_header" name="image_header"
-                                accept="image/*" required />
+                                accept="image/*" />
                         </div>
                     </div>
                     <div class="modal-footer">

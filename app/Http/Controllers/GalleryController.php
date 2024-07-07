@@ -89,10 +89,9 @@ class GalleryController extends Controller
     {
         $validasi = Validator::make($request->all(), [
             'title' => 'required',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ], [
             'title.required' => 'Title is required',
-            'image.required' => 'Image is required',
             'image.image' => 'Image must be an image',
             'image.mimes' => 'Image must be a file of type: jpeg, png, jpg, gif',
             'image.max' => 'Image must be a file of type: jpeg, png, jpg, gif and max 2048kb',

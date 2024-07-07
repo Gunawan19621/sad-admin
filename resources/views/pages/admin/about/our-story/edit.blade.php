@@ -49,9 +49,9 @@
                                 value="{{ $ourStory->year_story }}" placeholder="Enter Title Story" required />
                         </div>
                         <div class="mb-3">
-                            <label for="image_story" class="form-label">Image <span class="text-danger">*</span></label>
-                            <input class="form-control" type="file" id="image_story" name="image_story" accept="image/*"
-                                required />
+                            <label for="image_story" class="form-label">Image</label>
+                            <input class="form-control" type="file" id="image_story" name="image_story"
+                                accept="image/*" />
                         </div>
                     </div>
                 </div>

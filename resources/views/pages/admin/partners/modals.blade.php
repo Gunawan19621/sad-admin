@@ -15,9 +15,9 @@
                             placeholder="Enter Name Partner" required />
                     </div>
                     <div class="">
-                        <label for="image_partner" class="form-label">Image <span class="text-danger">*</span></label>
+                        <label for="image_partner" class="form-label">Image</label>
                         <input class="form-control" type="file" id="image_partner" name="image_partner"
-                            accept="image/*" required />
+                            accept="image/*" />
                     </div>
                 </div>
                 <div class="modal-footer">

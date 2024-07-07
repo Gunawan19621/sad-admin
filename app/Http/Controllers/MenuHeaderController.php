@@ -63,9 +63,8 @@ class MenuHeaderController extends Controller
         $validasi = Validator::make($request->all(), [
             'title_header' => '',
             'subtitle_header' => '',
-            'image_header' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image_header' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ], [
-            'image_header.required' => 'Image header is required',
             'image_header.image' => 'Image header must be an image',
             'image_header.mimes' => 'Image header must be a file of type: jpeg, png, jpg, gif',
             'image_header.max' => 'Image header must be a file with a maximum size of 2048 kilobytes',

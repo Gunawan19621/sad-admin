@@ -87,9 +87,8 @@ class AwardController extends Controller
     {
         $validasi = Validator::make($request->all(), [
             'title_awards' => '',
-            'image_awards' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image_awards' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ], [
-            'image_awards.required' => 'Image Awards is required',
             'image_awards.image' => 'Image Awards must be an image',
             'image_awards.mimes' => 'Image Awards must be a file of type: jpeg, png, jpg, gif',
             'image_awards.max' => 'Image Awards must be a file of type: jpeg, png, jpg, gif and max 2048kb',

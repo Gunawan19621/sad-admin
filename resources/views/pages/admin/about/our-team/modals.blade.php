@@ -76,10 +76,9 @@
                                         required />
                                 </div>
                                 <div class="">
-                                    <label for="image_team" class="form-label">Image <span
-                                            class="text-danger">*</span></label>
+                                    <label for="image_team" class="form-label">Image</label>
                                     <input class="form-control" type="file" id="image_team" name="image_team"
-                                        accept="image/*" required />
+                                        accept="image/*" />
                                 </div>
                             </div>
                         </div>

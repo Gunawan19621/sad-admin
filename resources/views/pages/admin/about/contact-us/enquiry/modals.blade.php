@@ -1,6 +1,3 @@
-{{--
-
- --}}
 <!-- Modal Edit -->
 @foreach ($enquiry as $itemModals)
     <div class="modal fade bd-example-modal-lg" id="modalEdit{{ $itemModals->id }}" tabindex="-1"

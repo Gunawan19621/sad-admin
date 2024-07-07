@@ -92,11 +92,10 @@ class ActivitiController extends Controller
         $validasi = Validator::make($request->all(), [
             'title_activiti' => 'required',
             'date_activiti' => 'required',
-            'image_activiti' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image_activiti' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ], [
             'title_activiti.required' => 'Title Activiti is required',
             'date_activiti.required' => 'Date Activiti is required',
-            'image_activiti.required' => 'Image Activiti is required',
             'image_activiti.image' => 'Image Activiti must be an image',
             'image_activiti.mimes' => 'Image Activiti must be a file of type: jpeg, png, jpg, gif',
             'image_activiti.max' => 'Image Activiti must be a file of type: jpeg, png, jpg, gif and max 2048kb',

@@ -64,9 +64,8 @@
                         value="{{ $jobApplicant->question2 }}" placeholder="Enter Question 2" />
                 </div>
                 <div class="mb-3">
-                    <label for="cv_applicant" class="form-label">CV <span class="text-danger">*</span></label>
-                    <input class="form-control" type="file" id="cv_applicant" name="cv_applicant" accept="image/*"
-                        required />
+                    <label for="cv_applicant" class="form-label">CV</label>
+                    <input class="form-control" type="file" id="cv_applicant" name="cv_applicant" accept="image/*" />
                 </div>
                 <div class="text-center">
                     <a href="{{ route('dashboard.job-applicant.index') }}" class="btn btn-secondary">Back</a>

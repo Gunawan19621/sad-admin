@@ -63,10 +63,9 @@
                                         value="{{ $itemModals->title_awards }}" placeholder="Enter Team Name" />
                                 </div>
                                 <div class="">
-                                    <label for="image_awards" class="form-label">Image <span
-                                            class="text-danger">*</span></label>
+                                    <label for="image_awards" class="form-label">Image</label>
                                     <input class="form-control" type="file" id="image_awards" name="image_awards"
-                                        accept="image/*" required />
+                                        accept="image/*" />
                                 </div>
                             </div>
                         </div>

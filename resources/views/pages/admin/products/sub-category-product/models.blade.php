@@ -92,10 +92,9 @@
                                         placeholder="Enter Name Sub Category" required />
                                 </div>
                                 <div class="mb-3">
-                                    <label for="image_sub_category" class="form-label">Image <span
-                                            class="text-danger">*</span></label>
+                                    <label for="image_sub_category" class="form-label">Image</label>
                                     <input class="form-control" type="file" id="image_sub_category"
-                                        name="image_sub_category" accept="image/*" required />
+                                        name="image_sub_category" accept="image/*" />
                                 </div>
                             </div>
                         </div>

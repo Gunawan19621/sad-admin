@@ -106,12 +106,11 @@ class OurStoryController extends Controller
             'title_story' => 'required',
             'description_story' => 'required',
             'year_story' => 'required',
-            'image_story' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image_story' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ], [
             'title_story.required' => 'Title Story is required',
             'description_story.required' => 'Description Story is required',
             'year_story.required' => 'Year Story is required',
-            'image_story.required' => 'Image Story is required',
             'image_story.image' => 'Image Story must be an image',
             'image_story.mimes' => 'Image Story must be a file of type: jpeg, png, jpg, gif',
             'image_story.max' => 'Image Story must be a file of type: jpeg, png, jpg, gif and max 2048kb',

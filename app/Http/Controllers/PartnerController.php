@@ -88,10 +88,9 @@ class PartnerController extends Controller
     {
         $validasi = Validator::make($request->all(), [
             'name_partner' => 'required',
-            'image_partner' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image_partner' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ], [
             'name_partner.required' => 'Name Partner is required',
-            'image_partner.required' => 'Image Partner is required',
             'image_partner.image' => 'Image Partner must be an image',
             'image_partner.mimes' => 'Image Partner must be a file of type: jpeg, png, jpg, gif',
             'image_partner.max' => 'Image Partner must be a file of type: jpeg, png, jpg, gif and max 2048kb',

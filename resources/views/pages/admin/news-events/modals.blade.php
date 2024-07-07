@@ -31,10 +31,9 @@
                             placeholder="Enter Date" required />
                     </div>
                     <div class="mb-3">
-                        <label for="image_news_event" class="form-label">Image <span
-                                class="text-danger">*</span></label>
+                        <label for="image_news_event" class="form-label">Image</label>
                         <input class="form-control" type="file" id="image_news_event" name="image_news_event"
-                            accept="image/*" required />
+                            accept="image/*" />
                     </div>
                 </div>
                 <div class="modal-footer">

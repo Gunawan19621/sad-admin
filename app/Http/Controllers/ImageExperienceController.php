@@ -96,10 +96,9 @@ class ImageExperienceController extends Controller
     {
         $validasi = Validator::make($request->all(), [
             'id_experience' => 'required',
-            'image_experience' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image_experience' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ], [
             'id_experience.required' => 'Experience is required',
-            'image_experience.required' => 'Image Experience is required',
             'image_experience.image' => 'Image Experience must be an image',
             'image_experience.mimes' => 'Image Experience must be a file of type: jpeg, png, jpg, gif',
             'image_experience.max' => 'Image Experience must be a file of type: jpeg, png, jpg, gif and max 2048kb',

@@ -103,11 +103,10 @@ class OurVisionController extends Controller
         $validasi = Validator::make($request->all(), [
             'title_vision' => 'required',
             'description_vision' => 'required',
-            'image_vision' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image_vision' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ], [
             'title_vision.required' => 'Title Vision is required',
             'description_vision.required' => 'Description Vision is required',
-            'image_vision.required' => 'Image Vision is required',
             'image_vision.image' => 'Image Vision must be an image',
             'image_vision.mimes' => 'Image Vision must be a file of type: jpeg, png, jpg, gif',
             'image_vision.max' => 'Image Vision must be a file of type: jpeg, png, jpg, gif and max 2048kb',

@@ -78,10 +78,9 @@
                                         required />
                                 </div>
                                 <div class="mb-3">
-                                    <label for="image_activiti" class="form-label">Image <span
-                                            class="text-danger">*</span></label>
+                                    <label for="image_activiti" class="form-label">Image</label>
                                     <input class="form-control" type="file" id="image_activiti"
-                                        name="image_activiti" accept="image/*" required />
+                                        name="image_activiti" accept="image/*" />
                                 </div>
                             </div>
                         </div>

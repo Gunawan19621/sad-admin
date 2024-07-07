@@ -117,11 +117,10 @@ class SubCategoryController extends Controller
         $validasi = Validator::make($request->all(), [
             'id_category_product' => 'required',
             'name_sub_category' => 'required',
-            'image_sub_category' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image_sub_category' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ], [
             'id_category_product.required' => 'Category Product is required',
             'name_sub_category.required' => 'Name Sub Category is required',
-            'image_sub_category.required' => 'Image Sub Category is required',
             'image_sub_category.image' => 'Image Sub Category must be an image',
             'image_sub_category.mimes' => 'Image Sub Category must be a file of type: jpeg, png, jpg, gif',
             'image_sub_category.max' => 'Image Sub Category must be a file of type: jpeg, png, jpg, gif and max 2048kb',

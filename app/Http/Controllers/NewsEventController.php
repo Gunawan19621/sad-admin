@@ -102,12 +102,11 @@ class NewsEventController extends Controller
             'id_category_news_event' => 'required',
             'title_news_event' => 'required',
             'date_news_event' => 'required',
-            'image_news_event' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image_news_event' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ], [
             'id_category_news_event.required' => 'Category News Event is required',
             'title_news_event.required' => 'Title News Event is required',
             'date_news_event.required' => 'Date News Event is required',
-            'image_news_event.required' => 'Image News Event is required',
             'image_news_event.image' => 'Image News Event must be an image',
             'image_news_event.mimes' => 'Image News Event must be a file of type: jpeg, png, jpg, gif',
             'image_news_event.max' => 'Image News Event must be a file of type: jpeg, png, jpg, gif and max 2048kb',

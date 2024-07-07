@@ -141,8 +141,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="mb-3">
-                            <label for="image_product" class="form-label">Image <span
-                                    class="text-danger">*</span></label>
+                            <label for="image_product" class="form-label">Image</label>
                             <input class="form-control" type="file" id="image_product" name="image_product"
                                 accept="image/*" />
                         </div>

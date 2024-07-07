@@ -15,9 +15,8 @@
                             placeholder="Enter title image" required />
                     </div>
                     <div class="">
-                        <label for="image" class="form-label">Image <span class="text-danger">*</span></label>
-                        <input class="form-control" type="file" id="image" name="image" accept="image/*"
-                            required />
+                        <label for="image" class="form-label">Image</label>
+                        <input class="form-control" type="file" id="image" name="image" accept="image/*" />
                     </div>
                 </div>
                 <div class="modal-footer">

@@ -77,10 +77,9 @@
                                     </select>
                                 </div>
                                 <div class="">
-                                    <label for="image_experience" class="form-label">Image <span
-                                            class="text-danger">*</span></label>
+                                    <label for="image_experience" class="form-label">Image</label>
                                     <input class="form-control" type="file" id="image_experience"
-                                        name="image_experience" accept="image/*" required />
+                                        name="image_experience" accept="image/*" />
                                 </div>
                             </div>
                         </div>

@@ -75,12 +75,11 @@ class JobApplicantController extends Controller
             'email' => 'required',
             'question1' => '',
             'question2' => '',
-            'cv_applicant' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'cv_applicant' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ], [
             'firstname.required' => 'First Name is required',
             'lastname.required' => 'Last Name is required',
             'email.required' => 'Email is required',
-            'cv_applicant.required' => 'CV Applicant is required',
             'cv_applicant.image' => 'CV Applicant must be an image',
             'cv_applicant.mimes' => 'CV Applicant must be a file of type: jpeg, png, jpg, gif',
             'cv_applicant.max' => 'CV Applicant must be a file of type: jpeg, png, jpg, gif and max 2048kb',
