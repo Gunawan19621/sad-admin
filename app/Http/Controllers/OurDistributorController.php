@@ -20,14 +20,6 @@ class OurDistributorController extends Controller
         return view('pages.admin.distributors.index', $data);
     }
 
-    // /**
-    //  * Show the form for creating a new resource.
-    //  */
-    // public function create()
-    // {
-    //     //
-    // }
-
     /**
      * Store a newly created resource in storage.
      */
@@ -69,22 +61,6 @@ class OurDistributorController extends Controller
             return redirect()->back()->with('error', 'Data Distributor failed to added');
         }
     }
-
-    // /**
-    //  * Display the specified resource.
-    //  */
-    // public function show(string $id)
-    // {
-    //     //
-    // }
-
-    // /**
-    //  * Show the form for editing the specified resource.
-    //  */
-    // public function edit(string $id)
-    // {
-    //     //
-    // }
 
     /**
      * Update the specified resource in storage.
@@ -133,9 +109,9 @@ class OurDistributorController extends Controller
         }
     }
 
-    // /**
-    //  * Remove the specified resource from storage.
-    //  */
+    /**
+     * Remove the specified resource from storage.
+     */
     public function destroy(string $id)
     {
         try {

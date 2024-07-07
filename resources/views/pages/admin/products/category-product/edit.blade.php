@@ -42,7 +42,7 @@
                 </div>
                 <div class="text-center">
                     <a href="{{ route('dashboard.category-product.index') }}" class="btn btn-secondary">Back</a>
-                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button type="submit" class="btn btn-primary" id="submitButton">Save</button>
                 </div>
             </form>
         </div>

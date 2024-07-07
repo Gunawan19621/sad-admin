@@ -52,7 +52,7 @@
                                 <td>
                                     <button type="button" class="btn btn-sm btn-success" data-bs-toggle="modal"
                                         data-bs-target="#modalEdit{{ $items->id }}">Edit</button>
-                                    <form action="{{ route('dashboard.news-event.destroy', $items->id) }}" method="POST"
+                                    <form action="{{ route('dashboard.activiti.destroy', $items->id) }}" method="POST"
                                         style="display: inline;">
                                         @csrf
                                         @method('DELETE')

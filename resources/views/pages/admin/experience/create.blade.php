@@ -18,7 +18,8 @@
             <h5 class="mb-0">Create New Experience</h5>
         </div>
         <div class="card-body">
-            <form action="{{ route('dashboard.experience.store') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('dashboard.experience.store') }}" method="POST" enctype="multipart/form-data"
+                id="inputanForm">
                 @csrf
                 <div class="row">
                     <div class="col-md-6">
@@ -46,7 +47,7 @@
                 </div>
                 <div class="text-center">
                     <a href="{{ route('dashboard.experience.index') }}" class="btn btn-secondary">Back</a>
-                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button type="submit" class="btn btn-primary" id="submitButton">Save</button>
                 </div>
             </form>
         </div>

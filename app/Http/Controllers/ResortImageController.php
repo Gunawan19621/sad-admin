@@ -28,14 +28,6 @@ class ResortImageController extends Controller
         return view('pages.admin.experience.resort.resort-image.index', $data);
     }
 
-    // /**
-    //  * Show the form for creating a new resource.
-    //  */
-    // public function create()
-    // {
-    //     //
-    // }
-
     /**
      * Store a newly created resource in storage.
      */
@@ -72,22 +64,6 @@ class ResortImageController extends Controller
             return redirect()->back()->with('error', 'Data Resort Image failed to added');
         }
     }
-
-    // /**
-    //  * Display the specified resource.
-    //  */
-    // public function show(string $id)
-    // {
-    //     //
-    // }
-
-    // /**
-    //  * Show the form for editing the specified resource.
-    //  */
-    // public function edit(string $id)
-    // {
-    //     //
-    // }
 
     /**
      * Update the specified resource in storage.

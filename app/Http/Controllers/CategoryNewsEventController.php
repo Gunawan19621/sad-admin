@@ -20,14 +20,6 @@ class CategoryNewsEventController extends Controller
         return view('pages.admin.news-events.category-news-event.index', $data);
     }
 
-    // /**
-    //  * Show the form for creating a new resource.
-    //  */
-    // public function create()
-    // {
-    //     //
-    // }
-
     /**
      * Store a newly created resource in storage.
      */
@@ -53,22 +45,6 @@ class CategoryNewsEventController extends Controller
             return redirect()->back()->with('error', 'Data Category failed to added');
         }
     }
-
-    // /**
-    //  * Display the specified resource.
-    //  */
-    // public function show(string $id)
-    // {
-    //     //
-    // }
-
-    // /**
-    //  * Show the form for editing the specified resource.
-    //  */
-    // public function edit(string $id)
-    // {
-    //     //
-    // }
 
     /**
      * Update the specified resource in storage.

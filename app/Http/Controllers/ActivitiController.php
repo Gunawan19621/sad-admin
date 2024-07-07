@@ -21,14 +21,6 @@ class ActivitiController extends Controller
         return view('pages.admin.experience.activiti.index', $data);
     }
 
-    // // /**
-    // //  * Show the form for creating a new resource.
-    // //  */
-    // // public function create()
-    // // {
-    // //     //
-    // // }
-
     /**
      * Store a newly created resource in storage.
      */
@@ -67,22 +59,6 @@ class ActivitiController extends Controller
             return redirect()->back()->with('error', 'Data Activiti failed to added');
         }
     }
-
-    // // /**
-    // //  * Display the specified resource.
-    // //  */
-    // // public function show(string $id)
-    // // {
-    // //     //
-    // // }
-
-    // // /**
-    // //  * Show the form for editing the specified resource.
-    // //  */
-    // // public function edit(string $id)
-    // // {
-    // //     //
-    // // }
 
     /**
      * Update the specified resource in storage.
@@ -127,17 +103,17 @@ class ActivitiController extends Controller
         }
     }
 
-    // /**
-    //  * Remove the specified resource from storage.
-    //  */
-    // public function destroy(string $id)
-    // {
-    //     try {
-    //         $newsEvent = NewsEvent::findOrFail($id);
-    //         $newsEvent->delete();
-    //         return redirect()->back()->with('success', 'Data News & Event Question delete successfully');
-    //     } catch (\Throwable $th) {
-    //         return redirect()->back()->with('error', 'Data News & Event Question failed to delete');
-    //     }
-    // }
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(string $id)
+    {
+        try {
+            $activity = Activiti::findOrFail($id);
+            $activity->delete();
+            return redirect()->back()->with('success', 'Data Activity delete successfully');
+        } catch (\Throwable $th) {
+            return redirect()->back()->with('error', 'Data Activity failed to delete');
+        }
+    }
 }

@@ -48,6 +48,12 @@
     </div>
 
     @include('layouts.script')
+    <!-- auto disable form pada saat sudah di simpan-->
+    <script>
+        document.getElementById('inputanForm').addEventListener('submit', function() {
+            document.getElementById('submitButton').setAttribute('disabled', 'true');
+        });
+    </script>
 </body>
 
 </html>

@@ -20,26 +20,6 @@ class JobApplicantController extends Controller
         return view('pages.admin.work-with-us.index', $data);
     }
 
-    // /**
-    //  * Show the form for creating a new resource.
-    //  */
-    // public function create()
-    // {
-    //     $data = [
-    //         'ourStory' => OurStory::all(),
-    //         'active' => 'our-story',
-    //     ];
-    //     return view('pages.admin.layouts.our-story.create', $data);
-    // }
-
-    // /**
-    //  * Store a newly created resource in storage.
-    //  */
-    public function store(Request $request)
-    {
-        //
-    }
-
     /**
      * Display the specified resource.
      */

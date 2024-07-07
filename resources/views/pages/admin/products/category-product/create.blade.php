@@ -18,7 +18,8 @@
             <h5 class="mb-0">Create New Category</h5>
         </div>
         <div class="card-body">
-            <form action="{{ route('dashboard.category-product.store') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('dashboard.category-product.store') }}" method="POST" enctype="multipart/form-data"
+                id="inputanForm">
                 @csrf
                 <div class="mb-3">
                     <label class="form-label" for="name_category_product">Name Category <span
@@ -40,7 +41,7 @@
                 </div>
                 <div class="text-center">
                     <a href="{{ route('dashboard.category-product.index') }}" class="btn btn-secondary">Back</a>
-                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button type="submit" class="btn btn-primary" id="submitButton">Save</button>
                 </div>
             </form>
         </div>

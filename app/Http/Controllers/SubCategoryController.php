@@ -28,20 +28,6 @@ class SubCategoryController extends Controller
         return view('pages.admin.products.sub-category-product.index', $data);
     }
 
-    // /**
-    //  * Show the form for creating a new resource.
-    //  */
-    // public function create()
-    // {
-    //     $data = [
-    //         'distributor' => OurDistributor::all(),
-    //         'categoryProduct' => CategoryProduct::all(),
-    //         'product' => Product::all(),
-    //         'active' => 'product',
-    //     ];
-    //     return view('pages.admin.products.create', $data);
-    // }
-
     /**
      * Store a newly created resource in storage.
      */
@@ -80,34 +66,6 @@ class SubCategoryController extends Controller
             return redirect()->back()->with('error', 'Data Sub Category failed to added');
         }
     }
-
-    // /**
-    //  * Display the specified resource.
-    //  */
-    // public function show(string $id)
-    // {
-    //     $data = [
-    //         'distributor' => OurDistributor::all(),
-    //         'categoryProduct' => CategoryProduct::all(),
-    //         'product' => Product::findOrFail($id),
-    //         'active' => 'product',
-    //     ];
-    //     return view('pages.admin.products.show', $data);
-    // }
-
-    // /**
-    //  * Show the form for editing the specified resource.
-    //  */
-    // public function edit(string $id)
-    // {
-    //     $data = [
-    //         'distributor' => OurDistributor::all(),
-    //         'categoryProduct' => CategoryProduct::all(),
-    //         'product' => Product::findOrFail($id),
-    //         'active' => 'product',
-    //     ];
-    //     return view('pages.admin.products.edit', $data);
-    // }
 
     /**
      * Update the specified resource in storage.

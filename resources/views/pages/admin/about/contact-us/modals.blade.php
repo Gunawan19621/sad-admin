@@ -92,29 +92,11 @@
                                     class="text-danger">*</span></label>
                             <textarea name="google_maps" id="google_maps" class="form-control" cols="30" rows="3"
                                 placeholder="Enter Your Location" required>{{ $contact->google_maps }}</textarea>
-                            {{-- <div class="row">
-                                <div class="col-md-6">
-                                    <label class="form-label" for="google_maps_latitude">Latitude <span
-                                            class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" id="google_maps_latitude"
-                                        name="google_maps_latitude"
-                                        value="{{ isset($contact->google_maps['latitude']) ? $contact->google_maps['latitude'] : '' }}"
-                                        placeholder="Enter Latitude" required />
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="form-label" for="google_maps_longitude">Longitude <span
-                                            class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" id="google_maps_longitude"
-                                        name="google_maps_longitude"
-                                        value="{{ isset($contact->google_maps['longitude']) ? $contact->google_maps['longitude'] : '' }}"
-                                        placeholder="Enter Longitude" required />
-                                </div>
-                            </div> --}}
                         </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Save</button>
+                        <button type="submit" class="btn btn-primary" id="submitButton">Save</button>
                     </div>
                 </form>
             </div>
@@ -201,20 +183,6 @@
                         <label class="form-label">Maps</label>
                         <textarea name="google_maps" id="google_maps" class="form-control" cols="30" rows="3"
                             placeholder="Enter Your Location" readonly>{{ $itemModals->google_maps }}</textarea>
-                        {{-- <div class="row">
-                            <div class="col-md-6">
-                                <label class="form-label" for="google_maps_latitude">Latitude</label>
-                                <input class="form-control" id="google_maps_latitude"
-                                    value="{{ isset($itemModals->google_maps['latitude']) ? $itemModals->google_maps['latitude'] : '' }}"
-                                    readonly />
-                            </div>
-                            <div class="col-md-6">
-                                <label class="form-label" for="google_maps_longitude">Longitude</label>
-                                <input class="form-control" id="google_maps_longitude"
-                                    value="{{ isset($itemModals->google_maps['longitude']) ? $itemModals->google_maps['longitude'] : '' }}"
-                                    readonly />
-                            </div>
-                        </div> --}}
                     </div>
                 </div>
                 <div class="modal-footer">
