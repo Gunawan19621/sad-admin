@@ -14,7 +14,7 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-6">
-                    <h5 class="card-header">Partner</h5>
+                    <h4 class="card-header">Partner</h4>
                 </div>
                 <div class="col-6 card-header text-end">
                     <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalCreate">Add New
@@ -22,7 +22,7 @@
                 </div>
             </div>
             <div class="table-responsive text-nowrap">
-                <table class="table">
+                <table id="myTable" class="table table-hover">
                     <thead>
                         <tr>
                             <th>No</th>

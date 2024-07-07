@@ -10,9 +10,9 @@
 
     <div class="card">
         <div class="card-body">
-            <h5 class="card-header">Enquiry</h5>
+            <h4 class="card-header">Enquiry</h4>
             <div class="table-responsive text-nowrap">
-                <table class="table">
+                <table id="myTable" class="table table-hover">
                     <thead>
                         <tr>
                             <th>Name</th>

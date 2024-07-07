@@ -10,7 +10,7 @@
 
     <div class="card">
         <div class="card-body">
-            <h5 class="card-header">Menu Header</h5>
+            <h4 class="card-header">Menu Header</h4>
             <div class="table-responsive text-nowrap">
                 <table class="table">
                     <thead>

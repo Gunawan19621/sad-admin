@@ -47,8 +47,17 @@
         <div class="layout-overlay layout-menu-toggle"></div>
     </div>
 
+    <!-- Script -->
     @include('layouts.script')
-    <!-- auto disable form pada saat sudah di simpan-->
+
+    <!-- DataTables -->
+    <script>
+        $(document).ready(function() {
+            $('#myTable').DataTable();
+        });
+    </script>
+
+    <!-- auto disable form pada saat sudah di simpan (biar tidak dobel inputan)-->
     <script>
         document.getElementById('inputanForm').addEventListener('submit', function() {
             document.getElementById('submitButton').setAttribute('disabled', 'true');

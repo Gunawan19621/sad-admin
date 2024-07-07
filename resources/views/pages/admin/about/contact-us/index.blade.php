@@ -12,7 +12,7 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-6">
-                    <h5 class="card-header">Contact Us</h5>
+                    <h4 class="card-header">Contact Us</h4>
                 </div>
             </div>
             <div class="table-responsive text-nowrap">

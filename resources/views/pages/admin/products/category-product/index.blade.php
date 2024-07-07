@@ -14,14 +14,14 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-6">
-                    <h5 class="card-header">Category Product</h5>
+                    <h4 class="card-header">Category Product</h4>
                 </div>
                 <div class="col-6 card-header text-end">
                     <a href="{{ route('dashboard.category-product.create') }}" class="btn btn-success">Add New Category</a>
                 </div>
             </div>
             <div class="table-responsive text-nowrap">
-                <table class="table">
+                <table id="myTable" class="table table-hover">
                     <thead>
                         <tr>
                             <th>No</th>
