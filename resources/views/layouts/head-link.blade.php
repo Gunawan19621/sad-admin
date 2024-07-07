@@ -32,5 +32,5 @@
 <script src="{{ asset('assets/vendor/libs/ckfinder/ckfinder.js') }}"></script>
 
 <!-- css DataTables -->
-<link href="{{ asset('assets/vendor/libs/datatables/datatables.css') }}" rel="stylesheet">
+{{-- <link href="{{ asset('assets/vendor/libs/datatables/datatables.css') }}" rel="stylesheet"> tidak di pakai --}}
 <link href="{{ asset('assets/vendor/libs/datatables/datatables.min.css') }}" rel="stylesheet">

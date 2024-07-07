@@ -330,12 +330,12 @@ table.dataTable td.dt-empty {
     vertical-align: top;
 }
 
-table.dataTable th.dt-type-numeric,
+/* table.dataTable th.dt-type-numeric,
 table.dataTable th.dt-type-date,
 table.dataTable td.dt-type-numeric,
 table.dataTable td.dt-type-date {
     text-align: right;
-}
+} */
 
 table.dataTable thead th,
 table.dataTable thead td,
@@ -972,12 +972,12 @@ html.dark .dt-container .dt-paging .dt-paging-button:active {
     text-align: right;
 }
 
-*[dir=rtl] table.dataTable th.dt-type-numeric,
+/* *[dir=rtl] table.dataTable th.dt-type-numeric,
 *[dir=rtl] table.dataTable th.dt-type-date,
 *[dir=rtl] table.dataTable td.dt-type-numeric,
 *[dir=rtl] table.dataTable td.dt-type-date {
     text-align: left;
-}
+} */
 
 *[dir=rtl] div.dt-container div.dt-layout-cell.dt-start {
     text-align: right;

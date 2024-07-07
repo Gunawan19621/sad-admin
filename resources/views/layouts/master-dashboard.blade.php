@@ -30,7 +30,7 @@
                             <ol class="breadcrumb breadcrumb-style1">
                                 @section('breadcrumb')
                                     <li class="breadcrumb-item">
-                                        <a href="route('dashboard')">Home</a>
+                                        <a href="{{ route('dashboard') }}">Home</a>
                                     </li>
                                 @show
                             </ol>

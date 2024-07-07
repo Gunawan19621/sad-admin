@@ -17,7 +17,7 @@
 <script src="{{ asset('assets/js/dashboards-analytics.js') }}"></script>
 
 <!-- Js DataTables -->
-<script src="{{ asset('assets/vendor/libs/datatables/datatables.js') }}"></script>
+{{-- <script src="{{ asset('assets/vendor/libs/datatables/datatables.js') }}"></script>  tidak di pakai --}}
 <script src="{{ asset('assets/vendor/libs/datatables/datatables.min.js') }}"></script>
 
 <!-- Place this tag in your head or just before your close body tag. -->
