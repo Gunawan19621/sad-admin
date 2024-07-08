@@ -88,7 +88,7 @@
                     </div>
                 </div>
                 <div class="row g-3">
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="mb-3">
                             <label class="form-label" for="id_distributor">Name Distributor <span
                                     class="text-danger">*</span></label>
@@ -102,7 +102,7 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="mb-3">
                             <label class="form-label" for="id_sub_category">Sub Category <span
                                     class="text-danger">*</span></label>
@@ -116,14 +116,14 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="mb-3">
                             <label class="form-label" for="name_product">Name <span class="text-danger">*</span></label>
                             <input class="form-control" type="text" id="name_product" name="name_product"
                                 value="{{ $product->name_product }}" placeholder="Enter Name Product" required />
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="mb-3">
                             <label class="form-label" for="sub_product">Subtitle Product <span
                                     class="text-danger">*</span></label>
@@ -131,7 +131,7 @@
                                 value="{{ $product->sub_product }}" placeholder="Enter Subtitle Product" required />
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="mb-3">
                             <label class="form-label" for="cellaring">Cellaring <span
                                     class="text-danger">*</span></label>
@@ -139,7 +139,7 @@
                                 value="{{ $product->cellaring }}" placeholder="Enter Cellaring" required />
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="mb-3">
                             <label for="image_product" class="form-label">Image</label>
                             <input class="form-control" type="file" id="image_product" name="image_product"

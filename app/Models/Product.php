@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\SubCategory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Product extends Model
 {
@@ -31,4 +32,9 @@ class Product extends Model
         'created_at',
         'updated_at',
     ];
+
+    public function subCategory()
+    {
+        return $this->belongsTo(SubCategory::class, 'id_sub_category');
+    }
 }

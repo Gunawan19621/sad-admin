@@ -44,8 +44,8 @@
                         <input class="form-control" id="temperature" value="{{ $product->temperature }}" readonly />
                     </div>
                     <div class="mb-3">
-                        <label class="form-label" for="size_bottle">Size Bottle <span class="text-danger">*</span></label>
-                        <input class="form-control" id="size_bottle" value="{{ $product->size_bottle }}" readonly />
+                        <label class="form-label" for="cellaring">Cellaring <span class="text-danger">*</span></label>
+                        <input class="form-control" id="cellaring" value="{{ $product->cellaring }}" readonly />
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -71,7 +71,7 @@
                 </div>
             </div>
             <div class="row g-3">
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <div class="mb-3">
                         <label class="form-label" for="id_distributor">Name Distributor <span
                                 class="text-danger">*</span></label>
@@ -85,7 +85,7 @@
                         </select>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <div class="mb-3">
                         <label class="form-label" for="id_sub_category">Sub Category <span
                                 class="text-danger">*</span></label>
@@ -99,7 +99,7 @@
                         </select>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <div class="mb-3">
                         <label class="form-label" for="name_product">Name <span class="text-danger">*</span></label>
                         <input class="form-control" id="name_product" value="{{ $product->name_product }}" readonly />
@@ -107,11 +107,12 @@
                 </div>
                 <div class="col-md-6">
                     <div class="mb-3">
-                        <label class="form-label" for="cellaring">Cellaring <span class="text-danger">*</span></label>
-                        <input class="form-control" id="cellaring" value="{{ $product->cellaring }}" readonly />
+                        <label class="form-label" for="size_bottle">Size Bottle <span
+                                class="text-danger">*</span></label>
+                        <input class="form-control" id="size_bottle" value="{{ $product->size_bottle }}" readonly />
                     </div>
                 </div>
-                <div class="col-md-12">
+                <div class="col-md-6">
                     <div class="mb-3">
                         <label class="form-label" for="sub_product">Subtitle Product <span
                                 class="text-danger">*</span></label>
