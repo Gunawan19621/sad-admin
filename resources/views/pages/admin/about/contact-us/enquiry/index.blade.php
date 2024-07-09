@@ -32,10 +32,8 @@
                                 <td>
                                     <button type="button" class="btn btn-sm btn-success" data-bs-toggle="modal"
                                         data-bs-target="#modalEdit{{ $items->id }}">Edit</button>
-                                    <button type="button" class="btn btn-sm btn-info" data-bs-toggle="modal"
-                                        data-bs-target="#modalShow{{ $items->id }}">View</button>
-                                    {{-- <a href="{{ route('dashboard.enquiry.show', $items->id) }}"
-                                        class="btn btn-sm btn-info">View</a> --}}
+                                    <a href="{{ route('dashboard.enquiry.show', $items->id) }}"
+                                        class="btn btn-sm btn-info">View</a>
                                 </td>
                             </tr>
                         @empty

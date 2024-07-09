@@ -157,6 +157,7 @@ Route::prefix('dashboard')->name('dashboard.')->middleware('auth')->group(functi
     //Menu Enquiry
     Route::controller(App\Http\Controllers\EnquiryController::class)->group(function () {
         Route::get('enquiry', 'index')->name('enquiry.index');
+        Route::get('enquiry/{id}', 'show')->name('enquiry.show');
         Route::put('enquiry/{id}', 'update')->name('enquiry.update');
     });
 
