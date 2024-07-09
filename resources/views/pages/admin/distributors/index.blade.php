@@ -21,12 +21,11 @@
                         Distributor</button>
                 </div>
             </div>
-            <div class="table-responsive text-nowrap">
+            <div class="">
                 <table id="myTable" class="table table-hover">
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Image</th>
                             <th>Name</th>
                             <th>Address</th>
                             <th>Name Person</th>
@@ -41,14 +40,6 @@
                         @forelse ($ourDistributor as $items)
                             <tr>
                                 <td>{{ $no++ }}</td>
-                                <td>
-                                    @if (!empty($items->image_distributor))
-                                        <img src="{{ asset('images/' . $items->image_distributor) }}" alt="Image Team"
-                                            class="img-fluid" style="max-width: 50px;">
-                                    @else
-                                        -
-                                    @endif
-                                </td>
                                 <td>{{ $items->name_distributor ?? '-' }}</td>
                                 <td>{{ $items->address_distributor ?? '-' }}</td>
                                 <td>{{ $items->name_person_distributor ?? '-' }}</td>
@@ -56,8 +47,6 @@
                                 <td>
                                     <button type="button" class="btn btn-sm btn-success" data-bs-toggle="modal"
                                         data-bs-target="#modalEdit{{ $items->id }}">Edit</button>
-                                    <button type="button" class="btn btn-sm btn-info" data-bs-toggle="modal"
-                                        data-bs-target="#modalShow{{ $items->id }}">View</button>
                                     <form action="{{ route('dashboard.our-distributor.destroy', $items->id) }}"
                                         method="POST" style="display: inline;">
                                         @csrf

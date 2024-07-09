@@ -17,18 +17,17 @@
                     <h4 class="card-header">Activiti</h4>
                 </div>
                 <div class="col-6 card-header text-end">
-                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalCreate">Add New
-                        Activiti</button>
+                    <a href="{{ route('dashboard.activiti.create') }}" class="btn btn-success">Add New Activiti</a>
                 </div>
             </div>
-            <div class="table-responsive text-nowrap">
+            <div class="">
                 <table id="myTable" class="table table-hover">
                     <thead>
                         <tr>
                             <th>No</th>
                             <th>Image</th>
                             <th>Title</th>
-                            <th>Date</th>
+                            <th>subtitle_activiti</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -48,10 +47,12 @@
                                     @endif
                                 </td>
                                 <td>{{ $items->title_activiti ?? '-' }}</td>
-                                <td>{{ $items->date_activiti ?? '-' }}</td>
+                                <td>{{ $items->subtitle_activiti ?? '-' }}</td>
                                 <td>
-                                    <button type="button" class="btn btn-sm btn-success" data-bs-toggle="modal"
-                                        data-bs-target="#modalEdit{{ $items->id }}">Edit</button>
+                                    <a href="{{ route('dashboard.activiti.edit', $items->id) }}"
+                                        class="btn btn-sm btn-success">Edit</a>
+                                    <a href="{{ route('dashboard.activiti.show', $items->id) }}"
+                                        class="btn btn-sm btn-info">View</a>
                                     <form action="{{ route('dashboard.activiti.destroy', $items->id) }}" method="POST"
                                         style="display: inline;">
                                         @csrf
@@ -73,5 +74,5 @@
     </div>
 
     <!-- Modal -->
-    @include('pages.admin.experience.activiti.modals')
+    {{-- @include('pages.admin.experience.activiti.modals') --}}
 @endsection

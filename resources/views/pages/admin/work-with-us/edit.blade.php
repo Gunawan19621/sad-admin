@@ -37,29 +37,37 @@
                     </div>
                     <div class="col-md-8">
                         <div class="mb-3">
-                            <label class="form-label" for="firstname">Firstname <span class="text-danger">*</span></label>
+                            <label class="form-label" for="firstname">First Name <span class="text-danger">*</span></label>
                             <input class="form-control" type="text" id="firstname" name="firstname"
                                 value="{{ $jobApplicant->firstname }}" placeholder="Enter Firstname" required />
                         </div>
                         <div class="mb-3">
-                            <label class="form-label" for="lastname">Lastname <span class="text-danger">*</span></label>
+                            <label class="form-label" for="lastname">Last Name <span class="text-danger">*</span></label>
                             <input class="form-control" type="text" id="lastname" name="lastname"
                                 value="{{ $jobApplicant->lastname }}" placeholder="Enter Lastname" required />
                         </div>
                         <div class="mb-3">
-                            <label class="form-label" for="email">Email <span class="text-danger">*</span></label>
+                            <label class="form-label" for="email">Email Address <span
+                                    class="text-danger">*</span></label>
                             <input class="form-control" type="email" id="email" name="email"
                                 value="{{ $jobApplicant->email }}" placeholder="Enter Email" required />
                         </div>
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label" for="question1">Question 1</label>
-                    <input class="form-control" type="text" id="question1" name="question1"
-                        value="{{ $jobApplicant->question1 }}" placeholder="Enter Question 1" />
+                    <label class="form-label" for="question1">Where are you interested in working?</label>
+                    <select class="form-select" id="question1" name="question1" required>
+                        <option disabled selected>Select one</option>
+                        @foreach ($jobPosition as $data)
+                            <option value="{{ $data->id }}"
+                                {{ $jobApplicant->question1 == $data->id ? 'selected' : '' }}>
+                                {{ $data->name }}</option>
+                        @endforeach
+                    </select>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label" for="question2">Question 2</label>
+                    <label class="form-label" for="question2">What gets you excited about working at Sumber Air
+                        Dewa?</label>
                     <input class="form-control" type="text" id="question2" name="question2"
                         value="{{ $jobApplicant->question2 }}" placeholder="Enter Question 2" />
                 </div>

@@ -11,7 +11,7 @@
     <div class="card">
         <div class="card-body">
             <h4 class="card-header">Enquiry</h4>
-            <div class="table-responsive text-nowrap">
+            <div class=" ">
                 <table id="myTable" class="table table-hover">
                     <thead>
                         <tr>
@@ -28,12 +28,14 @@
                                 <td>{{ $items->name ?? '-' }}</td>
                                 <td>{{ $items->phone ?? '-' }}</td>
                                 <td>{{ $items->email ?? '-' }}</td>
-                                <td>{{ $items->enquiring ?? '-' }}</td>
+                                <td>{{ $items->name ?? '-' }}</td>
                                 <td>
                                     <button type="button" class="btn btn-sm btn-success" data-bs-toggle="modal"
                                         data-bs-target="#modalEdit{{ $items->id }}">Edit</button>
-                                    <a href="{{ route('dashboard.enquiry.show', $items->id) }}"
-                                        class="btn btn-sm btn-info">View</a>
+                                    <button type="button" class="btn btn-sm btn-info" data-bs-toggle="modal"
+                                        data-bs-target="#modalShow{{ $items->id }}">View</button>
+                                    {{-- <a href="{{ route('dashboard.enquiry.show', $items->id) }}"
+                                        class="btn btn-sm btn-info">View</a> --}}
                                 </td>
                             </tr>
                         @empty

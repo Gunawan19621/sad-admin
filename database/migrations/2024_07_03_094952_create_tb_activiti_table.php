@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('image_activiti');
             $table->string('title_activiti');
-            $table->date('date_activiti');
+            $table->string('subtitle_activiti');
+            $table->text('description_activiti');
             $table->timestamps();
         });
     }

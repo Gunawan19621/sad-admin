@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('tb_our_distributors', function (Blueprint $table) {
             $table->id();
             $table->string('name_distributor');
-            $table->string('image_distributor')->nullable();
             $table->string('address_distributor');
             $table->string('name_person_distributor');
             $table->string('phone_distributor');

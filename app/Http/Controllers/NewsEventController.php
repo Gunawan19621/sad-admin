@@ -29,6 +29,19 @@ class NewsEventController extends Controller
     }
 
     /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+        $data = [
+            'newsEvent' => NewsEvent::all(),
+            'categoryNewsEvent' => CategoryNewsEvent::all(),
+            'active' => 'newsEvent'
+        ];
+        return view('pages.admin.news-events.create', $data);
+    }
+
+    /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
@@ -36,12 +49,13 @@ class NewsEventController extends Controller
         $validasi = Validator::make($request->all(), [
             'id_category_news_event' => 'required',
             'title_news_event' => 'required',
-            'date_news_event' => 'required',
+            'date_news_event' => '',
+            'description_news_event' => 'required',
             'image_news_event' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ], [
             'id_category_news_event.required' => 'Category News Event is required',
             'title_news_event.required' => 'Title News Event is required',
-            'date_news_event.required' => 'Date News Event is required',
+            'description_news_event.required' => 'Title News Event is required',
             'image_news_event.required' => 'Image News Event is required',
             'image_news_event.image' => 'Image News Event must be an image',
             'image_news_event.mimes' => 'Image News Event must be a file of type: jpeg, png, jpg, gif',
@@ -63,10 +77,36 @@ class NewsEventController extends Controller
 
             NewsEvent::create($validatedData);
 
-            return redirect()->back()->with('success', 'Data News & Event add successfully');
+            return redirect()->route('dashboard.news-event.index')->with('success', 'Data News & Event add successfully');
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Data News & Event failed to added');
         }
+    }
+
+    /**
+     * Display the specified resource.
+     */
+    public function show(string $id)
+    {
+        $data = [
+            'newsEvent' => NewsEvent::findOrFail($id),
+            'categoryNewsEvent' => CategoryNewsEvent::all(),
+            'active' => 'newsEvent',
+        ];
+        return view('pages.admin.news-events.show', $data);
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(string $id)
+    {
+        $data = [
+            'newsEvent' => NewsEvent::findOrFail($id),
+            'categoryNewsEvent' => CategoryNewsEvent::all(),
+            'active' => 'newsEvent',
+        ];
+        return view('pages.admin.news-events.edit', $data);
     }
 
     /**
@@ -77,12 +117,13 @@ class NewsEventController extends Controller
         $validasi = Validator::make($request->all(), [
             'id_category_news_event' => 'required',
             'title_news_event' => 'required',
-            'date_news_event' => 'required',
+            'date_news_event' => '',
+            'description_news_event' => 'required',
             'image_news_event' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ], [
             'id_category_news_event.required' => 'Category News Event is required',
             'title_news_event.required' => 'Title News Event is required',
-            'date_news_event.required' => 'Date News Event is required',
+            'description_news_event.required' => 'Title News Event is required',
             'image_news_event.image' => 'Image News Event must be an image',
             'image_news_event.mimes' => 'Image News Event must be a file of type: jpeg, png, jpg, gif',
             'image_news_event.max' => 'Image News Event must be a file of type: jpeg, png, jpg, gif and max 2048kb',
@@ -108,7 +149,7 @@ class NewsEventController extends Controller
 
             $data->update($validatedData);
 
-            return redirect()->back()->with('success', 'Data News & Event updated successfully');
+            return redirect()->route('dashboard.news-event.index')->with('success', 'Data News & Event updated successfully');
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Data News & Event failed to update');
         }

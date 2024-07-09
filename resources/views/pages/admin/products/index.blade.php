@@ -20,7 +20,7 @@
                     <a href="{{ route('dashboard.product.create') }}" class="btn btn-success">Add New Product</a>
                 </div>
             </div>
-            <div class="table-responsive text-nowrap">
+            <div class="">
                 <table id="myTable" class="table table-hover">
                     <thead>
                         <tr>

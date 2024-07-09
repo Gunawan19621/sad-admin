@@ -20,7 +20,7 @@
                     <a href="{{ route('dashboard.our-vision.create') }}" class="btn btn-success">Add New Vision</a>
                 </div>
             </div>
-            <div class="table-responsive text-nowrap">
+            <div class="">
                 <table id="myTable" class="table table-hover">
                     <thead>
                         <tr>

@@ -11,9 +11,10 @@ class NewsEvent extends Model
     protected $table = 'tb_news_event';
     protected $fillable = [
         'id_category_news_event',
-        'image_news_event',
         'title_news_event',
+        'image_news_event',
         'date_news_event',
+        'description_news_event',
         'created_at',
         'updated_at',
     ];

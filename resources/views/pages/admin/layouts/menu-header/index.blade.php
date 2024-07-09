@@ -11,8 +11,8 @@
     <div class="card">
         <div class="card-body">
             <h4 class="card-header">Menu Header</h4>
-            <div class="table-responsive text-nowrap">
-                <table class="table">
+            <div class="">
+                <table id="myTable" class="table table-hover">
                     <thead>
                         <tr>
                             <th>Menu</th>

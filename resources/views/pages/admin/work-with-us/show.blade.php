@@ -47,11 +47,19 @@
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label" for="question1">Question 1</label>
-                    <input class="form-control" id="question1" value="{{ $jobApplicant->question1 }}" readonly />
+                    <label class="form-label" for="question1">Where are you interested in working?</label>
+                    <select class="form-select" id="question1" name="question1" disabled>
+                        <option disabled selected>Select one</option>
+                        @foreach ($jobPosition as $data)
+                            <option value="{{ $data->id }}"
+                                {{ $jobApplicant->question1 == $data->id ? 'selected' : '' }}>
+                                {{ $data->name }}</option>
+                        @endforeach
+                    </select>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label" for="question2">Question 2</label>
+                    <label class="form-label" for="question2">What gets you excited about working at Sumber Air
+                        Dewa?</label>
                     <input class="form-control" id="question2" value="{{ $jobApplicant->question2 }}" readonly />
                 </div>
             </div>

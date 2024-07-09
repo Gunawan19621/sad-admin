@@ -32,8 +32,8 @@
                         <div class="mb-3">
                             <label class="form-label" for="subtitle_resort">Subtitle <span
                                     class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="subtitle_resort" name="subtitle_resort"
-                                placeholder="Enter Subtitle Resort" required />
+                            <textarea class="form-control" name="subtitle_resort" id="subtitle_resort" cols="30" rows="3"
+                                placeholder="Enter Subtitle Resort" required></textarea>
                         </div>
                     </div>
                 </div>

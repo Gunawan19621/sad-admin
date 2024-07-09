@@ -25,7 +25,7 @@
                 <div class="col-md-6">
                     <div class="mb-3">
                         <label class="form-label" for="subtitle_resort">Subtitle</label>
-                        <input class="form-control" id="subtitle_resort" value="{{ $resort->subtitle_resort }}" readonly />
+                        <textarea class="form-control" id="subtitle_resort" cols="30" rows="3" readonly>{{ $resort->subtitle_resort }}</textarea>
                     </div>
                 </div>
             </div>

@@ -18,7 +18,7 @@
                     <a href="{{ route('dashboard.our-story.create') }}" class="btn btn-success">Add New Story</a>
                 </div>
             </div>
-            <div class="table-responsive text-nowrap">
+            <div class="">
                 <table id="myTable" class="table table-hover">
                     <thead>
                         <tr>

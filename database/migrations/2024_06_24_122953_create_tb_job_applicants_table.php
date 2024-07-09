@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('firstname');
             $table->string('lastname');
             $table->string('email')->unique();
-            $table->string('question1')->nullable();
+            $table->integer('question1')->nullable();
             $table->string('question2')->nullable();
             $table->string('cv_applicant'); //
             $table->timestamps();

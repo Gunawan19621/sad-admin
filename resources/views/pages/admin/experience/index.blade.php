@@ -20,7 +20,7 @@
                     <a href="{{ route('dashboard.experience.create') }}" class="btn btn-success">Add New Experience</a>
                 </div>
             </div>
-            <div class="table-responsive text-nowrap">
+            <div class="">
                 <table id="myTable" class="table table-hover">
                     <thead>
                         <tr>

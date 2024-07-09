@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('tb_product', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_distributor');
             $table->integer('id_sub_category');
             $table->string('image_product');
             $table->string('name_product');

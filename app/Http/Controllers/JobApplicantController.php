@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\JobPosition;
 use App\Models\JobApplicant;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -27,6 +28,7 @@ class JobApplicantController extends Controller
     {
         $data = [
             'jobApplicant' => JobApplicant::findOrFail($id),
+            'jobPosition' => JobPosition::all(),
             'active' => 'jobApplicant',
         ];
         return view('pages.admin.work-with-us.show', $data);
@@ -39,6 +41,7 @@ class JobApplicantController extends Controller
     {
         $data = [
             'jobApplicant' => JobApplicant::findOrFail($id),
+            'jobPosition' => JobPosition::all(),
             'active' => 'jobApplicant',
         ];
         return view('pages.admin.work-with-us.edit', $data);

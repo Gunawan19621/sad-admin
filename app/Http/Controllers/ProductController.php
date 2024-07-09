@@ -34,7 +34,7 @@ class ProductController extends Controller
     public function create()
     {
         $data = [
-            'distributor' => OurDistributor::all(),
+            // 'distributor' => OurDistributor::all(),
             'subCategory' => SubCategory::all(),
             'product' => Product::all(),
             'active' => 'product',
@@ -50,16 +50,16 @@ class ProductController extends Controller
         $validasi = Validator::make(
             $request->all(),
             [
-                'id_distributor' => 'required',
+                // 'id_distributor' => 'required',
                 'id_sub_category' => 'required',
                 'name_product' => 'required',
                 'sub_product' => 'required',
                 'year_product' => 'required|integer',
-                'alcohol' => 'required|numeric',
-                'temperature' => 'required|integer',
+                'alcohol' => 'required',
+                'temperature' => 'required',
                 'cellaring' => 'required',
-                'total_acidity' => 'required|numeric',
-                'ressidual_sugar' => 'required|numeric',
+                'total_acidity' => 'required',
+                'ressidual_sugar' => 'required',
                 'bottle_produced' => 'required|integer',
                 'size_bottle' => 'required',
                 'award_won' => 'required',
@@ -70,7 +70,6 @@ class ProductController extends Controller
                 'image_product' => 'required|mimes:jpeg,png,jpg|max:2048',
             ],
             [
-                'id_distributor.required' => 'Distributor is required',
                 'id_sub_category.required' => 'Sub Category is required',
                 'name_product.required' => 'Name Product is required',
                 'sub_product.required' => 'Sub Product is required',
@@ -106,7 +105,6 @@ class ProductController extends Controller
             }
 
             Product::create([
-                'id_distributor' => $request->id_distributor,
                 'id_sub_category' => $request->id_sub_category,
                 'name_product' => $request->name_product,
                 'sub_product' => $request->sub_product,
@@ -139,7 +137,7 @@ class ProductController extends Controller
     public function show(string $id)
     {
         $data = [
-            'distributor' => OurDistributor::all(),
+            // 'distributor' => OurDistributor::all(),
             'subCategory' => SubCategory::all(),
             'product' => Product::findOrFail($id),
             'active' => 'product',
@@ -153,7 +151,7 @@ class ProductController extends Controller
     public function edit(string $id)
     {
         $data = [
-            'distributor' => OurDistributor::all(),
+            // 'distributor' => OurDistributor::all(),
             'subCategory' => SubCategory::all(),
             'product' => Product::findOrFail($id),
             'active' => 'product',
@@ -169,16 +167,15 @@ class ProductController extends Controller
         $validasi = Validator::make(
             $request->all(),
             [
-                'id_distributor' => 'required',
                 'id_sub_category' => 'required',
                 'name_product' => 'required',
                 'sub_product' => 'required',
                 'year_product' => 'required|integer',
-                'alcohol' => 'required|numeric',
-                'temperature' => 'required|integer',
+                'alcohol' => 'required',
+                'temperature' => 'required',
                 'cellaring' => 'required',
-                'total_acidity' => 'required|numeric',
-                'ressidual_sugar' => 'required|numeric',
+                'total_acidity' => 'required',
+                'ressidual_sugar' => 'required',
                 'bottle_produced' => 'required|integer',
                 'size_bottle' => 'required',
                 'award_won' => 'required',
@@ -189,7 +186,6 @@ class ProductController extends Controller
                 'image_product' => 'mimes:jpeg,png,jpg|max:2048',
             ],
             [
-                'id_distributor.required' => 'Distributor is required',
                 'id_sub_category.required' => 'Sub Category is required',
                 'name_product.required' => 'Name Product is required',
                 'sub_product.required' => 'Sub Product is required',
@@ -231,7 +227,6 @@ class ProductController extends Controller
             }
 
             $product->update([
-                'id_distributor' => $request->id_distributor,
                 'id_sub_category' => $request->id_sub_category,
                 'name_product' => $request->name_product,
                 'sub_product' => $request->sub_product,

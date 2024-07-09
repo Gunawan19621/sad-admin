@@ -17,16 +17,18 @@
                     <h4 class="card-header">Category Product</h4>
                 </div>
                 <div class="col-6 card-header text-end">
-                    <a href="{{ route('dashboard.category-product.create') }}" class="btn btn-success">Add New Category</a>
+                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalCreate">Add New
+                        Category</button>
                 </div>
             </div>
-            <div class="table-responsive text-nowrap">
+            <div class="">
                 <table id="myTable" class="table table-hover">
                     <thead>
                         <tr>
                             <th>No</th>
                             <th>Category Product</th>
                             <th>Subtitle</th>
+                            <th>Description</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -39,11 +41,16 @@
                                 <td>{{ $no++ }}</td>
                                 <td>{{ $items->name_category_product ?? '-' }}</td>
                                 <td>{{ $items->subtitle_category ?? '-' }}</td>
+                                <td>{{ $items->description_category_product ?? '-' }}</td>
                                 <td>
-                                    <a href="{{ route('dashboard.category-product.edit', $items->id) }}"
+                                    <button type="button" class="btn btn-sm btn-success" data-bs-toggle="modal"
+                                        data-bs-target="#modalEdit{{ $items->id }}">Edit</button>
+                                    {{-- <button type="button" class="btn btn-sm btn-info" data-bs-toggle="modal"
+                                        data-bs-target="#modalEdit{{ $items->id }}">View</button> --}}
+                                    {{-- <a href="{{ route('dashboard.category-product.edit', $items->id) }}"
                                         class="btn btn-sm btn-success">Edit</a>
                                     <a href="{{ route('dashboard.category-product.show', $items->id) }}"
-                                        class="btn btn-sm btn-info">View</a>
+                                        class="btn btn-sm btn-info">View</a> --}}
                                     <form action="{{ route('dashboard.category-product.destroy', $items->id) }}"
                                         method="POST" style="display: inline;">
                                         @csrf
@@ -63,4 +70,7 @@
             </div>
         </div>
     </div>
+
+    <!-- Modal -->
+    @include('pages.admin.products.category-product.models')
 @endsection

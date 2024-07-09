@@ -15,7 +15,7 @@
                     <h4 class="card-header">Contact Us</h4>
                 </div>
             </div>
-            <div class="table-responsive text-nowrap">
+            <div class=" ">
                 <table class="table">
                     <thead>
                         <tr>

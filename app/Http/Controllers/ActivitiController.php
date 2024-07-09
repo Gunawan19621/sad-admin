@@ -22,17 +22,32 @@ class ActivitiController extends Controller
     }
 
     /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+        $data = [
+            'activiti' => Activiti::all(),
+            'active' => 'activiti'
+        ];
+        return view('pages.admin.experience.activiti.create', $data);
+    }
+
+    /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
     {
+        // dd($request->all());
         $validasi = Validator::make($request->all(), [
             'title_activiti' => 'required',
-            'date_activiti' => 'required',
+            'subtitle_activiti' => 'required',
+            'description_activiti' => 'required',
             'image_activiti' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ], [
             'title_activiti.required' => 'Title Activiti is required',
-            'date_activiti.required' => 'Date Activiti is required',
+            'subtitle_activiti.required' => 'Subtitle Activiti is required',
+            'description_activiti.required' => 'Description Activiti is required',
             'image_activiti.required' => 'Image Activiti is required',
             'image_activiti.image' => 'Image Activiti must be an image',
             'image_activiti.mimes' => 'Image Activiti must be a file of type: jpeg, png, jpg, gif',
@@ -54,10 +69,34 @@ class ActivitiController extends Controller
 
             Activiti::create($validatedData);
 
-            return redirect()->back()->with('success', 'Data Activiti add successfully');
+            return redirect()->route('dashboard.activiti.index')->with('success', 'Data Activiti add successfully');
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Data Activiti failed to added');
         }
+    }
+
+    /**
+     * Display the specified resource.
+     */
+    public function show(string $id)
+    {
+        $data = [
+            'activiti' => Activiti::findOrFail($id),
+            'active' => 'activiti',
+        ];
+        return view('pages.admin.experience.activiti.show', $data);
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(string $id)
+    {
+        $data = [
+            'activiti' => Activiti::findOrFail($id),
+            'active' => 'activiti',
+        ];
+        return view('pages.admin.experience.activiti.edit', $data);
     }
 
     /**
@@ -65,13 +104,16 @@ class ActivitiController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        // dd($request->all());
         $validasi = Validator::make($request->all(), [
             'title_activiti' => 'required',
-            'date_activiti' => 'required',
+            'subtitle_activiti' => 'required',
+            'description_activiti' => 'required',
             'image_activiti' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ], [
             'title_activiti.required' => 'Title Activiti is required',
-            'date_activiti.required' => 'Date Activiti is required',
+            'subtitle_activiti.required' => 'Subtitle Activiti is required',
+            'description_activiti.required' => 'Description Activiti is required',
             'image_activiti.image' => 'Image Activiti must be an image',
             'image_activiti.mimes' => 'Image Activiti must be a file of type: jpeg, png, jpg, gif',
             'image_activiti.max' => 'Image Activiti must be a file of type: jpeg, png, jpg, gif and max 2048kb',
@@ -97,7 +139,7 @@ class ActivitiController extends Controller
 
             $data->update($validatedData);
 
-            return redirect()->back()->with('success', 'Data Activiti updated successfully');
+            return redirect()->route('dashboard.activiti.index')->with('success', 'Data Activiti updated successfully');
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Data Activiti failed to update');
         }

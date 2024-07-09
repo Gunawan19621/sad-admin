@@ -84,6 +84,15 @@ Route::prefix('dashboard')->name('dashboard.')->middleware('auth')->group(functi
         Route::put('menu-header/{id}', 'update')->name('menu-header.update');
     });
 
+    //Aboute
+    //Menu About
+    Route::controller(App\Http\Controllers\AboutController::class)->group(function () {
+        Route::get('about', 'index')->name('about.index');
+        Route::get('about/{id}', 'show')->name('about.show');
+        Route::get('about/{id}/edit', 'edit')->name('about.edit');
+        Route::put('about/{id}', 'update')->name('about.update');
+    });
+
     //Menu Our Team
     Route::controller(App\Http\Controllers\OurTeamController::class)->group(function () {
         Route::get('our-team', 'index')->name('our-team.index');
@@ -148,7 +157,6 @@ Route::prefix('dashboard')->name('dashboard.')->middleware('auth')->group(functi
     //Menu Enquiry
     Route::controller(App\Http\Controllers\EnquiryController::class)->group(function () {
         Route::get('enquiry', 'index')->name('enquiry.index');
-        Route::get('enquiry/{id}', 'show')->name('enquiry.show');
         Route::put('enquiry/{id}', 'update')->name('enquiry.update');
     });
 
@@ -203,11 +211,29 @@ Route::prefix('dashboard')->name('dashboard.')->middleware('auth')->group(functi
     //Menu Activiti
     Route::controller(App\Http\Controllers\ActivitiController::class)->group(function () {
         Route::get('activiti', 'index')->name('activiti.index');
+        Route::get('activiti/create', 'create')->name('activiti.create');
         Route::post('activiti/store', 'store')->name('activiti.store');
+        Route::get('activiti/{id}', 'show')->name('activiti.show');
+        Route::get('activiti/{id}/edit', 'edit')->name('activiti.edit');
         Route::put('activiti/{id}', 'update')->name('activiti.update');
         Route::delete('activiti/delete/{id}', 'destroy')->name('activiti.destroy');
     });
 
+    //Menu Image Activiti
+    Route::controller(App\Http\Controllers\ImageActivitiController::class)->group(function () {
+        Route::get('image-activiti', 'index')->name('image-activiti.index');
+        Route::post('image-activiti/store', 'store')->name('image-activiti.store');
+        Route::put('image-activiti/{id}', 'update')->name('image-activiti.update');
+        Route::delete('image-activiti/delete/{id}', 'destroy')->name('image-activiti.destroy');
+    });
+
+    //Menu Activiti Price
+    Route::controller(App\Http\Controllers\ActivitiPriceController::class)->group(function () {
+        Route::get('activiti-price', 'index')->name('activiti-price.index');
+        Route::post('activiti-price/store', 'store')->name('activiti-price.store');
+        Route::put('activiti-price/{id}', 'update')->name('activiti-price.update');
+        Route::delete('activiti-price/delete/{id}', 'destroy')->name('activiti-price.destroy');
+    });
 
     //Menu Our Distributor
     Route::controller(App\Http\Controllers\OurDistributorController::class)->group(function () {
@@ -221,10 +247,7 @@ Route::prefix('dashboard')->name('dashboard.')->middleware('auth')->group(functi
     //Menu Category Product
     Route::controller(App\Http\Controllers\CategoryProductController::class)->group(function () {
         Route::get('category-product', 'index')->name('category-product.index');
-        Route::get('category-product/create', 'create')->name('category-product.create');
         Route::post('category-product/store', 'store')->name('category-product.store');
-        Route::get('category-product/{id}', 'show')->name('category-product.show');
-        Route::get('category-product/{id}/edit', 'edit')->name('category-product.edit');
         Route::put('category-product/{id}', 'update')->name('category-product.update');
         Route::delete('category-product/delete/{id}', 'destroy')->name('category-product.destroy');
     });
@@ -269,7 +292,10 @@ Route::prefix('dashboard')->name('dashboard.')->middleware('auth')->group(functi
     //Menu News & Event
     Route::controller(App\Http\Controllers\NewsEventController::class)->group(function () {
         Route::get('news-event', 'index')->name('news-event.index');
+        Route::get('news-event/create', 'create')->name('news-event.create');
         Route::post('news-event/store', 'store')->name('news-event.store');
+        Route::get('news-event/{id}', 'show')->name('news-event.show');
+        Route::get('news-event/{id}/edit', 'edit')->name('news-event.edit');
         Route::put('news-event/{id}', 'update')->name('news-event.update');
         Route::delete('news-event/delete/{id}', 'destroy')->name('news-event.destroy');
     });

@@ -11,7 +11,6 @@ class OurDistributor extends Model
     protected $table = 'tb_our_distributors';
     protected $fillable = [
         'name_distributor',
-        'image_distributor',
         'address_distributor',
         'name_person_distributor',
         'phone_distributor',

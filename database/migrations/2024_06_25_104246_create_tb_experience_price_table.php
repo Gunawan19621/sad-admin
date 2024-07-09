@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('tb_experience_price', function (Blueprint $table) {
             $table->id();
             $table->integer('id_experience');
-            // $table->string('name_experience');
             $table->integer('price_experience');
             $table->string('unit_experience');
             $table->timestamps();

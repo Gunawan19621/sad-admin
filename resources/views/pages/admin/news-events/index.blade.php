@@ -17,11 +17,10 @@
                     <h4 class="card-header">News & Event</h4>
                 </div>
                 <div class="col-6 card-header text-end">
-                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalCreate">Add New
-                        News or Event</button>
+                    <a href="{{ route('dashboard.news-event.create') }}" class="btn btn-success">Add New News or Event</a>
                 </div>
             </div>
-            <div class="table-responsive text-nowrap">
+            <div class="">
                 <table id="myTable" class="table table-hover">
                     <thead>
                         <tr>
@@ -52,8 +51,10 @@
                                 <td>{{ $items->title_news_event ?? '-' }}</td>
                                 <td>{{ $items->date_news_event ?? '-' }}</td>
                                 <td>
-                                    <button type="button" class="btn btn-sm btn-success" data-bs-toggle="modal"
-                                        data-bs-target="#modalEdit{{ $items->id }}">Edit</button>
+                                    <a href="{{ route('dashboard.news-event.edit', $items->id) }}"
+                                        class="btn btn-sm btn-success">Edit</a>
+                                    <a href="{{ route('dashboard.news-event.show', $items->id) }}"
+                                        class="btn btn-sm btn-info">View</a>
                                     <form action="{{ route('dashboard.news-event.destroy', $items->id) }}" method="POST"
                                         style="display: inline;">
                                         @csrf
@@ -75,5 +76,5 @@
     </div>
 
     <!-- Modal -->
-    @include('pages.admin.news-events.modals')
+    {{-- @include('pages.admin.news-events.modals') --}}
 @endsection

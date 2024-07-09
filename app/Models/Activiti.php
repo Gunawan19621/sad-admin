@@ -12,7 +12,8 @@ class Activiti extends Model
     protected $fillable = [
         'image_activiti',
         'title_activiti',
-        'date_activiti',
+        'subtitle_activiti',
+        'description_activiti',
         'created_at',
         'updated_at',
     ];

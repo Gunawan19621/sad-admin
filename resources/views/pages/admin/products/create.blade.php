@@ -24,18 +24,6 @@
                 <div class="row g-3">
                     <div class="col-md-4">
                         <div class="mb-2">
-                            <label class="form-label" for="id_distributor">Name Distributor <span
-                                    class="text-danger">*</span></label>
-                            <select class="form-select" id="id_distributor" name="id_distributor" required>
-                                <option disabled selected>Select one</option>
-                                @foreach ($distributor as $data)
-                                    <option value="{{ $data->id }}">{{ $data->name_distributor }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="mb-2">
                             <label class="form-label" for="id_sub_category">Sub Category <span
                                     class="text-danger">*</span></label>
                             <select class="form-select" id="id_sub_category" name="id_sub_category" required>
@@ -55,14 +43,6 @@
                     </div>
                     <div class="col-md-4">
                         <div class="mb-2">
-                            <label class="form-label" for="sub_product">Subtitle Product <span
-                                    class="text-danger">*</span></label>
-                            <input class="form-control" type="text" id="sub_product" name="sub_product"
-                                placeholder="Enter Subtitle Product" required />
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="mb-2">
                             <label class="form-label" for="year_product">Year Product <span
                                     class="text-danger">*</span></label>
                             <input class="form-control" type="number" id="year_product" name="year_product"
@@ -72,7 +52,7 @@
                     <div class="col-md-4">
                         <div class="mb-2">
                             <label class="form-label" for="alcohol">Alcohol <span class="text-danger">*</span></label>
-                            <input class="form-control" type="number" id="alcohol" name="alcohol"
+                            <input class="form-control" type="text" id="alcohol" name="alcohol"
                                 placeholder="Enter Alcohol Content" required />
                         </div>
                     </div>
@@ -80,7 +60,7 @@
                         <div class="mb-2">
                             <label class="form-label" for="temperature">Serving Temperature <span
                                     class="text-danger">*</span></label>
-                            <input class="form-control" type="number" id="temperature" name="temperature"
+                            <input class="form-control" type="text" id="temperature" name="temperature"
                                 placeholder="Enter Serving Temperature" required />
                         </div>
                     </div>
@@ -95,7 +75,7 @@
                         <div class="mb-2">
                             <label class="form-label" for="total_acidity">Total Acidity <span
                                     class="text-danger">*</span></label>
-                            <input class="form-control" type="number" id="total_acidity" name="total_acidity"
+                            <input class="form-control" type="text" id="total_acidity" name="total_acidity"
                                 placeholder="Enter Total Acidity" required />
                         </div>
                     </div>
@@ -103,7 +83,7 @@
                         <div class="mb-2">
                             <label class="form-label" for="ressidual_sugar">Residual Sugar <span
                                     class="text-danger">*</span></label>
-                            <input class="form-control" type="number" id="ressidual_sugar" name="ressidual_sugar"
+                            <input class="form-control" type="text" id="ressidual_sugar" name="ressidual_sugar"
                                 placeholder="Enter Residual Sugar" required />
                         </div>
                     </div>
@@ -117,21 +97,22 @@
                     </div>
                     <div class="col-md-4">
                         <div class="mb-2">
-                            <label class="form-label" for="award_won">Award Won <span
-                                    class="text-danger">*</span></label>
-                            <input class="form-control" type="number" id="award_won" name="award_won"
-                                placeholder="Enter Award Won" required />
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="mb-2">
                             <label class="form-label" for="size_bottle">Size Bottle <span
                                     class="text-danger">*</span></label>
                             <input class="form-control" type="text" id="size_bottle" name="size_bottle"
                                 placeholder="Enter Size Bottle" required />
                         </div>
                     </div>
-                    <div class="col-md-6">
+
+                    <div class="col-md-4">
+                        <div class="mb-2">
+                            <label class="form-label" for="award_won">Award Won <span
+                                    class="text-danger">*</span></label>
+                            <input class="form-control" type="number" id="award_won" name="award_won"
+                                placeholder="Enter Award Won" required />
+                        </div>
+                    </div>
+                    <div class="col-md-4">
                         <div class="mb-2">
                             <label for="image_product" class="form-label">Image <span
                                     class="text-danger">*</span></label>
@@ -139,6 +120,15 @@
                                 accept="image/*" required />
                         </div>
                     </div>
+                    <div class="col-md-12">
+                        <div class="mb-2">
+                            <label class="form-label" for="sub_product">Subtitle Product <span
+                                    class="text-danger">*</span></label>
+                            <textarea class="form-control" name="sub_product" id="sub_product" cols="30" rows="3"
+                                placeholder="Enter Subtitle Product" required></textarea>
+                        </div>
+                    </div>
+
                     <div class="col-md-6">
                         <div class="mb-2">
                             <label class="form-label" for="characteristics">Characteristics <span

@@ -46,7 +46,8 @@
 
         <!-- About -->
         <li
-            class="menu-item {{ $active == 'our-story' ||
+            class="menu-item {{ $active == 'about' ||
+            $active == 'our-story' ||
             $active == 'our-team' ||
             $active == 'our-vision' ||
             $active == 'award' ||
@@ -61,6 +62,12 @@
                 <div data-i18n="About"> About </div>
             </a>
             <ul class="menu-sub">
+                <li class="menu-item {{ $active == 'about' ? 'active' : '' }}">
+                    <a href="{{ route('dashboard.about.index') }}" class="menu-link">
+                        <div data-i18n="oru-story">About</div>
+                    </a>
+                </li>
+
                 <li class="menu-item {{ $active == 'our-story' ? 'active' : '' }}">
                     <a href="{{ route('dashboard.our-story.index') }}" class="menu-link">
                         <div data-i18n="oru-story">Our Story</div>
@@ -130,7 +137,9 @@
             $active == 'experiencePrice' ||
             $active == 'resort' ||
             $active == 'resortImage' ||
-            $active == 'activiti'
+            $active == 'activiti' ||
+            $active == 'imageActiviti' ||
+            $active == 'activitiPrice'
                 ? 'active open'
                 : '' }}">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
@@ -153,7 +162,6 @@
                         <div data-i18n="experience-price">Experience Price</div>
                     </a>
                 </li>
-
                 <li class="menu-item {{ $active == 'resort' || $active == 'resortImage' ? 'active open' : '' }}">
                     <a href="javascript:void(0);" class="menu-link menu-toggle">
                         <div>Resort</div>
@@ -171,11 +179,34 @@
                         </li>
                     </ul>
                 </li>
-                <li class="menu-item {{ $active == 'activiti' ? 'active' : '' }}">
+                <li
+                    class="menu-item {{ $active == 'activiti' || $active == 'imageActiviti' || $active == 'activitiPrice' ? 'active open' : '' }}">
+                    <a href="javascript:void(0);" class="menu-link menu-toggle">
+                        <div>Activiti</div>
+                    </a>
+                    <ul class="menu-sub">
+                        <li class="menu-item {{ $active == 'activiti' ? 'active' : '' }}">
+                            <a href="{{ route('dashboard.activiti.index') }}" class="menu-link">
+                                <div> Activiti </div>
+                            </a>
+                        </li>
+                        <li class="menu-item {{ $active == 'imageActiviti' ? 'active' : '' }}">
+                            <a href="{{ route('dashboard.image-activiti.index') }}" class="menu-link">
+                                <div> Image Activiti </div>
+                            </a>
+                        </li>
+                        <li class="menu-item {{ $active == 'activitiPrice' ? 'active' : '' }}">
+                            <a href="{{ route('dashboard.activiti-price.index') }}" class="menu-link">
+                                <div> Activiti Price </div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                {{-- <li class="menu-item {{ $active == 'activiti' ? 'active' : '' }}">
                     <a href="{{ route('dashboard.activiti.index') }}" class="menu-link">
                         <div data-i18n="activiti">Activiti</div>
                     </a>
-                </li>
+                </li> --}}
             </ul>
         </li>
 
