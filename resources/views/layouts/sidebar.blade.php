@@ -25,7 +25,8 @@
         </li>
 
         <!-- Layouts -->
-        <li class="menu-item {{ $active == 'menu-header' ? 'active open' : '' }}">
+        <li
+            class="menu-item {{ $active == 'menu-header' || $active == 'quickLink' || $active == 'stayInTouch' ? 'active open' : '' }}">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-layout"></i>
                 <div data-i18n="Layouts">Layouts</div>
@@ -35,6 +36,22 @@
                 <li class="menu-item {{ $active == 'menu-header' ? 'active' : '' }}">
                     <a href="{{ route('dashboard.menu-header.index') }}" class="menu-link">
                         <div data-i18n="Without menu">Menu header</div>
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="menu-sub">
+                <li class="menu-item {{ $active == 'quickLink' ? 'active' : '' }}">
+                    <a href="{{ route('dashboard.quick-link.index') }}" class="menu-link">
+                        <div data-i18n="Without menu">Quick Link</div>
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="menu-sub">
+                <li class="menu-item {{ $active == 'stayInTouch' ? 'active' : '' }}">
+                    <a href="{{ route('dashboard.stay-in-touch.index') }}" class="menu-link">
+                        <div data-i18n="Without menu">Stay In Touch</div>
                     </a>
                 </li>
             </ul>

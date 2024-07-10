@@ -84,6 +84,23 @@ Route::prefix('dashboard')->name('dashboard.')->middleware('auth')->group(functi
         Route::put('menu-header/{id}', 'update')->name('menu-header.update');
     });
 
+    //Menu Quick Link
+    Route::controller(App\Http\Controllers\QuickLinkController::class)->group(function () {
+        Route::get('quick-link', 'index')->name('quick-link.index');
+        Route::get('quick-link/{id}', 'show')->name('quick-link.show');
+        Route::get('quick-link/{id}/edit', 'edit')->name('quick-link.edit');
+        Route::put('quick-link/{id}', 'update')->name('quick-link.update');
+    });
+
+    //Menu Stay In Touch
+    Route::controller(App\Http\Controllers\StayInTouchCOntroller::class)->group(function () {
+        Route::get('stay-in-touch', 'index')->name('stay-in-touch.index');
+        Route::put('stay-in-touch/{id}', 'update')->name('stay-in-touch.update');
+        Route::delete('stay-in-touch/delete/{id}', 'destroy')->name('stay-in-touch.destroy');
+    });
+
+
+
     //Aboute
     //Menu About
     Route::controller(App\Http\Controllers\AboutController::class)->group(function () {

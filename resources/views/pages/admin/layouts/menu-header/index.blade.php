@@ -22,10 +22,10 @@
                             <th>Actions</th>
                         </tr>
                     </thead>
-                    <tbody class="table-border-bottom-0">
+                    <tbody>
                         @forelse ($menuHeader as $items)
                             <tr>
-                                <td><i class="fab fa-angular fa-lg text-danger me-3"></i>
+                                <td>
                                     <strong>{{ $items->name_menu }}</strong>
                                 </td>
                                 <td>
