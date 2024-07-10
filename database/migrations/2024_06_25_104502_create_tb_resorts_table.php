@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title_resort');
             $table->string('subtitle_resort');
+            $table->string('image');
             $table->text('description_resort');
             $table->timestamps();
         });

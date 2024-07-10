@@ -23,6 +23,7 @@
                     <thead>
                         <tr>
                             <th>No</th>
+                            <th>Image</th>
                             <th>Title</th>
                             <th>Subtitle</th>
                             <th>Actions</th>
@@ -35,6 +36,14 @@
                         @forelse ($resort as $items)
                             <tr>
                                 <td>{{ $no++ }}</td>
+                                <td>
+                                    @if (!empty($items->image))
+                                        <img src="{{ asset('images/' . $items->image) }}" alt="Image Story"
+                                            class="img-fluid" style="max-width: 50px;">
+                                    @else
+                                        -
+                                    @endif
+                                </td>
                                 <td>{{ $items->title_resort ?? '-' }}</td>
                                 <td>{{ $items->subtitle_resort ?? '-' }}</td>
                                 <td>
@@ -53,7 +62,7 @@
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="4" style="text-align: center;">Empty</td>
+                                <td colspan="5" style="text-align: center;">Empty</td>
                             </tr>
                         @endforelse
                     </tbody>

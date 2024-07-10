@@ -25,6 +25,7 @@
                     <thead>
                         <tr>
                             <th>No</th>
+                            <th>Image</th>
                             <th>Title</th>
                             <th>Subtitle</th>
                             <th>Actions</th>
@@ -37,6 +38,14 @@
                         @forelse ($experience as $items)
                             <tr>
                                 <td>{{ $no++ }}</td>
+                                <td>
+                                    @if (!empty($items->image))
+                                        <img src="{{ asset('images/' . $items->image) }}" alt="Image Story"
+                                            class="img-fluid" style="max-width: 50px;">
+                                    @else
+                                        -
+                                    @endif
+                                </td>
                                 <td>{{ $items->title_experience ?? '-' }}</td>
                                 <td>{{ $items->subtitle_experience ?? '-' }}</td>
                                 <td>

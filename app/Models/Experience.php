@@ -12,6 +12,7 @@ class Experience extends Model
     protected $fillable = [
         'title_experience',
         'subtitle_experience',
+        'image',
         'description_experience',
         'created_at',
         'updated_at',

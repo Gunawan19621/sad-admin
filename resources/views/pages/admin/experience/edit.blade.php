@@ -23,15 +23,28 @@
                 @csrf
                 @method('PUT')
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-4 text-center">
+                        <label for="image" class="form-label mb-3">Image</label>
+                        <div class="mb-3">
+                            @if ($experience->image)
+                                <img src="{{ asset('images/' . $experience->image) }}" alt="Image Story" class="img-fluid"
+                                    style="max-width: 100%; max-height: 250px">
+                            @else
+                                <i class="menu-icon tf-icons bx bx-image" style="font-size: 150px;"></i>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="col-md-8">
                         <div class="mb-3">
                             <label class="form-label" for="title_experience">Title <span
                                     class="text-danger">*</span></label>
                             <input class="form-control" type="text" id="title_experience" name="title_experience"
                                 placeholder="Enter Title Experience" value="{{ $experience->title_experience }}" required />
                         </div>
-                    </div>
-                    <div class="col-md-8">
+                        <div class="mb-3">
+                            <label for="image" class="form-label">Image</label>
+                            <input class="form-control" type="file" id="image" name="image" accept="image/*" />
+                        </div>
                         <div class="mb-3">
                             <label class="form-label" for="subtitle_experience">Subtitle <span
                                     class="text-danger">*</span></label>

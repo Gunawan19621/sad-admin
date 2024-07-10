@@ -10,8 +10,6 @@
                         <div class="card-body">
                             <div class="card-title d-flex align-items-start justify-content-between">
                                 <div class="avatar flex-shrink-0">
-                                    {{-- <img src="{{ asset('assets/img/icons/unicons/chart-success.png') }}" alt="chart success"
-                                        class="rounded" /> --}}
                                     <img src="{{ asset('assets/img/icons/unicons/team.png') }}" alt="chart success"
                                         class="rounded" />
                                 </div>
@@ -257,17 +255,11 @@
                                     <img src="{{ asset('assets/img/icons/unicons/list.png') }}" alt="User"
                                         class="rounded" />
                                 </div>
-                                {{-- <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                                    <div class="me-2">
-                                        <small class="text-muted d-block mb-1">{{ $items->email }}</small>
-                                        <h6 class="mb-0">{{ $items->enquiring }}</h6>
-                                    </div>
-                                </div> --}}
                                 <a href="{{ route('dashboard.enquiry.show', ['id' => $items->id]) }}"
                                     class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2 text-decoration-none">
                                     <div class="me-2">
                                         <small class="text-muted d-block mb-1">{{ $items->email }}</small>
-                                        <h6 class="mb-0">{{ $items->enquiring }}</h6>
+                                        <h6 class="mb-0">{{ $items->name }}</h6>
                                     </div>
                                 </a>
                             </li>

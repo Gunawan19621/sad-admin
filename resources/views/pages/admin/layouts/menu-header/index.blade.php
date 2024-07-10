@@ -12,7 +12,7 @@
         <div class="card-body">
             <h4 class="card-header">Menu Header</h4>
             <div class="">
-                <table id="myTable" class="table table-hover">
+                <table class="table table-hover">
                     <thead>
                         <tr>
                             <th>Menu</th>

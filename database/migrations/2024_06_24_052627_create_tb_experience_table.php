@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title_experience');
             $table->string('subtitle_experience');
+            $table->string('image');
             $table->text('description_experience');
             $table->timestamps();
         });

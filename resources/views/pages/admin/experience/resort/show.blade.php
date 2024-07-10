@@ -16,13 +16,22 @@
         </div>
         <div class="card-body">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-4 text-center">
+                    <label for="image" class="form-label mb-3">Image</label>
+                    <div class="mb-3">
+                        @if ($resort->image)
+                            <img src="{{ asset('images/' . $resort->image) }}" alt="Image Story" class="img-fluid"
+                                style="max-width: 100%; max-height: 250px">
+                        @else
+                            <i class="menu-icon tf-icons bx bx-image" style="font-size: 150px;"></i>
+                        @endif
+                    </div>
+                </div>
+                <div class="col-md-8">
                     <div class="mb-3">
                         <label class="form-label" for="title_resort">Title</label>
                         <input class="form-control" id="title_resort" value="{{ $resort->title_resort }}" readonly />
                     </div>
-                </div>
-                <div class="col-md-6">
                     <div class="mb-3">
                         <label class="form-label" for="subtitle_resort">Subtitle</label>
                         <textarea class="form-control" id="subtitle_resort" cols="30" rows="3" readonly>{{ $resort->subtitle_resort }}</textarea>

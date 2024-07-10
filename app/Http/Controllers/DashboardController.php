@@ -2,63 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\CategoryProduct;
+use App\Models\Resort;
 use App\Models\Enquiry;
-use App\Models\OurDistributor;
 use App\Models\OurTeam;
 use App\Models\Partner;
 use App\Models\Product;
-use App\Models\Resort;
 use App\Models\SubCategory;
 use Illuminate\Http\Request;
+use App\Models\OurDistributor;
+use App\Models\CategoryProduct;
+use Illuminate\Support\Facades\DB;
 
 class DashboardController extends Controller
 {
-    // public function index()
-    // {
-    //     $data = [
-    //         'active' => 'dashboard',
-    //         'teams' => OurTeam::count(),
-    //         'partners' => Partner::count(),
-    //         'distributors' => OurDistributor::count(),
-    //         'countProducts' => Product::count(),
-    //         'categoryProducts' => CategoryProduct::with(['subCategories', 'subCategories.products'])->get(), // Load subcategories and products count
-    //         'countEnquiries' => Enquiry::count(),
-    //         'enquiries' => Enquiry::all(),
-    //         'countResort' => Resort::count(),
-    //     ];
-
-    //     return view('pages.admin.index', $data);
-    // }
-    // public function index()
-    // {
-    //     $categoryProducts = CategoryProduct::with(['subCategories', 'subCategories.products'])->get();
-
-    //     $chartData = $categoryProducts->map(function ($category) {
-    //         $subCategoryProductsCount = $category->subCategories->map(function ($subCategory) {
-    //             return $subCategory->products->count();
-    //         })->sum();
-    //         return [
-    //             'label' => $category->name_category_product,
-    //             'count' => $subCategoryProductsCount
-    //         ];
-    //     });
-
-    //     $data = [
-    //         'active' => 'dashboard',
-    //         'teams' => OurTeam::count(),
-    //         'partners' => Partner::count(),
-    //         'distributors' => OurDistributor::count(),
-    //         'countProducts' => Product::count(),
-    //         'categoryProducts' => $categoryProducts,
-    //         'chartData' => $chartData,
-    //         'countEnquiries' => Enquiry::count(),
-    //         'enquiries' => Enquiry::all(),
-    //         'countResort' => Resort::count(),
-    //     ];
-
-    //     return view('pages.admin.index', $data);
-    // }
     public function index()
     {
         $categoryProducts = CategoryProduct::with(['subCategories', 'subCategories.products'])->get();
@@ -77,6 +33,11 @@ class DashboardController extends Controller
             ];
         });
 
+        $enquiry = DB::table('tb_enquiry')
+            ->leftJoin('tb_type_question', 'tb_enquiry.enquiring', '=', 'tb_type_question.id')
+            ->select('tb_enquiry.*', 'tb_type_question.name')
+            ->get();
+
         $data = [
             'active' => 'dashboard',
             'teams' => OurTeam::count(),
@@ -85,7 +46,7 @@ class DashboardController extends Controller
             'countProducts' => $totalProducts,
             'categoryProducts' => $categoryProducts, // Load subcategories and products count
             'countEnquiries' => Enquiry::count(),
-            'enquiries' => Enquiry::all(),
+            'enquiries' => $enquiry,
             'countResort' => Resort::count(),
             'chartData' => $chartData
         ];

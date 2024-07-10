@@ -12,6 +12,7 @@ class Resort extends Model
     protected $fillable = [
         'title_resort',
         'subtitle_resort',
+        'image',
         'description_resort',
         'created_at',
         'updated_at',

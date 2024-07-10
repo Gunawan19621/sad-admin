@@ -30,6 +30,13 @@
                     </div>
                     <div class="col-md-6">
                         <div class="mb-3">
+                            <label for="image" class="form-label">Image <span class="text-danger">*</span></label>
+                            <input class="form-control" type="file" id="image" name="image" accept="image/*"
+                                required />
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="mb-3">
                             <label class="form-label" for="subtitle_resort">Subtitle <span
                                     class="text-danger">*</span></label>
                             <textarea class="form-control" name="subtitle_resort" id="subtitle_resort" cols="30" rows="3"

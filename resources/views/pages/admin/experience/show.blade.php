@@ -17,13 +17,22 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-md-4 text-center">
+                    <label for="image" class="form-label mb-3">Image</label>
+                    <div class="mb-3">
+                        @if ($experience->image)
+                            <img src="{{ asset('images/' . $experience->image) }}" alt="Image Story" class="img-fluid"
+                                style="max-width: 100%; max-height: 250px">
+                        @else
+                            <i class="menu-icon tf-icons bx bx-image" style="font-size: 150px;"></i>
+                        @endif
+                    </div>
+                </div>
+                <div class="col-md-8">
                     <div class="mb-3">
                         <label class="form-label" for="title_experience">Title</label>
                         <input class="form-control" id="title_experience" value="{{ $experience->title_experience }}"
                             readonly />
                     </div>
-                </div>
-                <div class="col-md-8">
                     <div class="mb-3">
                         <label class="form-label" for="subtitle_experience">Subtitle</label>
                         <textarea id="subtitle_experience" class="form-control" rows="3" readonly>{{ $experience->subtitle_experience }}</textarea>

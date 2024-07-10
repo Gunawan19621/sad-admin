@@ -41,10 +41,15 @@ class ResortController extends Controller
             'title_resort' => 'required',
             'subtitle_resort' => 'required',
             'description_resort' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ], [
             'title_resort.required' => 'Title Resort is required',
             'subtitle_resort.required' => 'Subtitle Resort is required',
             'description_resort.required' => 'Description Resort is required',
+            'image.required' => 'Image is required',
+            'image.image' => 'Image must be an image',
+            'image.mimes' => 'Image must be a file of type: jpeg, png, jpg, gif',
+            'image.max' => 'Image must be a file of type: jpeg, png, jpg, gif and max 2048kb',
         ]);
 
         if ($validasi->fails()) {
@@ -53,6 +58,12 @@ class ResortController extends Controller
 
         try {
             $validatedData = $validasi->validated();
+
+            if ($request->hasFile('image')) {
+                $imageName = time() . '.' . $request->image->extension();
+                $request->image->move(public_path('images'), $imageName);
+                $validatedData['image'] = $imageName;
+            }
 
             Resort::create($validatedData);
 
@@ -95,10 +106,14 @@ class ResortController extends Controller
             'title_resort' => 'required',
             'subtitle_resort' => 'required',
             'description_resort' => 'required',
+            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ], [
             'title_resort.required' => 'Title Resort is required',
             'subtitle_resort.required' => 'Subtitle Resort is required',
             'description_resort.required' => 'Description Resort is required',
+            'image.image' => 'Image must be an image',
+            'image.mimes' => 'Image must be a file of type: jpeg, png, jpg, gif',
+            'image.max' => 'Image must be a file of type: jpeg, png, jpg, gif and max 2048kb',
         ]);
 
         if ($validasi->fails()) {
@@ -108,6 +123,16 @@ class ResortController extends Controller
         try {
             $data = Resort::findOrFail($id);
             $validatedData = $validasi->validated();
+
+            if ($request->hasFile('image')) {
+                if ($data->image && file_exists(public_path('images/' . $data->image))) {
+                    unlink(public_path('images/' . $data->image));
+                }
+
+                $imageName = time() . '.' . $request->image->extension();
+                $request->image->move(public_path('images'), $imageName);
+                $validatedData['image'] = $imageName;
+            }
 
             $data->update($validatedData);
 
