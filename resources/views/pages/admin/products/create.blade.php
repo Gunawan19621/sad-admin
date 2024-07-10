@@ -52,16 +52,22 @@
                     <div class="col-md-4">
                         <div class="mb-2">
                             <label class="form-label" for="alcohol">Alcohol <span class="text-danger">*</span></label>
-                            <input class="form-control" type="text" id="alcohol" name="alcohol"
-                                placeholder="Enter Alcohol Content" required />
+                            <div class="input-group">
+                                <input class="form-control" type="text" id="alcohol" name="alcohol"
+                                    placeholder="Enter Alcohol Content" required />
+                                <span class="input-group-text">%</span>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="mb-2">
                             <label class="form-label" for="temperature">Serving Temperature <span
                                     class="text-danger">*</span></label>
-                            <input class="form-control" type="text" id="temperature" name="temperature"
-                                placeholder="Enter Serving Temperature" required />
+                            <div class="input-group">
+                                <input class="form-control" type="text" id="temperature" name="temperature"
+                                    placeholder="Enter Serving Temperature" required />
+                                <span class="input-group-text">°C</span>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -75,16 +81,22 @@
                         <div class="mb-2">
                             <label class="form-label" for="total_acidity">Total Acidity <span
                                     class="text-danger">*</span></label>
-                            <input class="form-control" type="text" id="total_acidity" name="total_acidity"
-                                placeholder="Enter Total Acidity" required />
+                            <div class="input-group">
+                                <input class="form-control" type="text" id="total_acidity" name="total_acidity"
+                                    placeholder="Enter Total Acidity" required />
+                                <span class="input-group-text">G/L</span>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="mb-2">
                             <label class="form-label" for="ressidual_sugar">Residual Sugar <span
                                     class="text-danger">*</span></label>
-                            <input class="form-control" type="text" id="ressidual_sugar" name="ressidual_sugar"
-                                placeholder="Enter Residual Sugar" required />
+                            <div class="input-group">
+                                <input class="form-control" type="text" id="ressidual_sugar" name="ressidual_sugar"
+                                    placeholder="Enter Residual Sugar" required />
+                                <span class="input-group-text">G/L</span>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-4">

@@ -21,18 +21,6 @@ class CategoryProductController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     */
-    // public function create()
-    // {
-    //     $data = [
-    //         'categoryProduct' => CategoryProduct::all(),
-    //         'active' => 'category-product'
-    //     ];
-    //     return view('pages.admin.products.category-product.create', $data);
-    // }
-
-    /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
@@ -61,30 +49,6 @@ class CategoryProductController extends Controller
             return redirect()->back()->with('error', 'Data Category Product failed to added');
         }
     }
-
-    // /**
-    //  * Display the specified resource.
-    //  */
-    // public function show(string $id)
-    // {
-    //     $data = [
-    //         'categoryProduct' => CategoryProduct::findOrFail($id),
-    //         'active' => 'category-product'
-    //     ];
-    //     return view('pages.admin.products.category-product.show', $data);
-    // }
-
-    // /**
-    //  * Show the form for editing the specified resource.
-    //  */
-    // public function edit(string $id)
-    // {
-    //     $data = [
-    //         'categoryProduct' => CategoryProduct::findOrFail($id),
-    //         'active' => 'category-product'
-    //     ];
-    //     return view('pages.admin.products.category-product.edit', $data);
-    // }
 
     /**
      * Update the specified resource in storage.

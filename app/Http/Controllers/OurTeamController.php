@@ -15,7 +15,6 @@ class OurTeamController extends Controller
     public function index()
     {
         $data = [
-            // 'menuHeader' => MenuHeader::all(),
             'ourTeam' => OurTeam::all(),
             'active' => 'our-team',
         ];

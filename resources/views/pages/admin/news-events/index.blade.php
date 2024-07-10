@@ -74,7 +74,4 @@
             </div>
         </div>
     </div>
-
-    <!-- Modal -->
-    {{-- @include('pages.admin.news-events.modals') --}}
 @endsection

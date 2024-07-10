@@ -29,7 +29,7 @@
                             </div>
                             <div class="col-md-7">
                                 <div class="mb-3">
-                                    <label class="form-label" for="basic-default-fullname">Nama Menu</label>
+                                    <label class="form-label" for="basic-default-fullname">Name Menu</label>
                                     <input class="form-control" id="basic-default-fullname"
                                         value="{{ $itemModals->name_menu }}" readonly />
                                 </div>

@@ -18,7 +18,6 @@ class ContactUsController extends Controller
 
         foreach ($contacts as $contact) {
             $contact->social_media = json_decode($contact->social_media, true);
-            // $contact->google_maps = json_decode($contact->google_maps, true);
         }
 
         return view('pages.admin.about.contact-us.index', compact('contacts', 'active'));

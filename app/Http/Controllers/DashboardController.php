@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Resort;
 use App\Models\Enquiry;
 use App\Models\OurTeam;
@@ -36,6 +37,8 @@ class DashboardController extends Controller
         $enquiry = DB::table('tb_enquiry')
             ->leftJoin('tb_type_question', 'tb_enquiry.enquiring', '=', 'tb_type_question.id')
             ->select('tb_enquiry.*', 'tb_type_question.name')
+            ->where('tb_enquiry.created_at', '>=', now()->subWeek())
+            ->orderBy('tb_enquiry.id', 'desc')
             ->get();
 
         $data = [
@@ -44,8 +47,8 @@ class DashboardController extends Controller
             'partners' => Partner::count(),
             'distributors' => OurDistributor::count(),
             'countProducts' => $totalProducts,
-            'categoryProducts' => $categoryProducts, // Load subcategories and products count
-            'countEnquiries' => Enquiry::count(),
+            'categoryProducts' => $categoryProducts,
+            'countEnquiries' => $enquiry->count(),
             'enquiries' => $enquiry,
             'countResort' => Resort::count(),
             'chartData' => $chartData

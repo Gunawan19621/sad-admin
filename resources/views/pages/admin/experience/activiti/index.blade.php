@@ -78,7 +78,4 @@
             </div>
         </div>
     </div>
-
-    <!-- Modal -->
-    {{-- @include('pages.admin.experience.activiti.modals') --}}
 @endsection

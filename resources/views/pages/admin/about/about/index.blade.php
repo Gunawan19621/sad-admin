@@ -49,7 +49,6 @@
                                     @endphp
                                     {{ count($words) > 15 ? $limitedWords . '...' : $items->subtitle }}
                                 </td>
-                                {{-- <td>{{ $items->subtitle ?? '-' }}</td> --}}
                                 <td>
                                     <a href="{{ route('dashboard.about.edit', $items->id) }}"
                                         class="btn btn-sm btn-success">Edit</a>

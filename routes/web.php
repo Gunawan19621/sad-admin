@@ -83,7 +83,6 @@ Route::prefix('dashboard')->name('dashboard.')->middleware('auth')->group(functi
         Route::get('menu-header', 'index')->name('menu-header.index');
         Route::put('menu-header/{id}', 'update')->name('menu-header.update');
     });
-
     //Menu Quick Link
     Route::controller(App\Http\Controllers\QuickLinkController::class)->group(function () {
         Route::get('quick-link', 'index')->name('quick-link.index');
@@ -91,13 +90,11 @@ Route::prefix('dashboard')->name('dashboard.')->middleware('auth')->group(functi
         Route::get('quick-link/{id}/edit', 'edit')->name('quick-link.edit');
         Route::put('quick-link/{id}', 'update')->name('quick-link.update');
     });
-
     //Menu Stay In Touch
     Route::controller(App\Http\Controllers\StayInTouchCOntroller::class)->group(function () {
         Route::get('stay-in-touch', 'index')->name('stay-in-touch.index');
         Route::delete('stay-in-touch/delete/{id}', 'destroy')->name('stay-in-touch.destroy');
     });
-
 
 
     //Aboute
@@ -108,7 +105,6 @@ Route::prefix('dashboard')->name('dashboard.')->middleware('auth')->group(functi
         Route::get('about/{id}/edit', 'edit')->name('about.edit');
         Route::put('about/{id}', 'update')->name('about.update');
     });
-
     //Menu Our Team
     Route::controller(App\Http\Controllers\OurTeamController::class)->group(function () {
         Route::get('our-team', 'index')->name('our-team.index');
@@ -116,7 +112,6 @@ Route::prefix('dashboard')->name('dashboard.')->middleware('auth')->group(functi
         Route::put('our-team/{id}', 'update')->name('our-team.update');
         Route::delete('our-team/delete/{id}', 'destroy')->name('our-team.destroy');
     });
-
     //Menu Our Story
     Route::controller(App\Http\Controllers\OurStoryController::class)->group(function () {
         Route::get('our-story', 'index')->name('our-story.index');

@@ -11,7 +11,6 @@ class ExperiencePrice extends Model
     protected $table = 'tb_experience_price';
     protected $fillable = [
         'id_experience',
-        // 'name_experience',
         'price_experience',
         'unit_experience',
         'created_at',

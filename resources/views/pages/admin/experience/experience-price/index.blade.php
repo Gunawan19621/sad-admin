@@ -40,7 +40,7 @@
                             <tr>
                                 <td>{{ $no++ }}</td>
                                 <td>{{ $items->title_experience ?? '-' }}</td>
-                                <td>{{ $items->price_experience ?? '-' }}</td>
+                                <td>Rp.{{ $items->price_experience ?? '-' }}</td>
                                 <td>{{ $items->unit_experience ?? '-' }}</td>
                                 <td>
                                     <button type="button" class="btn btn-sm btn-success" data-bs-toggle="modal"

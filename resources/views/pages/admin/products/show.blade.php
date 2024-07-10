@@ -61,13 +61,20 @@
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label class="form-label" for="alcohol">Alcohol</label>
-                                <input class="form-control" id="alcohol" value="{{ $product->alcohol }}" readonly />
+                                <div class="input-group">
+                                    <input class="form-control" id="alcohol" value="{{ $product->alcohol }}" readonly />
+                                    <span class="input-group-text">%</span>
+                                </div>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label class="form-label" for="temperature">Serving Temperature</label>
-                                <input class="form-control" id="temperature" value="{{ $product->temperature }}" readonly />
+                                <div class="input-group">
+                                    <input class="form-control" id="temperature" value="{{ $product->temperature }}"
+                                        readonly />
+                                    <span class="input-group-text">°C</span>
+                                </div>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -79,15 +86,21 @@
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label class="form-label" for="total_acidity">Total Acidity</label>
-                                <input class="form-control" id="total_acidity" value="{{ $product->total_acidity }}"
-                                    readonly />
+                                <div class="input-group">
+                                    <input class="form-control" id="total_acidity" value="{{ $product->total_acidity }}"
+                                        readonly />
+                                    <span class="input-group-text">G/L</span>
+                                </div>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label class="form-label" for="ressidual_sugar">Residual Sugar</label>
-                                <input class="form-control" id="ressidual_sugar" value="{{ $product->ressidual_sugar }}"
-                                    readonly />
+                                <div class="input-group">
+                                    <input class="form-control" id="ressidual_sugar"
+                                        value="{{ $product->ressidual_sugar }}" readonly />
+                                    <span class="input-group-text">G/L</span>
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -219,11 +219,6 @@
                         </li>
                     </ul>
                 </li>
-                {{-- <li class="menu-item {{ $active == 'activiti' ? 'active' : '' }}">
-                    <a href="{{ route('dashboard.activiti.index') }}" class="menu-link">
-                        <div data-i18n="activiti">Activiti</div>
-                    </a>
-                </li> --}}
             </ul>
         </li>
 

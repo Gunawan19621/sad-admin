@@ -22,8 +22,11 @@
                     <div class="mb-3">
                         <label class="form-label" for="price_experience">Price <span
                                 class="text-danger">*</span></label>
-                        <input class="form-control" type="number" id="price_experience" name="price_experience"
-                            placeholder="Enter Experience Price" required />
+                        <div class="input-group">
+                            <span class="input-group-text">Rp.</span>
+                            <input class="form-control" type="number" id="price_experience" name="price_experience"
+                                placeholder="Enter Experience Price" required />
+                        </div>
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="unit_experience">Unit <span class="text-danger">*</span></label>
@@ -70,9 +73,12 @@
                         <div class="mb-3">
                             <label class="form-label" for="price_experience">Price <span
                                     class="text-danger">*</span></label>
-                            <input class="form-control" type="number" id="price_experience" name="price_experience"
-                                value="{{ $itemModals->price_experience }}" placeholder="Enter Experience Price"
-                                required />
+                            <div class="input-group">
+                                <span class="input-group-text">Rp.</span>
+                                <input class="form-control" type="number" id="price_experience" name="price_experience"
+                                    value="{{ $itemModals->price_experience }}" placeholder="Enter Experience Price"
+                                    required />
+                            </div>
                         </div>
                         <div class="mb-3">
                             <label class="form-label" for="unit_experience">Unit <span

@@ -34,7 +34,6 @@ class ProductController extends Controller
     public function create()
     {
         $data = [
-            // 'distributor' => OurDistributor::all(),
             'subCategory' => SubCategory::all(),
             'product' => Product::all(),
             'active' => 'product',
@@ -50,7 +49,6 @@ class ProductController extends Controller
         $validasi = Validator::make(
             $request->all(),
             [
-                // 'id_distributor' => 'required',
                 'id_sub_category' => 'required',
                 'name_product' => 'required',
                 'sub_product' => 'required',
@@ -137,7 +135,6 @@ class ProductController extends Controller
     public function show(string $id)
     {
         $data = [
-            // 'distributor' => OurDistributor::all(),
             'subCategory' => SubCategory::all(),
             'product' => Product::findOrFail($id),
             'active' => 'product',
@@ -151,7 +148,6 @@ class ProductController extends Controller
     public function edit(string $id)
     {
         $data = [
-            // 'distributor' => OurDistributor::all(),
             'subCategory' => SubCategory::all(),
             'product' => Product::findOrFail($id),
             'active' => 'product',

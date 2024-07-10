@@ -22,8 +22,11 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="price_activiti">Price <span class="text-danger">*</span></label>
-                        <input class="form-control" type="number" id="price_activiti" name="price_activiti"
-                            placeholder="Enter Activiti Price" required />
+                        <div class="input-group">
+                            <span class="input-group-text">Rp.</span>
+                            <input class="form-control" type="number" id="price_activiti" name="price_activiti"
+                                placeholder="Enter Activiti Price" required />
+                        </div>
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="name_price">Price Name <span class="text-danger">*</span></label>
@@ -70,9 +73,12 @@
                         <div class="mb-3">
                             <label class="form-label" for="price_activiti">Price <span
                                     class="text-danger">*</span></label>
-                            <input class="form-control" type="number" id="price_activiti" name="price_activiti"
-                                value="{{ $itemModals->price_activiti }}" placeholder="Enter Experience Price"
-                                required />
+                            <div class="input-group">
+                                <span class="input-group-text">Rp.</span>
+                                <input class="form-control" type="number" id="price_activiti" name="price_activiti"
+                                    value="{{ $itemModals->price_activiti }}" placeholder="Enter Experience Price"
+                                    required />
+                            </div>
                         </div>
                         <div class="mb-3">
                             <label class="form-label" for="name_price">Price Name <span
