@@ -15,11 +15,11 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th>Menu</th>
-                            <th>Image</th>
-                            <th>Title</th>
-                            <th>Subtitle</th>
-                            <th>Actions</th>
+                            <th style="width: 17%">Menu</th>
+                            <th style="width: 10%">Image</th>
+                            <th style="width: 25%">Title</th>
+                            <th style="width: 45%">Subtitle</th>
+                            <th style="width: 8%">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -37,7 +37,13 @@
                                     @endif
                                 </td>
                                 <td>{{ $items->title_header ?? '-' }}</td>
-                                <td>{{ $items->subtitle_header ?? '-' }}</td>
+                                <td>
+                                    @php
+                                        $words = explode(' ', $items->subtitle_header);
+                                        $limitedWords = implode(' ', array_slice($words, 0, 15));
+                                    @endphp
+                                    {{ count($words) > 15 ? $limitedWords . '...' : $items->subtitle_header }}
+                                </td>
                                 <td>
                                     <button type="button" class="btn btn-sm btn-success" data-bs-toggle="modal"
                                         data-bs-target="#modalEditHeader{{ $items->id }}">Edit</button>

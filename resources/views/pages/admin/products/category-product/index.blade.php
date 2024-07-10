@@ -25,11 +25,11 @@
                 <table id="myTable" class="table table-hover">
                     <thead>
                         <tr>
-                            <th>No</th>
-                            <th>Category Product</th>
-                            <th>Subtitle</th>
-                            <th>Description</th>
-                            <th>Actions</th>
+                            <th style="width: 8%">No</th>
+                            <th style="width: 20%">Category Product</th>
+                            <th style="width: 22%">Subtitle</th>
+                            <th style="width: 35%">Description</th>
+                            <th style="width: 15%">Actions</th>
                         </tr>
                     </thead>
                     <tbody class="table-border-bottom-0">
@@ -40,17 +40,23 @@
                             <tr>
                                 <td>{{ $no++ }}</td>
                                 <td>{{ $items->name_category_product ?? '-' }}</td>
-                                <td>{{ $items->subtitle_category ?? '-' }}</td>
-                                <td>{{ $items->description_category_product ?? '-' }}</td>
+                                <td>
+                                    @php
+                                        $words = explode(' ', $items->subtitle_category);
+                                        $limitedWords = implode(' ', array_slice($words, 0, 10));
+                                    @endphp
+                                    {{ count($words) > 10 ? $limitedWords . '...' : $items->subtitle_category }}
+                                </td>
+                                <td>
+                                    @php
+                                        $words = explode(' ', $items->description_category_product);
+                                        $limitedWords = implode(' ', array_slice($words, 0, 10));
+                                    @endphp
+                                    {{ count($words) > 10 ? $limitedWords . '...' : $items->description_category_product }}
+                                </td>
                                 <td>
                                     <button type="button" class="btn btn-sm btn-success" data-bs-toggle="modal"
                                         data-bs-target="#modalEdit{{ $items->id }}">Edit</button>
-                                    {{-- <button type="button" class="btn btn-sm btn-info" data-bs-toggle="modal"
-                                        data-bs-target="#modalEdit{{ $items->id }}">View</button> --}}
-                                    {{-- <a href="{{ route('dashboard.category-product.edit', $items->id) }}"
-                                        class="btn btn-sm btn-success">Edit</a>
-                                    <a href="{{ route('dashboard.category-product.show', $items->id) }}"
-                                        class="btn btn-sm btn-info">View</a> --}}
                                     <form action="{{ route('dashboard.category-product.destroy', $items->id) }}"
                                         method="POST" style="display: inline;">
                                         @csrf

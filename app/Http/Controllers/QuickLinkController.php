@@ -27,7 +27,7 @@ class QuickLinkController extends Controller
     {
         $data = [
             'quicLink' => QuickLink::findOrFail($id),
-            'active' => 'quicLink',
+            'active' => 'quickLink',
         ];
         return view('pages.admin.layouts.quick_link.show', $data);
     }
@@ -39,7 +39,7 @@ class QuickLinkController extends Controller
     {
         $data = [
             'quicLink' => QuickLink::findOrFail($id),
-            'active' => 'quicLink',
+            'active' => 'quickLink',
         ];
         return view('pages.admin.layouts.quick_link.edit', $data);
     }
@@ -51,10 +51,8 @@ class QuickLinkController extends Controller
     public function update(Request $request, string $id)
     {
         $validasi = Validator::make($request->all(), [
-            'title' => 'required',
             'description' => 'required',
         ], [
-            'title.required' => 'Title is required',
             'description.required' => 'Description is required',
         ]);
 

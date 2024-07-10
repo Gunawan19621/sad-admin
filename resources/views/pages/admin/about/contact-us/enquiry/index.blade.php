@@ -15,20 +15,25 @@
                 <table id="myTable" class="table table-hover">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Contact</th>
-                            <th>Email</th>
-                            <th>Enquiring</th>
-                            <th>Actions</th>
+                            <th style="width: 8%">No</th>
+                            <th style="width: 19%">Name</th>
+                            <th style="width: 15%">Contact</th>
+                            <th style="width: 25%">Email</th>
+                            <th style="width: 18%">Enquiring</th>
+                            <th style="width: 15%">Actions</th>
                         </tr>
                     </thead>
                     <tbody class="table-border-bottom-0">
+                        @php
+                            $no = 1;
+                        @endphp
                         @forelse ($enquiry as $items)
                             <tr>
+                                <td>{{ $no++ }}</td>
                                 <td>{{ $items->name ?? '-' }}</td>
                                 <td>{{ $items->phone ?? '-' }}</td>
                                 <td>{{ $items->email ?? '-' }}</td>
-                                <td>{{ $items->name ?? '-' }}</td>
+                                <td>{{ $items->type_question_name ?? '-' }}</td>
                                 <td>
                                     <button type="button" class="btn btn-sm btn-success" data-bs-toggle="modal"
                                         data-bs-target="#modalEdit{{ $items->id }}">Edit</button>
@@ -38,7 +43,7 @@
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="4" style="text-align: center;">Empty</td>
+                                <td colspan="6" style="text-align: center;">Empty</td>
                             </tr>
                         @endforelse
                     </tbody>

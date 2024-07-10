@@ -23,9 +23,8 @@
                 @csrf
                 @method('PUT')
                 <div class="mb-3">
-                    <label class="form-label" for="title">Title <span class="text-danger">*</span></label>
-                    <input class="form-control" type="text" id="title" name="title"
-                        placeholder="Enter Title Quick Link" value="{{ $quicLink->title }}" required />
+                    <label class="form-label" for="title">Title</label>
+                    <input class="form-control" id="title" value="{{ $quicLink->title }}" readonly />
                 </div>
 
                 <div class="mb-3">

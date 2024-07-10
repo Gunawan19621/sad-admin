@@ -29,121 +29,115 @@
                         @endif
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="mb-3">
-                        <label class="form-label" for="year_product">Year Product <span class="text-danger">*</span></label>
-                        <input class="form-control" id="year_product" value="{{ $product->year_product }}" readonly />
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label" for="alcohol">Alcohol <span class="text-danger">*</span></label>
-                        <input class="form-control" id="alcohol" value="{{ $product->alcohol }}" readonly />
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label" for="temperature">Serving Temperature <span
-                                class="text-danger">*</span></label>
-                        <input class="form-control" id="temperature" value="{{ $product->temperature }}" readonly />
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label" for="cellaring">Cellaring <span class="text-danger">*</span></label>
-                        <input class="form-control" id="cellaring" value="{{ $product->cellaring }}" readonly />
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="mb-3">
-                        <label class="form-label" for="total_acidity">Total Acidity <span
-                                class="text-danger">*</span></label>
-                        <input class="form-control" id="total_acidity" value="{{ $product->total_acidity }}" readonly />
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label" for="ressidual_sugar">Residual Sugar <span
-                                class="text-danger">*</span></label>
-                        <input class="form-control" id="ressidual_sugar" value="{{ $product->ressidual_sugar }}" readonly />
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label" for="bottle_produced">Bottle Produced <span
-                                class="text-danger">*</span></label>
-                        <input class="form-control" id="bottle_produced" value="{{ $product->bottle_produced }}" readonly />
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label" for="award_won">Award Won <span class="text-danger">*</span></label>
-                        <input class="form-control" id="award_won" value="{{ $product->award_won }}" readonly />
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label" for="id_sub_category">Sub Category</label>
+                                <select class="form-select" id="id_sub_category" disabled>
+                                    <option disabled selected>Select one</option>
+                                    @foreach ($subCategory as $data)
+                                        <option value="{{ $data->id }}"
+                                            {{ $product->id_sub_category == $data->id ? 'selected' : '' }}>
+                                            {{ $data->name_sub_category }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label" for="name_product">Name</label>
+                                <input class="form-control" id="name_product" value="{{ $product->name_product }}"
+                                    readonly />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label" for="year_product">Year Product</label>
+                                <input class="form-control" id="year_product" value="{{ $product->year_product }}"
+                                    readonly />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label" for="alcohol">Alcohol</label>
+                                <input class="form-control" id="alcohol" value="{{ $product->alcohol }}" readonly />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label" for="temperature">Serving Temperature</label>
+                                <input class="form-control" id="temperature" value="{{ $product->temperature }}" readonly />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label" for="cellaring">Cellaring</label>
+                                <input class="form-control" id="cellaring" value="{{ $product->cellaring }}" readonly />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label" for="total_acidity">Total Acidity</label>
+                                <input class="form-control" id="total_acidity" value="{{ $product->total_acidity }}"
+                                    readonly />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label" for="ressidual_sugar">Residual Sugar</label>
+                                <input class="form-control" id="ressidual_sugar" value="{{ $product->ressidual_sugar }}"
+                                    readonly />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="row g-3">
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <div class="mb-3">
-                        <label class="form-label" for="id_distributor">Name Distributor <span
-                                class="text-danger">*</span></label>
-                        <select class="form-select" id="id_distributor" disabled>
-                            <option disabled selected>Select one</option>
-                            @foreach ($distributor as $data)
-                                <option value="{{ $data->id }}"
-                                    {{ $product->id_distributor == $data->id ? 'selected' : '' }}>
-                                    {{ $data->name_distributor }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="mb-3">
-                        <label class="form-label" for="id_sub_category">Sub Category <span
-                                class="text-danger">*</span></label>
-                        <select class="form-select" id="id_sub_category" disabled>
-                            <option disabled selected>Select one</option>
-                            @foreach ($subCategory as $data)
-                                <option value="{{ $data->id }}"
-                                    {{ $product->id_sub_category == $data->id ? 'selected' : '' }}>
-                                    {{ $data->name_sub_category }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="mb-3">
-                        <label class="form-label" for="name_product">Name <span class="text-danger">*</span></label>
-                        <input class="form-control" id="name_product" value="{{ $product->name_product }}" readonly />
+                        <label class="form-label" for="bottle_produced">Bottle Produced</label>
+                        <input class="form-control" id="bottle_produced" value="{{ $product->bottle_produced }}"
+                            readonly />
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="mb-3">
-                        <label class="form-label" for="size_bottle">Size Bottle <span
-                                class="text-danger">*</span></label>
+                        <label class="form-label" for="size_bottle">Size Bottle</label>
                         <input class="form-control" id="size_bottle" value="{{ $product->size_bottle }}" readonly />
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="mb-3">
-                        <label class="form-label" for="sub_product">Subtitle Product <span
-                                class="text-danger">*</span></label>
-                        <input class="form-control" id="sub_product" value="{{ $product->sub_product }}" readonly />
+                        <label class="form-label" for="award_won">Award Won</label>
+                        <input class="form-control" id="award_won" value="{{ $product->award_won }}" readonly />
                     </div>
                 </div>
                 <div class="col-md-6">
+                    <label class="form-label" for="sub_product">Subtitle Product</label>
+                    <textarea class="form-control" id="sub_product" cols="30" rows="3" readonly>{{ $product->sub_product }}</textarea>
+                </div>
+                <div class="col-md-6">
                     <div class="mb-3">
-                        <label class="form-label" for="characteristics">Characteristics <span
-                                class="text-danger">*</span></label>
+                        <label class="form-label" for="characteristics">Characteristics</label>
                         <textarea id="characteristics" class="form-control" rows="3" readonly>{{ $product->characteristics }}</textarea>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="mb-3">
-                        <label class="form-label" for="testing_note">Testing Note <span
-                                class="text-danger">*</span></label>
+                        <label class="form-label" for="testing_note">Testing Note</label>
                         <textarea id="testing_note" class="form-control" rows="3" readonly>{{ $product->testing_note }}</textarea>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="mb-3">
-                        <label class="form-label" for="food_pairing">Food Pairing <span
-                                class="text-danger">*</span></label>
+                        <label class="form-label" for="food_pairing">Food Pairing</label>
                         <textarea id="food_pairing" class="form-control" rows="3" readonly>{{ $product->food_pairing }}</textarea>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="mb-3">
-                        <label class="form-label" for="description_product">Description <span
-                                class="text-danger">*</span></label>
+                        <label class="form-label" for="description_product">Description</label>
                         <textarea id="description_product" class="form-control" rows="3" readonly>{{ $product->description_product }}</textarea>
                     </div>
                 </div>

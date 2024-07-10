@@ -24,12 +24,12 @@
                 <table id="myTable" class="table table-hover">
                     <thead>
                         <tr>
-                            <th>No</th>
-                            <th>Image</th>
-                            <th>Name</th>
-                            <th>Subtitle</th>
-                            <th>Size</th>
-                            <th>Actions</th>
+                            <th style="width: 8%">No</th>
+                            <th style="width: 10%">Image</th>
+                            <th style="width: 15%">Name</th>
+                            <th style="width: 27%">Subtitle</th>
+                            <th style="width: 15%">Size</th>
+                            <th style="width: 20%">Actions</th>
                         </tr>
                     </thead>
                     <tbody class="table-border-bottom-0">
@@ -48,7 +48,13 @@
                                     @endif
                                 </td>
                                 <td>{{ $items->name_product ?? '-' }}</td>
-                                <td>{{ $items->sub_product ?? '-' }}</td>
+                                <td>
+                                    @php
+                                        $words = explode(' ', $items->sub_product);
+                                        $limitedWords = implode(' ', array_slice($words, 0, 10));
+                                    @endphp
+                                    {{ count($words) > 10 ? $limitedWords . '...' : $items->sub_product }}
+                                </td>
                                 <td>{{ $items->size_bottle ?? '-' }}</td>
                                 <td>
                                     <a href="{{ route('dashboard.product.edit', $items->id) }}"

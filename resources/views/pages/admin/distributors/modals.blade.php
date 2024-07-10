@@ -48,7 +48,7 @@
 @foreach ($ourDistributor as $itemModals)
     <div class="modal fade" id="modalEdit{{ $itemModals->id }}" tabindex="-1" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Edit Dustributor</h5>
@@ -85,11 +85,6 @@
                                     class="text-danger">*</span></label>
                             <textarea id="address_distributor" class="form-control" name="address_distributor"
                                 placeholder="Enter Address Distributor" rows="3" required>{{ $itemModals->address_distributor }}</textarea>
-                        </div>
-                        <div class="">
-                            <label for="image_distributor" class="form-label">Image</label>
-                            <input class="form-control" type="file" id="image_distributor"
-                                name="image_distributor" accept="image/*" />
                         </div>
                     </div>
                     <div class="modal-footer">

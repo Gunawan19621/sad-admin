@@ -31,8 +31,6 @@
                                 <td>{{ $items->email }}</td>
                                 <td>{{ $items->created_at }}</td>
                                 <td>
-                                    <button type="button" class="btn btn-sm btn-success" data-bs-toggle="modal"
-                                        data-bs-target="#modalEditHeader{{ $items->id }}">Edit</button>
                                     <form action="{{ route('dashboard.stay-in-touch.destroy', $items->id) }}" method="POST"
                                         style="display: inline;">
                                         @csrf
@@ -52,7 +50,4 @@
             </div>
         </div>
     </div>
-
-    <!-- Modal -->
-    @include('pages.admin.layouts.stay_in_touch.modals')
 @endsection

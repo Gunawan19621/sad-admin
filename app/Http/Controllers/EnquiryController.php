@@ -17,7 +17,10 @@ class EnquiryController extends Controller
     {
         $enquiry = DB::table('tb_enquiry')
             ->leftJoin('tb_type_question', 'tb_enquiry.enquiring', '=', 'tb_type_question.id')
-            ->select('tb_enquiry.*', 'tb_type_question.name')
+            ->select(
+                'tb_enquiry.*',
+                'tb_type_question.name as type_question_name' // Menambahkan alias untuk nama kolom dari tb_type_question
+            )
             ->get();
 
         $data = [
@@ -28,6 +31,22 @@ class EnquiryController extends Controller
 
         return view('pages.admin.about.contact-us.enquiry.index', $data);
     }
+
+    // public function index()
+    // {
+    //     $enquiry = DB::table('tb_enquiry')
+    //         ->leftJoin('tb_type_question', 'tb_enquiry.enquiring', '=', 'tb_type_question.id')
+    //         ->select('tb_enquiry.*', 'tb_type_question.name')
+    //         ->get();
+
+    //     $data = [
+    //         'enquiry' => $enquiry,
+    //         'typeQuestion' => TypeQuestion::all(),
+    //         'active' => 'enquiry',
+    //     ];
+
+    //     return view('pages.admin.about.contact-us.enquiry.index', $data);
+    // }
 
     /**
      * Display the specified resource.

@@ -95,7 +95,6 @@ Route::prefix('dashboard')->name('dashboard.')->middleware('auth')->group(functi
     //Menu Stay In Touch
     Route::controller(App\Http\Controllers\StayInTouchCOntroller::class)->group(function () {
         Route::get('stay-in-touch', 'index')->name('stay-in-touch.index');
-        Route::put('stay-in-touch/{id}', 'update')->name('stay-in-touch.update');
         Route::delete('stay-in-touch/delete/{id}', 'destroy')->name('stay-in-touch.destroy');
     });
 

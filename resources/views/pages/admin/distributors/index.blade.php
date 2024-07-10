@@ -25,12 +25,12 @@
                 <table id="myTable" class="table table-hover">
                     <thead>
                         <tr>
-                            <th>No</th>
-                            <th>Name</th>
-                            <th>Address</th>
-                            <th>Name Person</th>
-                            <th>Phone</th>
-                            <th>Actions</th>
+                            <th style="width: 8%">No</th>
+                            <th style="width: 15%">Name</th>
+                            <th style="width: 15%">Name Person</th>
+                            <th style="width: 15%">Phone</th>
+                            <th style="width: 32%">Address</th>
+                            <th style="width: 15%">Actions</th>
                         </tr>
                     </thead>
                     <tbody class="table-border-bottom-0">
@@ -41,9 +41,15 @@
                             <tr>
                                 <td>{{ $no++ }}</td>
                                 <td>{{ $items->name_distributor ?? '-' }}</td>
-                                <td>{{ $items->address_distributor ?? '-' }}</td>
                                 <td>{{ $items->name_person_distributor ?? '-' }}</td>
                                 <td>{{ $items->phone_distributor ?? '-' }}</td>
+                                <td>
+                                    @php
+                                        $words = explode(' ', $items->address_distributor);
+                                        $limitedWords = implode(' ', array_slice($words, 0, 10));
+                                    @endphp
+                                    {{ count($words) > 10 ? $limitedWords . '...' : $items->address_distributor }}
+                                </td>
                                 <td>
                                     <button type="button" class="btn btn-sm btn-success" data-bs-toggle="modal"
                                         data-bs-target="#modalEdit{{ $items->id }}">Edit</button>
@@ -58,7 +64,7 @@
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="7" style="text-align: center;">Empty</td>
+                                <td colspan="6" style="text-align: center;">Empty</td>
                             </tr>
                         @endforelse
                     </tbody>

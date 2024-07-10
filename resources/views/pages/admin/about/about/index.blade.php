@@ -19,11 +19,11 @@
                 <table id="myTable" class="table table-hover">
                     <thead>
                         <tr>
-                            <th>No</th>
-                            <th>Image</th>
-                            <th>Title</th>
-                            <th>Subtitle</th>
-                            <th>Actions</th>
+                            <th style="width: 8%">No</th>
+                            <th style="width: 10%">Image</th>
+                            <th style="width: 25%">Title</th>
+                            <th style="width: 42%">Subtitle</th>
+                            <th style="width: 15%">Actions</th>
                         </tr>
                     </thead>
                     <tbody class="table-border-bottom-0">
@@ -42,7 +42,14 @@
                                     @endif
                                 </td>
                                 <td>{{ $items->title ?? '-' }}</td>
-                                <td>{{ $items->subtitle ?? '-' }}</td>
+                                <td>
+                                    @php
+                                        $words = explode(' ', $items->subtitle);
+                                        $limitedWords = implode(' ', array_slice($words, 0, 15));
+                                    @endphp
+                                    {{ count($words) > 15 ? $limitedWords . '...' : $items->subtitle }}
+                                </td>
+                                {{-- <td>{{ $items->subtitle ?? '-' }}</td> --}}
                                 <td>
                                     <a href="{{ route('dashboard.about.edit', $items->id) }}"
                                         class="btn btn-sm btn-success">Edit</a>
@@ -60,7 +67,4 @@
             </div>
         </div>
     </div>
-
-    <!-- Modal -->
-    {{-- @include('pages.admin.about.faq.category-faq.modals') --}}
 @endsection

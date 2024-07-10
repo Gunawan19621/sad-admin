@@ -27,8 +27,8 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="answer_faq">Answer <span class="text-danger">*</span></label>
-                        <input type="text" class="form-control" id="answer_faq" name="answer_faq"
-                            placeholder="Enter job Answer Question" required />
+                        <textarea class="form-control" name="answer_faq" id="answer_faq" cols="30" rows="3"
+                            placeholder="Enter job Answer Question" required></textarea>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -75,9 +75,8 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label" for="answer_faq">Answer <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="answer_faq" name="answer_faq"
-                                value="{{ $itemModals->answer_faq }}" placeholder="Enter job Answer Question"
-                                required />
+                            <textarea class="form-control" name="answer_faq" id="answer_faq" cols="30" rows="3"
+                                placeholder="Enter job Answer Question" required>{{ $itemModals->answer_faq }}</textarea>
                         </div>
                     </div>
                     <div class="modal-footer">

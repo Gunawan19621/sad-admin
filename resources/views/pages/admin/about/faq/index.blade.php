@@ -23,11 +23,11 @@
                 <table id="myTable" class="table table-hover">
                     <thead>
                         <tr>
-                            <th>No</th>
-                            <th>Category</th>
-                            <th>Question</th>
-                            <th>Answer</th>
-                            <th>Actions</th>
+                            <th style="width: 8%">No</th>
+                            <th style="width: 20%">Category</th>
+                            <th style="width: 25%">Question</th>
+                            <th style="width: 32%">Answer</th>
+                            <th style="width: 15%">Actions</th>
                         </tr>
                     </thead>
                     <tbody class="table-border-bottom-0">

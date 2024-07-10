@@ -19,22 +19,29 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th style="max-width: 200px;">Address</th>
-                            <th style="max-width: 200px;">Operating Hours</th>
-                            <th>Email</th>
-                            <th>Contact</th>
-                            <th>Actions</th>
+                            <th style="width: 25%">Address</th>
+                            <th style="width: 25%">Operating Hours</th>
+                            <th style="width: 20%">Email</th>
+                            <th style="width: 15%">Contact</th>
+                            <th style="width: 15%">Actions</th>
                         </tr>
                     </thead>
                     <tbody class="table-border-bottom-0">
                         @forelse ($contacts as $items)
                             <tr>
-                                <td
-                                    style="max-width: 200px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
-                                    {{ $items->address ?? '-' }}</td>
-                                <td
-                                    style="max-width: 200px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
-                                    {{ $items->operating_hours ?? '-' }}
+                                <td>
+                                    @php
+                                        $words = explode(' ', $items->address);
+                                        $limitedWords = implode(' ', array_slice($words, 0, 10));
+                                    @endphp
+                                    {{ count($words) > 10 ? $limitedWords . ' ...' : $items->address }}
+                                </td>
+                                <td>
+                                    @php
+                                        $words = explode(' ', $items->operating_hours);
+                                        $limitedWords = implode(' ', array_slice($words, 0, 10));
+                                    @endphp
+                                    {{ count($words) > 10 ? $limitedWords . ' ...' : $items->operating_hours }}
                                 </td>
                                 <td>{{ $items->email ?? '-' }}</td>
                                 <td>

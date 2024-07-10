@@ -24,11 +24,11 @@
                 <table id="myTable" class="table table-hover">
                     <thead>
                         <tr>
-                            <th>No</th>
-                            <th>Image</th>
-                            <th>Title</th>
-                            <th>Subtitle</th>
-                            <th>Actions</th>
+                            <th style="width: 8%">No</th>
+                            <th style="width: 12%">Image</th>
+                            <th style="width: 15%">Title</th>
+                            <th style="width: 45%">Subtitle</th>
+                            <th style="width: 20%">Actions</th>
                         </tr>
                     </thead>
                     <tbody class="table-border-bottom-0">
@@ -47,7 +47,13 @@
                                     @endif
                                 </td>
                                 <td>{{ $items->title_experience ?? '-' }}</td>
-                                <td>{{ $items->subtitle_experience ?? '-' }}</td>
+                                <td>
+                                    @php
+                                        $words = explode(' ', $items->subtitle_experience);
+                                        $limitedWords = implode(' ', array_slice($words, 0, 15));
+                                    @endphp
+                                    {{ count($words) > 15 ? $limitedWords . '...' : $items->subtitle_experience }}
+                                </td>
                                 <td>
                                     <a href="{{ route('dashboard.experience.edit', $items->id) }}"
                                         class="btn btn-sm btn-success">Edit</a>

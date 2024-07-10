@@ -21,33 +21,6 @@ class StayInTouchController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        $validasi = Validator::make($request->all(), [
-            'email' => 'required',
-        ], [
-            'email.required' => 'Email is required',
-        ]);
-
-        if ($validasi->fails()) {
-            return redirect()->back()->withErrors($validasi)->withInput();
-        }
-
-        try {
-            $data = StayInTouch::findOrFail($id);
-            $validatedData = $validasi->validated();
-
-            $data->update($validatedData);
-
-            return redirect()->back()->with('success', 'Data Stay In Touch updated successfully');
-        } catch (\Exception $e) {
-            return redirect()->back()->with('error', 'Data Quick Link failed to update');
-        }
-    }
-
-    /**
      * Remove the specified resource from storage.
      */
     public function destroy(string $id)
