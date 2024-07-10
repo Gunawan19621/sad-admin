@@ -147,20 +147,14 @@
                 <div class="col-lg-6">
                     <h4 class="text-size-title text-color-purple">CONTACT US</h4><br>
                     <h6 class="roboto text-bold text-color-black">ADDRESS</h6><br>
-                    <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
-                        sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
-                        Neque porro quisquam est, qui dolorem.</p><br>
+                    <p>{!! $contact->address !!}</p><br>
                     <H6 class="roboto text-bold text-color-black">OPERATING HOURS</H6><br>
-                    <p>10 AM - 5 PM Thursday - Monday <br>
-                        Closed Tuesday & Wednesday</p>
+                    <p>{!! $contact->operating_hours !!}</p>
                     <a href="#">
                         <button class="btn-coklat">GET IN TOUCH</button></a>
                 </div>
                 <div class="col-lg-6">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3945.887244988517!2d115.06848397515114!3d-8.510327791531783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd2318c1faf71ed%3A0xcc163e4fa8ac5f8e!2sSumber%20Air%20Dewa%20Suade%20Winery!5e0!3m2!1sen!2sid!4v1719287785590!5m2!1sen!2sid"
-                        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    {!! $contact->google_maps !!}
                 </div>
             </div>
         </div>

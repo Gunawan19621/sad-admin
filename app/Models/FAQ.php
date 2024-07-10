@@ -16,4 +16,9 @@ class FAQ extends Model
         'created_at',
         'updated_at',
     ];
+
+    public function category()
+    {
+        return $this->belongsTo(CategoryFaq::class, 'id', 'id_category_faq');
+    }
 }

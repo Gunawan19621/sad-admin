@@ -382,7 +382,9 @@ label {
 }
 
 .description-experience {
-  max-height: calc(1.2em * 5);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
   /* 1.2em (line-height) times 5 lines */
   overflow: hidden;
   text-overflow: ellipsis;
@@ -405,6 +407,14 @@ label {
   font-size: 14px;
 }
 
+/* ABOUT */
+
+.description-about {
+  max-height: calc(1.2em * 6);
+  /* 1.2em (line-height) times 5 lines */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
 /* PRODUCTS */
 

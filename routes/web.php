@@ -33,7 +33,7 @@ Route::get('/about', [web_aboutcontroller::class, 'about'])->name('about');
 Route::get('/about/our-story', [web_aboutcontroller::class, 'our_story'])->name('our_story');
 Route::get('/about/our-team', [web_aboutcontroller::class, 'our_team'])->name('our_team');
 Route::get('/about/our-vision', [web_aboutcontroller::class, 'our_vision'])->name('our_vision');
-Route::get('/about/awads', [web_aboutcontroller::class, 'awards'])->name('awards');
+Route::get('/about/awards', [web_aboutcontroller::class, 'awards'])->name('awards');
 Route::get('/about/faq', [web_aboutcontroller::class, 'faq'])->name('faq');
 Route::get('/about/contact-us', [web_aboutcontroller::class, 'contact_us'])->name('contact_us');
 
