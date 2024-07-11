@@ -33,7 +33,9 @@
                                     <label class="form-label" for="phone">Phone <span
                                             class="text-danger">*</span></label>
                                     <input class="form-control" type="text" id="phone" name="phone"
-                                        value="{{ $itemModals->phone }}" placeholder="Enter Phone Number" required />
+                                        value="{{ $itemModals->phone }}" placeholder="Enter Phone Number" required
+                                        pattern="[0-9+\-\(\)\s]*"
+                                        oninput="this.value = this.value.replace(/[^0-9+\-\(\)\s]/g, '');" />
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label" for="enquiring">Enquiring</label>

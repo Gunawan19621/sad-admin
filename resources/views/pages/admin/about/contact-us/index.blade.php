@@ -20,9 +20,9 @@
                     <thead>
                         <tr>
                             <th style="width: 25%">Address</th>
-                            <th style="width: 25%">Operating Hours</th>
+                            <th style="width: 20%">Operating Hours</th>
                             <th style="width: 20%">Email</th>
-                            <th style="width: 15%">Contact</th>
+                            <th style="width: 20%">Contact</th>
                             <th style="width: 15%">Actions</th>
                         </tr>
                     </thead>
@@ -39,9 +39,9 @@
                                 <td>
                                     @php
                                         $words = explode(' ', $items->operating_hours);
-                                        $limitedWords = implode(' ', array_slice($words, 0, 10));
+                                        $limitedWords = implode(' ', array_slice($words, 0, 9));
                                     @endphp
-                                    {{ count($words) > 10 ? $limitedWords . ' ...' : $items->operating_hours }}
+                                    {{ count($words) > 9 ? $limitedWords . ' ...' : $items->operating_hours }}
                                 </td>
                                 <td>{{ $items->email ?? '-' }}</td>
                                 <td>

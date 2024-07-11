@@ -329,6 +329,18 @@ Route::prefix('dashboard')->name('dashboard.')->middleware('auth')->group(functi
         Route::delete('gallery/delete/{id}', 'destroy')->name('gallery.destroy');
     });
 
+    //System
+    //Menu User Management
+    Route::controller(App\Http\Controllers\UserManagementController::class)->group(function () {
+        Route::get('user-management', 'index')->name('user-management.index');
+        Route::get('user-management/create', 'create')->name('user-management.create');
+        Route::post('user-management/store', 'store')->name('user-management.store');
+        Route::get('user-management/{id}', 'show')->name('user-management.show');
+        Route::get('user-management/{id}/edit', 'edit')->name('user-management.edit');
+        Route::put('user-management/{id}', 'update')->name('user-management.update');
+        Route::delete('user-management/delete/{id}', 'destroy')->name('user-management.destroy');
+    });
+
 
     //Function CKEditor
     Route::post('ckeditor/upload', [App\Http\Controllers\CKEditorController::class, 'upload'])->name('ckeditor.upload');

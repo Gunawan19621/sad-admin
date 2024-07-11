@@ -15,7 +15,7 @@
     @php
         $active = $active ?? '';
     @endphp
-    <ul class="menu-inner py-1">
+    <ul class="menu-inner py-1 mb-5">
         <!-- Dashboard -->
         <li class="menu-item {{ $active == 'dashboard' ? 'active' : '' }}">
             <a href="{{ route('dashboard') }}" class="menu-link">
@@ -313,6 +313,18 @@
                     </a>
                 </li>
             </ul>
+        </li>
+
+        <li class="menu-header small text-uppercase">
+            <span class="menu-header-text">System</span>
+        </li>
+
+        <!-- User Management -->
+        <li class="menu-item {{ $active == 'userManagement' ? 'active' : '' }}">
+            <a href="{{ route('dashboard.user-management.index') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-user"></i>
+                <div data-i18n="userManagement">User management</div>
+            </a>
         </li>
     </ul>
 </aside>

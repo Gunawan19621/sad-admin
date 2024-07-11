@@ -31,7 +31,7 @@
                     </div>
                     <div class="input-group input-group-merge">
                         <input type="password" id="password" class="form-control @error('password') is-invalid @enderror"
-                            name="password" aria-describedby="password" required />
+                            name="password" aria-describedby="password" placeholder="Enter your password" required />
                         <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
                     </div>
                     @error('password')
@@ -48,13 +48,6 @@
                     <button class="btn btn-primary d-grid w-100" type="submit">Sign in</button>
                 </div>
             </form>
-
-            <p class="text-center">
-                <span>New on our platform?</span>
-                <a href="auth-register-basic.html">
-                    <span>Create an account</span>
-                </a>
-            </p>
         </div>
     </div>
 @endsection

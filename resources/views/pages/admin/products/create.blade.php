@@ -52,11 +52,9 @@
                     <div class="col-md-4">
                         <div class="mb-2">
                             <label class="form-label" for="alcohol">Alcohol <span class="text-danger">*</span></label>
-                            <div class="input-group">
-                                <input class="form-control" type="text" id="alcohol" name="alcohol"
-                                    placeholder="Enter Alcohol Content" required />
-                                <span class="input-group-text">%</span>
-                            </div>
+                            <input class="form-control" type="text" id="alcohol" name="alcohol"
+                                placeholder="Enter the alcohol content" required pattern="[0-9,.\s]*"
+                                oninput="this.value = this.value.replace(/[^\d,.\s]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" />
                         </div>
                     </div>
                     <div class="col-md-4">

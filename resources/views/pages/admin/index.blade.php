@@ -128,9 +128,7 @@
                             <i class="bx bx-dots-vertical-rounded"></i>
                         </button>
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="orederStatistics">
-                            <a class="dropdown-item" href="javascript:void(0);">Select All</a>
-                            <a class="dropdown-item" href="javascript:void(0);">Refresh</a>
-                            <a class="dropdown-item" href="javascript:void(0);">Share</a>
+                            <a class="dropdown-item" href="{{ route('dashboard.product.index') }}">View all Product</a>
                         </div>
                     </div>
                 </div>
@@ -181,22 +179,17 @@
         <!-- Expense Overview -->
         <div class="col-md-6 col-lg-4 order-1 mb-4">
             <div class="card h-100">
-                <div class="card-header">
-                    <ul class="nav nav-pills" role="tablist">
-                        <li class="nav-item">
-                            <button type="button" class="nav-link active" role="tab" data-bs-toggle="tab"
-                                data-bs-target="#navs-tabs-line-card-income" aria-controls="navs-tabs-line-card-income"
-                                aria-selected="true">
-                                Income
-                            </button>
-                        </li>
-                        <li class="nav-item">
-                            <button type="button" class="nav-link" role="tab">Expenses</button>
-                        </li>
-                        <li class="nav-item">
-                            <button type="button" class="nav-link" role="tab">Profit</button>
-                        </li>
-                    </ul>
+                <div class="card-header d-flex align-items-center justify-content-between">
+                    <h5 class="card-title m-0 me-2">Profit</h5>
+                    <div class="dropdown">
+                        <button class="btn p-0" type="button" id="profit" data-bs-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <i class="bx bx-dots-vertical-rounded"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="profit">
+                            <a class="dropdown-item" href="{{ route('dashboard.enquiry.index') }}">View More</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="card-body px-0">
                     <div class="tab-content p-0">

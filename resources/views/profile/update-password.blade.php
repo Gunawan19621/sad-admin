@@ -31,7 +31,6 @@
                     </a>
                 </li>
             </ul>
-            <!-- Change Password -->
             <div class="card mb-4">
                 <h5 class="card-header">Change Password</h5>
                 <div class="card-body">
@@ -44,7 +43,8 @@
                                 <div class="input-group input-group-merge">
                                     <input class="form-control" type="password" name="current_password"
                                         id="current_password" autocomplete="current-password" />
-                                    <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
+                                    <span class="input-group-text password-toggle"><i
+                                            class="menu-icon tf-icons bx bx-show"></i></span>
                                     @error('current_password')
                                         <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                                     @enderror
@@ -57,7 +57,8 @@
                                 <div class="input-group input-group-merge">
                                     <input class="form-control" type="password" id="password" name="password"
                                         autocomplete="new-password" />
-                                    <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
+                                    <span class="input-group-text password-toggle"><i
+                                            class="menu-icon tf-icons bx bx-show"></i></span>
                                     @error('password')
                                         <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                                     @enderror
@@ -69,7 +70,8 @@
                                 <div class="input-group input-group-merge">
                                     <input class="form-control" type="password" name="password_confirmation"
                                         id="password_confirmation" autocomplete="new-password" />
-                                    <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
+                                    <span class="input-group-text password-toggle"><i
+                                            class="menu-icon tf-icons bx bx-show"></i></span>
                                     @error('password_confirmation')
                                         <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                                     @enderror
@@ -77,13 +79,26 @@
                             </div>
                             <div class="col-12 mb-4">
                                 <p class="fw-medium mt-2">Password Requirements:</p>
-                                <ul class="ps-3 mb-0">
-                                    <li class="mb-1">
-                                        Minimum 8 characters long - the more, the better
-                                    </li>
-                                    <li class="mb-1">At least one lowercase character</li>
-                                    <li>At least one number, symbol, or whitespace character</li>
-                                </ul>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="passwordLengthCheckbox" disabled>
+                                    <label class="form-check-label" for="passwordLengthCheckbox">
+                                        Minimum 8 characters - the more the better
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="passwordUpperLowerCheckbox"
+                                        disabled>
+                                    <label class="form-check-label" for="passwordUpperLowerCheckbox">
+                                        Contains uppercase and lowercase letters
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="passwordNumberSymbolCheckbox"
+                                        disabled>
+                                    <label class="form-check-label" for="passwordNumberSymbolCheckbox">
+                                        Contains numbers and symbols
+                                    </label>
+                                </div>
                             </div>
                             <div class="col-12 mt-1">
                                 <button type="submit" class="btn btn-primary me-2">Save</button>
@@ -94,7 +109,56 @@
                     </form>
                 </div>
             </div>
-            <!--/ Change Password -->
         </div>
     </div>
+
+    <!-- Script show/hide password and automatic checkbox check -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const togglePassword = document.querySelectorAll('.password-toggle');
+            const passwordInput = document.getElementById('password');
+            const confirmPasswordInput = document.getElementById('confirm_password');
+            const passwordLengthCheckbox = document.getElementById('passwordLengthCheckbox');
+            const passwordUpperLowerCheckbox = document.getElementById('passwordUpperLowerCheckbox');
+            const passwordNumberSymbolCheckbox = document.getElementById('passwordNumberSymbolCheckbox');
+
+            const passwordRequirements = {
+                minLength: 8,
+                hasUpperCase: /[A-Z]/,
+                hasLowerCase: /[a-z]/,
+                hasNumber: /[0-9]/,
+                hasSymbol: /[!@#$%^&*()_+={}\[\]:;"'|<,>.?\/\\~-]/
+            };
+
+            function validatePasswordRequirements() {
+                const password = passwordInput.value;
+                const isLengthValid = password.length >= passwordRequirements.minLength;
+                const hasUpperCaseValid = passwordRequirements.hasUpperCase.test(password);
+                const hasLowerCaseValid = passwordRequirements.hasLowerCase.test(password);
+                const hasNumberValid = passwordRequirements.hasNumber.test(password);
+                const hasSymbolValid = passwordRequirements.hasSymbol.test(password);
+
+                passwordLengthCheckbox.checked = isLengthValid;
+                passwordUpperLowerCheckbox.checked = hasUpperCaseValid && hasLowerCaseValid;
+                passwordNumberSymbolCheckbox.checked = hasNumberValid && hasSymbolValid;
+            }
+
+            // untuk hide and show password
+            togglePassword.forEach(icon => {
+                icon.addEventListener('click', function() {
+                    const input = this.closest('.input-group').querySelector('input');
+                    if (input.type === 'password') {
+                        input.type = 'text';
+                        this.innerHTML = '<i class="menu-icon tf-icons bx bx-hide"></i>';
+                    } else {
+                        input.type = 'password';
+                        this.innerHTML = '<i class="menu-icon tf-icons bx bx-show"></i>';
+                    }
+                });
+            });
+
+            passwordInput.addEventListener('input', validatePasswordRequirements);
+            confirmPasswordInput.addEventListener('input', validatePasswordRequirements);
+        });
+    </script>
 @endsection

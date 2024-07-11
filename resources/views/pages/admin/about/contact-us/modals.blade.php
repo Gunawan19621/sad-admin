@@ -26,17 +26,23 @@
                                     <input type="text" class="form-control" id="email" name="email"
                                         value="{{ $contact->email }}" placeholder="Enter Email" required />
                                 </div>
+
                                 <div class="mb-3">
                                     <label class="form-label" for="phone">Phone <span
                                             class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" id="phone" name="phone"
-                                        value="{{ $contact->phone }}" placeholder="Enter Phone" required />
+                                    <input class="form-control" type="text" id="phone" name="phone"
+                                        value="{{ $contact->phone }}" placeholder="Enter Phone Number" required
+                                        pattern="[0-9+\-\(\)\s]*"
+                                        oninput="this.value = this.value.replace(/[^0-9+\-\(\)\s]/g, '');" />
                                 </div>
+
                                 <div class="mb-3">
                                     <label class="form-label" for="fax">Fax <span
                                             class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" id="fax" name="fax"
-                                        value="{{ $contact->fax }}" placeholder="Enter Fax" required />
+                                    <input class="form-control" type="text" id="fax" name="fax"
+                                        value="{{ $contact->fax }}" placeholder="Enter fax Number" required
+                                        pattern="[0-9+\-\(\)\s]*"
+                                        oninput="this.value = this.value.replace(/[^0-9+\-\(\)\s]/g, '');" />
                                 </div>
                             </div>
                             <div class="col-md-6">

@@ -41,7 +41,9 @@
                                 <td>{{ $no++ }}</td>
                                 <td>{{ $items->title_activiti ?? '-' }}</td>
                                 <td>{{ $items->name_price ?? '-' }}</td>
-                                <td>Rp.{{ $items->price_activiti ?? '-' }}</td>
+                                <td>Rp.
+                                    {{ isset($items->price_activiti) ? number_format($items->price_activiti, 0, ',', '.') : '-' }}
+                                </td>
                                 <td>
                                     <button type="button" class="btn btn-sm btn-success" data-bs-toggle="modal"
                                         data-bs-target="#modalEdit{{ $items->id }}">Edit</button>

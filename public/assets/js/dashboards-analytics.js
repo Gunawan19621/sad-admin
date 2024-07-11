@@ -436,7 +436,7 @@
             },
             labels: labels,
             series: series,
-            colors: [config.colors.primary, config.colors.info, config.colors.success],
+            colors: [config.colors.success, config.colors.secondary, config.colors.warning],
             stroke: {
                 width: 5,
                 colors: cardColor

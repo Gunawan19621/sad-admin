@@ -84,7 +84,7 @@
                                     <label class="form-label" for="temperature">Serving Temperature <span
                                             class="text-danger">*</span></label>
                                     <div class="input-group">
-                                        <input class="form-control" type="number" id="temperature" name="temperature"
+                                        <input class="form-control" type="text" id="temperature" name="temperature"
                                             value="{{ $product->temperature }}" placeholder="Enter Serving Temperature"
                                             required />
                                         <span class="input-group-text">°C</span>

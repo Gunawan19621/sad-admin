@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name'); // belum di pecah menjadi firstname dan lastname
             $table->string('email')->unique();
-            $table->date('date');
+            $table->date('date')->nullable(); // dirubah tadinya wajib menjadi tidak wajib
             $table->string('phone')->unique()->nullable();
             $table->string('address')->nullable();
             $table->string('photo')->nullable();
