@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Activiti;
 use App\Models\Experience;
 use App\Models\MenuHeader;
 use Illuminate\Http\Request;
@@ -14,19 +15,28 @@ class web_experiencecontroller extends Controller
     {
         //
         $headers=MenuHeader::find(3);
-        $experience=DB::table('tb_experience')
-            ->leftJoin('tb_image_experience', 'tb_experience.id', '=', 'tb_image_experience.id_experience')
-            ->select('tb_experience.*', 'tb_image_experience.image_experience')            
-            ->get();
+        $experience=Experience::all();
+        $activities=Activiti::take(3)->get();
         
-        return view('pages.web.layouts.experience.index',compact('headers','experience'));
+        
+        return view('pages.web.layouts.experience.index',compact('headers','experience','activities'));
     }
 
-    public function show()
+    public function show(Request $request,$id)
     {
         //
-        return view('pages.web.layouts.experience.show');
+        $experience=Experience::find($id);
+        return view('pages.web.layouts.experience.show',compact('experience'));
     }
+
+    public function activities()
+    {
+        //
+        $headers=MenuHeader::find(3);
+        $activities=Activiti::all();
+        return view('pages.web.layouts.experience.activities',compact('headers','activities'));
+    }
+
 
 
 }

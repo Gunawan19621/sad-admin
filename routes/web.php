@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\web_aboutcontroller;
+use App\Http\Controllers\Web_activitiescontroller;
 use App\Http\Controllers\web_distributorscontroller;
 use App\Http\Controllers\web_experiencecontroller;
 use App\Http\Controllers\web_newseventcontroller;
@@ -40,6 +41,9 @@ Route::get('/about/contact-us', [web_aboutcontroller::class, 'contact_us'])->nam
 
 Route::get('/experience', [web_experiencecontroller::class, 'index'])->name('experience');
 Route::get('/experience/{id}', [web_experiencecontroller::class, 'show'])->name('experience.show');
+
+Route::get('/activities', [Web_activitiescontroller::class, 'index'])->name('activities');
+Route::get('/activities/{id}', [Web_activitiescontroller::class, 'show'])->name('activities.show');
 
 Route::get('/resort', [web_resortcontroller::class, 'index'])->name('resort');
 Route::get('/resort/{id}', [web_resortcontroller::class, 'show'])->name('resort.show');
