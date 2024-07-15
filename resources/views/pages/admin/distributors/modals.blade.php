@@ -26,7 +26,8 @@
                         <label class="form-label" for="phone_distributor">Phone <span
                                 class="text-danger">*</span></label>
                         <input type="text" class="form-control" id="phone_distributor" name="phone_distributor"
-                            placeholder="Enter Phone Number" required />
+                            placeholder="Enter Phone Number" required pattern="[0-9+\-\(\)\s]*"
+                            oninput="this.value = this.value.replace(/[^0-9+\-\(\)\s]/g, '');" />
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="address_distributor">Address <span
@@ -77,8 +78,9 @@
                             <label class="form-label" for="phone_distributor">Phone <span
                                     class="text-danger">*</span></label>
                             <input type="text" class="form-control" id="phone_distributor"
-                                name="phone_distributor" value="{{ $itemModals->phone_distributor }}"
-                                placeholder="Enter Phone Number" required />
+                                value="{{ $itemModals->phone_distributor }}" name="phone_distributor"
+                                placeholder="Enter Phone Number" required pattern="[0-9+\-\(\)\s]*"
+                                oninput="this.value = this.value.replace(/[^0-9+\-\(\)\s]/g, '');" />
                         </div>
                         <div class="mb-3">
                             <label class="form-label" for="address_distributor">Address <span
