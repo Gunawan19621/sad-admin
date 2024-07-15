@@ -46,8 +46,9 @@
                     <div class="col-md-6">
                         <div class="mb-3">
                             <label class="form-label" for="phone">No. Telephone</label>
-                            <input class="form-control" type="number" id="phone" name="phone"
-                                placeholder="Enter user phone number" />
+                            <input class="form-control" type="text" id="phone" name="phone"
+                                placeholder="Enter user phone number" pattern="[0-9+\-\(\)\s]*"
+                                oninput="this.value = this.value.replace(/[^0-9+\-\(\)\s]/g, '');" />
                         </div>
                     </div>
                 </div>
