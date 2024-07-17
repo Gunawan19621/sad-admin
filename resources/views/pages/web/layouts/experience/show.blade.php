@@ -40,16 +40,14 @@
 
                         <div class="container-price">
                             <div class="row">
-                                <div class="col-md-6">
-                                    <div class="price-group">GROUP</div>
-                                    <div class="price">Rp. 225.000</div>
-                                    <div class="price-unit">Per pax</div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="price-group">COUPLE</div>
-                                    <div class="price">Rp. 455.000</div>
-                                    <div class="price-unit">Per pax</div>
-                                </div>
+                                @foreach ($price as $item)
+                                    <div class="col-md-6">
+                                        <div class="price-group">{{ strtoupper($item->unit_experience) }}</div>
+                                        <div class="price">Rp. {{ number_format($item->price_experience, 0, ',', '.') }}
+                                        </div>
+                                        <div class="price-unit">Per pax</div>
+                                    </div>
+                                @endforeach
                             </div>
                         </div>
                         <p>&nbsp;</p>
@@ -61,6 +59,55 @@
             </div>
         </div>
     </section>
+
+
+    <section class="section-slider">
+        <div>
+            <div class="slider">
+                <div class="slides">
+                    @foreach ($image as $item)
+                        <div class="slide"><img src="{{ asset('images/' . $item->image_experience) }}"
+                                onerror="this.onerror=null;this.src='{{ asset('assets-web/img/default-image.png') }}';"
+                                alt="Image"></div>
+                    @endforeach
+                </div>
+            </div>
+            <button class="next btn-slider" onclick="nextSlide()">❯</button>
+            <button class="prev btn-slider" onclick="prevSlide()">❮</button>
+        </div>
+    </section>
+
+
+    <script>
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            const slides = document.querySelector('.slides');
+            const totalSlides = document.querySelectorAll('.slide').length;
+
+            if (index >= totalSlides) {
+                currentSlide = 0;
+            } else if (index < 0) {
+                currentSlide = totalSlides - 1;
+            } else {
+                currentSlide = index;
+            }
+
+            const offset = -currentSlide * 20;
+            slides.style.transform = `translateX(${offset}%)`;
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        // Optional: Auto slide every 3 seconds
+        // setInterval(nextSlide, 3000);
+    </script>
 
 
 @endsection

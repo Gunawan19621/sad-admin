@@ -1,14 +1,9 @@
-@font-face {
-    font-family: "colus";
-    src: url("assets/Font/Colus-Regular.otf") format("opentype");
-}
-
 body {
     background-color: #FDF9EF;
     background-repeat: no-repeat;
     background-position: center 30px;
     background-size: 70%;
-    font-family: "colus";
+    font-family: 'Roboto', sans-serif;
 }
 
 .container {
@@ -272,4 +267,25 @@ body {
     /* Warna garis */
     transform: translateY(-50%);
     /* Untuk posisi vertikal garis */
+}
+
+
+.btn-coklat {
+    background-color: transparent;
+    border: #B99B4E solid 2px;
+    color: #B99B4E;
+    padding: 10px 20px;
+    margin: 10px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 14px;
+    font-family: 'roboto', sans-serif;
+    margin-top: 10px;
+    letter-spacing: 2px;
+}
+
+.btn-coklat:hover {
+    background-color: rgba(161, 157, 74, 0.2);
+    text-decoration: none;
+    color: #B99B4E;
 }

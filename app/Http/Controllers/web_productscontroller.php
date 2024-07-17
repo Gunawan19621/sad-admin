@@ -34,4 +34,19 @@ class web_productscontroller extends Controller
         
         return view('pages.web.layouts.products.show',compact('category', 'subcategories', 'products', 'subcategory'));
     }
+
+
+    public function detail($id)
+    {
+        //
+        $product = Product::find($id);
+        $subcategory = SubCategory::find($product->id_sub_category);
+        $category = CategoryProduct::find($subcategory->id_category_product);
+        
+       
+        
+        return view('pages.web.layouts.products.detail',compact('product', 'subcategory','category'));
+    
+    
+    }
 }

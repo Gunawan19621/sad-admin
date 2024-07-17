@@ -48,13 +48,15 @@
 
                     <div class="gallery">
                         @foreach ($products as $item)
-                            <div class="gallery-item {{ $item->id_sub_category }}">
-                                <div class="gallery-image">
-                                    <img src="{{ asset('images/' . $item->image_product) }}">
+                            <a href="{{ route('products.detail', $item->id) }}">
+                                <div class="gallery-item {{ $item->id_sub_category }}">
+                                    <div class="gallery-image">
+                                        <img src="{{ asset('images/' . $item->image_product) }}">
+                                    </div>
+                                    <figcaption>{{ $item->name_product }}</figcaption>
+                                    <p>{{ $item->year_product }}</p>
                                 </div>
-                                <figcaption>{{ $item->name_product }}</figcaption>
-                                <p>2023</p>
-                            </div>
+                            </a>
                         @endforeach
 
                     </div>

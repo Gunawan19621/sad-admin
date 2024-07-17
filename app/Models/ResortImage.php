@@ -13,4 +13,10 @@ class ResortImage extends Model
         'id_resort',
         'image_resort'
     ];
+
+
+    public function resort()
+    {
+        return $this->belongsTo(Resort::class);
+    }
 }

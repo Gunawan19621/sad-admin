@@ -17,4 +17,10 @@ class Resort extends Model
         'created_at',
         'updated_at',
     ];
+
+    public function category()
+    {
+        return $this->hasMany(ResortImage::class, 'id_resort');
+    }
+    
 }

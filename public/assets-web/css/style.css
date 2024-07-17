@@ -135,7 +135,7 @@ body {
 .text-size-heading {
   font-size: 32px;
   text-transform: uppercase;
-  padding: 20px;
+  padding: 20px 0px;
 }
 
 .text-size-title {
@@ -269,6 +269,10 @@ body {
 
 
 
+a:hover {
+  text-decoration: none;
+}
+
 .link {
   color: #365168;
   text-decoration: none;
@@ -401,6 +405,12 @@ label {
   font-size: 20px;
   color: #365168;
   font-weight: 900;
+}
+
+.price-product {
+  font-size: 24px;
+  color: #365168;
+  font-family: 'ptserif', serif;
 }
 
 .price-unit {
@@ -816,6 +826,18 @@ footer {
   background-color: #FDF9EF;
   border: none;
 }
+
+
+/* TABLE */
+.table2 {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table2 td {
+  padding: 8px 0px;
+}
+
 
 
 

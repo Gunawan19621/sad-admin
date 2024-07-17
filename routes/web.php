@@ -50,6 +50,7 @@ Route::get('/resort/{id}', [web_resortcontroller::class, 'show'])->name('resort.
 
 Route::get('/products', [web_productscontroller::class, 'index'])->name('products');
 Route::get('/products/{id}', [web_productscontroller::class, 'show'])->name('products.show');
+Route::get('/products/detail/{id}', [web_productscontroller::class, 'detail'])->name('products.detail');
 
 Route::get('/news-event', [web_newseventcontroller::class, 'index'])->name('news-event');
 Route::get('/news-event/{id}', [web_newseventcontroller::class, 'show'])->name('news-event.show');

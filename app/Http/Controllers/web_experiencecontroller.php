@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Activiti;
 use App\Models\Experience;
+use App\Models\ExperiencePrice;
+use App\Models\ImageExperience;
 use App\Models\MenuHeader;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -26,7 +28,12 @@ class web_experiencecontroller extends Controller
     {
         //
         $experience=Experience::find($id);
-        return view('pages.web.layouts.experience.show',compact('experience'));
+        $price=ExperiencePrice::where('id_experience',$id)->get();
+        $image=ImageExperience::where('id_experience',$id)->get();
+        
+        return view('pages.web.layouts.experience.show',compact('experience','price','image'));
+    
+    
     }
 
     public function activities()

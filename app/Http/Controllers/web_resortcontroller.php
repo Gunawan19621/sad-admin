@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Resort;
 use Illuminate\Http\Request;
 
 class web_resortcontroller extends Controller
@@ -10,7 +11,9 @@ class web_resortcontroller extends Controller
     public function index()
     {
         //
-        return view('pages.web.layouts.resort.index');
+        $resort=Resort::with('category')->get();
+        return view('pages.web.layouts.resort.index',compact('resort'));
+    
     }
 
     public function show()
