@@ -7,7 +7,7 @@
         // Tambahkan event listener untuk tombol start
         document.getElementById('start-image').addEventListener('click', function() {
             const startAudio = new Audio(
-            '{{ asset('assets-web/img/click.mp3') }}'); // Path to your start sound file
+                '{{ asset('assets-web/img/click.mp3') }}'); // Path to your start sound file
             startAudio.play();
             window.location = "{{ route('start') }}";
         });
@@ -39,11 +39,11 @@
             var scrollPosition = window.scrollY;
 
             // Tampilkan menu hanya ketika scroll berada di awal atau akhir halaman
-            if (scrollPosition === 0) {
-                discover.classList.remove('hide-container');
-            } else {
-                discover.classList.add('hide-container');
-            }
+            // if (scrollPosition === 200) {
+            //     discover.classList.remove('hide-container');
+            // } else {
+            //     discover.classList.add('hide-container');
+            // }
 
             // Tampilkan menu hanya ketika scroll berada di akhir halaman
             if (scrollPosition + windowHeight >= bodyHeight) {
