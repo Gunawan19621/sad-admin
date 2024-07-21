@@ -36,7 +36,7 @@
                         @php
                             $no = 1;
                         @endphp
-                        @forelse ($activitiPrice as $items)
+                        @foreach ($activitiPrice as $items)
                             <tr>
                                 <td>{{ $no++ }}</td>
                                 <td>{{ $items->title_activiti ?? '-' }}</td>
@@ -56,11 +56,7 @@
                                     </form>
                                 </td>
                             </tr>
-                        @empty
-                            <tr>
-                                <td colspan="5" style="text-align: center;">Empty</td>
-                            </tr>
-                        @endforelse
+                        @endforeach
                     </tbody>
                 </table>
             </div>

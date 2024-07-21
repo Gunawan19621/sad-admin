@@ -25,7 +25,7 @@
                         @php
                             $no = 1;
                         @endphp
-                        @forelse ($stayInTouch as $items)
+                        @foreach ($stayInTouch as $items)
                             <tr>
                                 <td>{{ $no++ }}</td>
                                 <td>{{ $items->email }}</td>
@@ -40,11 +40,7 @@
                                     </form>
                                 </td>
                             </tr>
-                        @empty
-                            <tr>
-                                <td colspan="4" style="text-align: center;">Empty</td>
-                            </tr>
-                        @endforelse
+                        @endforeach
                     </tbody>
                 </table>
             </div>

@@ -36,7 +36,7 @@
                         @php
                             $no = 1;
                         @endphp
-                        @forelse ($product as $items)
+                        @foreach ($product as $items)
                             <tr>
                                 <td>{{ $no++ }}</td>
                                 <td>
@@ -70,11 +70,7 @@
                                     </form>
                                 </td>
                             </tr>
-                        @empty
-                            <tr>
-                                <td colspan="6" style="text-align: center;">Empty</td>
-                            </tr>
-                        @endforelse
+                        @endforeach
                     </tbody>
                 </table>
             </div>

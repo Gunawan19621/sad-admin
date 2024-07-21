@@ -37,7 +37,7 @@
                         @php
                             $no = 1;
                         @endphp
-                        @forelse ($ourDistributor as $items)
+                        @foreach ($ourDistributor as $items)
                             <tr>
                                 <td>{{ $no++ }}</td>
                                 <td>{{ $items->name_distributor ?? '-' }}</td>
@@ -62,11 +62,7 @@
                                     </form>
                                 </td>
                             </tr>
-                        @empty
-                            <tr>
-                                <td colspan="6" style="text-align: center;">Empty</td>
-                            </tr>
-                        @endforelse
+                        @endforeach
                     </tbody>
                 </table>
             </div>

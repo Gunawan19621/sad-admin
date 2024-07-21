@@ -16,7 +16,7 @@
                 </div>
             </div>
             <div class=" ">
-                <table class="table">
+                <table class="table table-hover">
                     <thead>
                         <tr>
                             <th style="width: 25%">Address</th>

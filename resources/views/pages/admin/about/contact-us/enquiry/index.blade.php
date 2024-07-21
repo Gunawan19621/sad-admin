@@ -27,7 +27,7 @@
                         @php
                             $no = 1;
                         @endphp
-                        @forelse ($enquiry as $items)
+                        @foreach ($enquiry as $items)
                             <tr>
                                 <td>{{ $no++ }}</td>
                                 <td>{{ $items->name ?? '-' }}</td>
@@ -41,11 +41,7 @@
                                         class="btn btn-sm btn-info">View</a>
                                 </td>
                             </tr>
-                        @empty
-                            <tr>
-                                <td colspan="6" style="text-align: center;">Empty</td>
-                            </tr>
-                        @endforelse
+                        @endforeach
                     </tbody>
                 </table>
             </div>
