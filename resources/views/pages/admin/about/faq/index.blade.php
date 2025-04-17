@@ -34,7 +34,7 @@
                         @php
                             $no = 1;
                         @endphp
-                        @forelse ($faq as $items)
+                        @foreach ($faq as $items)
                             <tr>
                                 <td>{{ $no++ }}</td>
                                 <td>{{ $items->name_category_faq ?? '-' }}</td>
@@ -52,11 +52,7 @@
                                     </form>
                                 </td>
                             </tr>
-                        @empty
-                            <tr>
-                                <td colspan="5" style="text-align: center;">Empty</td>
-                            </tr>
-                        @endforelse
+                        @endforeach
                     </tbody>
                 </table>
             </div>

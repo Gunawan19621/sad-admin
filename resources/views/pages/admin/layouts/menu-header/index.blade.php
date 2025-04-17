@@ -12,7 +12,7 @@
         <div class="card-body">
             <h4 class="card-header">Menu Header</h4>
             <div class="">
-                <table class="table table-hover">
+                <table id="myTable" class="table table-hover">
                     <thead>
                         <tr>
                             <th style="width: 17%">Menu</th>
@@ -23,7 +23,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @forelse ($menuHeader as $items)
+                        @foreach ($menuHeader as $items)
                             <tr>
                                 <td>
                                     <strong>{{ $items->name_menu }}</strong>
@@ -49,11 +49,7 @@
                                         data-bs-target="#modalEditHeader{{ $items->id }}">Edit</button>
                                 </td>
                             </tr>
-                        @empty
-                            <tr>
-                                <td colspan="5" style="text-align: center;">Empty</td>
-                            </tr>
-                        @endforelse
+                        @endforeach
                     </tbody>
                 </table>
             </div>

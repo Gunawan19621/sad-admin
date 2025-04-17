@@ -33,7 +33,7 @@
                         @php
                             $no = 1;
                         @endphp
-                        @forelse ($resortImage as $items)
+                        @foreach ($resortImage as $items)
                             <tr>
                                 <td>{{ $no++ }}</td>
                                 <td>{{ $items->title_resort ?? '-' }}</td>
@@ -57,11 +57,7 @@
                                     </form>
                                 </td>
                             </tr>
-                        @empty
-                            <tr>
-                                <td colspan="4" style="text-align: center;">Empty</td>
-                            </tr>
-                        @endforelse
+                        @endforeach
                     </tbody>
                 </table>
             </div>

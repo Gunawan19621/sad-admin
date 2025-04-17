@@ -35,7 +35,7 @@
                         @php
                             $no = 1;
                         @endphp
-                        @forelse ($partner as $items)
+                        @foreach ($partner as $items)
                             <tr>
                                 <td>{{ $no++ }}</td>
                                 <td>
@@ -59,11 +59,7 @@
                                     </form>
                                 </td>
                             </tr>
-                        @empty
-                            <tr>
-                                <td colspan="4" style="text-align: center;">Empty</td>
-                            </tr>
-                        @endforelse
+                        @endforeach
                     </tbody>
                 </table>
             </div>
