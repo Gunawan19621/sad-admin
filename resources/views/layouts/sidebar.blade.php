@@ -298,6 +298,30 @@
             </a>
         </li>
 
+        <li
+            class="menu-item {{ $active == 'experienceCategory' || $active == 'suadeExperience' ? 'active open' : '' }}">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-rocket"></i>
+                <div data-i18n="SuadeExperience">Suade Experience</div>
+            </a>
+
+            <ul class="menu-sub">
+                <li class="menu-item {{ $active == 'experienceCategory' ? 'active' : '' }}">
+                    <a href="{{ route('dashboard.experience-category.index') }}" class="menu-link">
+                        <div data-i18n="Without menu">Experience Category</div>
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="menu-sub">
+                <li class="menu-item {{ $active == 'suadeExperience' ? 'active' : '' }}">
+                    <a href="{{ route('dashboard.suade-experience.index') }}" class="menu-link">
+                        <div data-i18n="Without menu">Experience</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
         <li class="menu-header small text-uppercase">
             <span class="menu-header-text">System</span>
         </li>
@@ -307,6 +331,12 @@
             <a href="{{ route('dashboard.user-management.index') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-user"></i>
                 <div data-i18n="userManagement">User management</div>
+            </a>
+        </li>
+        <li class="menu-item {{ $active == 'userVisitor' ? 'active' : '' }}">
+            <a href="{{ route('dashboard.user-visitor.index') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-user"></i>
+                <div data-i18n="userManagement">User Visitor</div>
             </a>
         </li>
     </ul>

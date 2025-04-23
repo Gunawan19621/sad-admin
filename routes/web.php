@@ -2,17 +2,17 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\web_shopcontroller;
 use App\Http\Controllers\web_aboutcontroller;
-use App\Http\Controllers\Web_activitiescontroller;
-use App\Http\Controllers\web_distributorscontroller;
-use App\Http\Controllers\web_experiencecontroller;
-use App\Http\Controllers\web_newseventcontroller;
+use App\Http\Controllers\web_startcontroller;
+use App\Http\Controllers\web_resortcontroller;
 use App\Http\Controllers\web_partnerscontroller;
 use App\Http\Controllers\web_productscontroller;
-use App\Http\Controllers\web_resortcontroller;
-use App\Http\Controllers\web_shopcontroller;
-use App\Http\Controllers\web_startcontroller;
+use App\Http\Controllers\web_newseventcontroller;
+use App\Http\Controllers\Web_activitiescontroller;
+use App\Http\Controllers\web_experiencecontroller;
 use App\Http\Controllers\web_workwithuscontroller;
+use App\Http\Controllers\web_distributorscontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -334,6 +334,27 @@ Route::prefix('dashboard')->name('dashboard.')->middleware('auth')->group(functi
         Route::delete('gallery/delete/{id}', 'destroy')->name('gallery.destroy');
     });
 
+    //Suade Experience
+    //Menu Category Experience
+    Route::controller(App\Http\Controllers\ExperienceCategoryController::class)->group(function () {
+    Route::get('experience-category', 'index')->name('experience-category.index');
+    Route::post('experience-category/store', 'store')->name('experience-category.store');
+    Route::put('experience-category/{id}', 'update')->name('experience-category.update');
+    Route::delete('experience-category/delete/{id}', 'destroy')->name('experience-category.destroy');
+});
+
+//Menu Experience
+Route::controller(App\Http\Controllers\SuadeExperienceController::class)->group(function () {
+    Route::get('suade-experience', 'index')->name('suade-experience.index');
+    // Route::get('suade-experience/create', 'create')->name('suade-experience.create');
+    // Route::post('suade-experience/store', 'store')->name('suade-experience.store');
+    // Route::get('suade-experience/{id}', 'show')->name('suade-experience.show');
+    // Route::get('suade-experience/{id}/edit', 'edit')->name('suade-experience.edit');
+    // Route::put('suade-experience/{id}', 'update')->name('suade-experience.update');
+    // Route::delete('suade-experience/delete/{id}', 'destroy')->name('suade-experience.destroy');
+});
+
+
     //System
     //Menu User Management
     Route::controller(App\Http\Controllers\UserManagementController::class)->group(function () {
@@ -345,6 +366,14 @@ Route::prefix('dashboard')->name('dashboard.')->middleware('auth')->group(functi
         Route::put('user-management/{id}', 'update')->name('user-management.update');
         Route::delete('user-management/delete/{id}', 'destroy')->name('user-management.destroy');
     });
+
+    Route::controller(App\Http\Controllers\UserVisitorController::class)->group(function () {
+    Route::get('user-visitor', 'index')->name('user-visitor.index');
+    Route::get('user-visitor/{id}/edit', 'edit')->name('user-visitor.edit');
+    Route::put('user-visitor/{id}', 'update')->name('user-visitor.update');
+    Route::delete('user-visitor/delete/{id}', 'destroy')->name('user-visitor.destroy');
+});
+
 
 
     //Function CKEditor
