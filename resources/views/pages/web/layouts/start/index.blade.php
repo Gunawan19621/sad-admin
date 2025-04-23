@@ -267,8 +267,8 @@
                 </div>
                 <div class="col-md-3" style="text-align:right;">
                     <!-- <a href="{{ route('home') }}" class="btn-coklat">
-                                                                                                                                                                                SKIP INTRO
-                                                                                                                                                                            </a> -->
+                                                                                                                                                                                    SKIP INTRO
+                                                                                                                                                                                </a> -->
                 </div>
             </div>
         </div>

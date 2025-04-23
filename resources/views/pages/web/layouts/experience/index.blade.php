@@ -53,7 +53,7 @@
                         <div class="col-md-6">
                             <div class="container">
                                 <h6 class="text-size-title text-color-purple">{{ $item->title_experience }}</h6>
-                                <p class="text-size-subtitle text-color-black">{{ $item->subtitle_experience }}</p>
+                                <p class="text-size-subtitle text-color-black">{!! $item->subtitle_experience !!}</p>
                                 <div class="description-experience">
                                     <p> {!! Str::limit(strip_tags($item->description_experience), 200) !!}
                                     </p>

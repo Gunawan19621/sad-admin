@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Activiti;
+use App\Models\ActivitiPrice;
+use App\Models\ImageActiviti;
 use App\Models\MenuHeader;
 use Illuminate\Http\Request;
 use Illuminate\Notifications\Action;
@@ -42,6 +44,12 @@ class Web_activitiescontroller extends Controller
     public function show(string $id)
     {
         //
+
+        $headers=MenuHeader::find(7);
+        $activiti=Activiti::find($id);
+        $price = ActivitiPrice::where('id_activiti',$id)->get();
+        $image = ImageActiviti::where('id_activiti',$id)->get();
+        return view('pages.web.layouts.activities.show',compact('headers','activiti','price','image'));
     }
 
     /**

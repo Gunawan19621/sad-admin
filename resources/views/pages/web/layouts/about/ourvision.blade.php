@@ -22,8 +22,12 @@
             <div class="row">
                 <div class="col-md-12 text-center">
                     <h2 class="text-size-heading text-color-purple ptserif">Our vision</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                        <br> consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    <p>We aspire to be the premier choice for those seeking quality and innovation in <br>
+                        alcoholic beverages
+                        while evolving into a leading corporation in Indonesia. Grounded <br>
+                        in ideas and innovation, we aim to
+                        expand globally while preserving our local heritage.
+
                     </p>
                 </div>
             </div>
@@ -49,7 +53,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="container">
-                                <p class="text-size-subtitle text-color-black">{{ $item->title_vision }}</p>
+                                <p class="text-size-subtitle text-color-black">{!! $item->title_vision !!}</p>
                                 <div class="description-vision"> {!! $item->description_vision !!}
                                 </div>
 

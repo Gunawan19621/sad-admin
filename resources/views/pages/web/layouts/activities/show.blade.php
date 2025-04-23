@@ -1,6 +1,6 @@
 @extends('layouts-web.master-web-menu')
 @section('title', 'Sumber Air Dewa')
-@section('experience', 'active')
+@section('activiti', 'active')
 @section('content')
 
     <section class="section-brudcrumb">
@@ -9,8 +9,8 @@
                 <div class="col-md-12">
                     <div class="brudcrumb">
                         <a href="#" class="brudcrumb-link">HOME</a> /
-                        <a href="{{ route('experience') }}" class="brudcrumb-link">EXPERIENCE</a> /
-                        <a href="#" class="brudcrumb-link-active">{{ strtoupper($experience->title_experience) }}</a>
+                        <a href="{{ route('activities') }}" class="brudcrumb-link">ACTIVITIES</a> /
+                        <a href="#" class="brudcrumb-link-active">{{ strtoupper($activiti->title_activiti) }}</a>
                     </div>
                 </div>
             </div>
@@ -21,9 +21,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <h2 class="text-size-heading text-color-purple ptserif">{{ strtoupper($experience->title_experience) }}
+                    <h2 class="text-size-heading text-color-purple ptserif">{{ strtoupper($activiti->title_activiti) }}
                     </h2>
-                    <p>{!! $experience->subtitle_experience !!}</p>
+                    <p>{!! $activiti->subtitle_activiti !!}</p>
                 </div>
             </div>
         </div>
@@ -36,24 +36,22 @@
             <div class="container-experience">
                 <div class="row">
                     <div class="col-md-12">
-                        {!! $experience->description_experience !!}
+                        {!! $activiti->description_activiti !!}
 
-                        {{-- <div class="container-price">
+                        <div class="container-price">
                             <div class="row">
                                 @foreach ($price as $item)
                                     <div class="col-md-6">
-                                        <div class="price-group">{{ strtoupper($item->unit_experience) }}</div>
-                                        <div class="price">Rp. {{ number_format($item->price_experience, 0, ',', '.') }}
+                                        <div class="price-group">{{ strtoupper($item->unit_activiti) }}</div>
+                                        <div class="price">Rp. {{ number_format($item->price_activiti, 0, ',', '.') }}
                                         </div>
                                         <div class="price-unit">Per pax</div>
                                     </div>
                                 @endforeach
                             </div>
-                        </div> --}}
+                        </div>
                         <p>&nbsp;</p>
                         <a href="#" class="btn-purple">RESERVE</a>
-                        {{-- <a href="#" class="btn-coklat">VIEW MENU</a> --}}
-                        <p>&nbsp;</p>
 
                     </div>
                 </div>
@@ -67,7 +65,7 @@
             <div class="slider">
                 <div class="slides">
                     @foreach ($image as $item)
-                        <div class="slide"><img src="{{ asset('images/' . $item->image_experience) }}"
+                        <div class="slide"><img src="{{ asset('images/' . $item->image) }}"
                                 onerror="this.onerror=null;this.src='{{ asset('assets-web/img/default-image.png') }}';"
                                 alt="Image"></div>
                     @endforeach

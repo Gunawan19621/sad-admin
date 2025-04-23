@@ -13,8 +13,8 @@
             <div class="row">
                 <div class="col-md-12 text-center">
                     <h2 class="text-size-heading text-color-purple ptserif">DRINK FROM THE FOUNTAIN OF GODS</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor sed quia <br> consequuntur magni incididunt ut labore
+                    <p>Welcome to Sumber Air Dewa, where every glass tells a story of craftsmanship. <br>
+                        Explore our curated collection and indulge in a refined drinking experience.
                     </p>
                     <p>&nbsp;</p>
                 </div>

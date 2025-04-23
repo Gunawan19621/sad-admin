@@ -5,12 +5,12 @@
 <head>
     @include('layouts-web.head-meta')
     @include('layouts-web.head-link')
-    <link rel="stylesheet" href="{{ asset('assets-web/css/web.css') }}">
+
 </head>
 
 <body>
     <!-- Layout wrapper -->
-    @yield('content')                   
+    @yield('content')
 
     @include('layouts-web.script')
 </body>

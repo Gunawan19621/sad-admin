@@ -21,8 +21,9 @@
             <div class="row">
                 <div class="col-md-12 text-center">
                     <h2 class="text-size-heading text-color-purple ptserif">Our Story</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                        <br> consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    <p>Established in Bali since 2022, we specialize in the production of premium wines, spirits, <br>
+                        and liqueurs, with beer soon to be introduced. Our mission is to elevate the drinking <br>
+                        experience through the creation of top-quality products, utilizing world-class methods.
                     </p>
                 </div>
             </div>

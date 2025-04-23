@@ -18,3 +18,34 @@
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>  -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="{{ asset('assets-web/css/web.css') }}">
+
+<style>
+    @media (max-width: 768px) {
+        .section-brudcrumb {
+            margin: 0px !important;
+            font-size: 10px;
+        }
+
+        .brudcrumb {
+            margin-bottom: 0px !important;
+        }
+
+        section {
+            margin: 0px !important;
+            padding: 0px !important;
+        }
+
+        .text-size-heading {
+            font-size: 20px !important;
+        }
+
+        .container-experience {
+            column-count: 1 !important;
+        }
+
+        .container-experience p {
+            font-size: 12px !important;
+        }
+    }
+</style>
