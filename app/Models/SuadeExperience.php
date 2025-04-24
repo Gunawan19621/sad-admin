@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\SuadeExperienceCategory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -15,8 +16,8 @@ class SuadeExperience extends Model
         'image_experience',
         'price_experience',
         'discount_experience',
-        'description_experience',
-        'additional_experience',
+        'description_experience', // ck editor
+        'additional_experience', // ck editor
         'subtitle_experience',
         'status_experience',
         'category_id',
@@ -24,4 +25,9 @@ class SuadeExperience extends Model
         'updated_at',
         'deleted_at',
     ];
+
+    public function category()
+    {
+        return $this->belongsTo(SuadeExperienceCategory::class, 'category_id', 'id');
+    }
 }

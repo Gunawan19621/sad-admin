@@ -298,13 +298,13 @@
             </a>
         </li>
 
+        <!-- Suade Experience -->
         <li
             class="menu-item {{ $active == 'experienceCategory' || $active == 'suadeExperience' ? 'active open' : '' }}">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-rocket"></i>
                 <div data-i18n="SuadeExperience">Suade Experience</div>
             </a>
-
             <ul class="menu-sub">
                 <li class="menu-item {{ $active == 'experienceCategory' ? 'active' : '' }}">
                     <a href="{{ route('dashboard.experience-category.index') }}" class="menu-link">
@@ -312,11 +312,41 @@
                     </a>
                 </li>
             </ul>
-
             <ul class="menu-sub">
                 <li class="menu-item {{ $active == 'suadeExperience' ? 'active' : '' }}">
                     <a href="{{ route('dashboard.suade-experience.index') }}" class="menu-link">
                         <div data-i18n="Without menu">Experience</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <!-- Suade Product -->
+        <li
+            class="menu-item {{ $active == 'productCategory' || $active == 'productType' || $active == 'suadeProduct' ? 'active open' : '' }}">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-cube"></i>
+                <div data-i18n="SuadeExperience">Suade Product</div>
+            </a>
+            <ul class="menu-sub">
+                <li class="menu-item {{ $active == 'productCategory' ? 'active' : '' }}">
+                    <a href="{{ route('dashboard.product-category.index') }}" class="menu-link">
+                        <div data-i18n="Without menu">Product Category</div>
+                    </a>
+                </li>
+            </ul>
+            <ul class="menu-sub">
+                <li class="menu-item {{ $active == 'productType' ? 'active' : '' }}">
+                    <a href="{{ route('dashboard.product-type.index') }}" class="menu-link">
+                        <div data-i18n="Without menu">Product Type</div>
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="menu-sub">
+                <li class="menu-item {{ $active == 'suadeProduct' ? 'active' : '' }}">
+                    <a href="{{ route('dashboard.suade-product.index') }}" class="menu-link">
+                        <div data-i18n="Without menu">Product</div>
                     </a>
                 </li>
             </ul>
