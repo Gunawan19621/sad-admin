@@ -59,10 +59,40 @@
                                     @endif
                                 </td>
                                 <td>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-primary dropdown-toggle"
+                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                            Add Type
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a class="dropdown-item"
+                                                    href="{{ route('dashboard.product-type.gallery', $items->id) }}">Type
+                                                    Gallery</a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item"
+                                                    href="{{ route('dashboard.product-type.collection', $items->id) }}">Type
+                                                    Collection</a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item"
+                                                    href="{{ route('dashboard.product-type.tour', $items->id) }}">Type
+                                                    Tour</a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item"
+                                                    href="{{ route('dashboard.product-type.story', $items->id) }}">Type
+                                                    Story</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+
                                     <button type="button" class="btn btn-sm btn-success" data-bs-toggle="modal"
                                         data-bs-target="#modalEdit{{ $items->id }}">
                                         Edit
                                     </button>
+
                                     <form action="{{ route('dashboard.product-type.destroy', $items->id) }}" method="POST"
                                         style="display: inline;">
                                         @csrf
