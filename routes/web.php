@@ -66,6 +66,9 @@ Route::get('/partner/{id}', [web_partnerscontroller::class, 'show'])->name('part
 Route::get('/shop', [web_shopcontroller::class, 'index'])->name('shop');
 Route::get('/shop/{id}', [web_shopcontroller::class, 'show'])->name('shop.show');
 
+/// SUDAE ////
+Route::get('/suade', [App\Http\Controllers\suade\HomeController::class, 'index'])->name('suade');
+
 ////////////////////////////////// Dashboard //////////////////////////////////
 
 //Menu Dashboard
