@@ -22,9 +22,8 @@
             <div class="row">
                 <div class="col-md-12 text-center">
                     <h2 class="text-size-heading text-color-purple ptserif">AWARDS</h2>
-                    <p>We take pride in the recognition we've earned for excellence and innovation. <br>
-                        These awards are a testament to our commitment to setting industry <br>
-                        standards and delivering superior quality.
+                    <p>We take pride in the recognition we've earned for excellence and innovation. These awards are a
+                        <br>testament to our commitment to setting industry standards and delivering superior quality.
                     </p>
                 </div>
             </div>

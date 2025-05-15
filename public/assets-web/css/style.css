@@ -129,6 +129,14 @@ body {
   color: #365168;
 }
 
+em {
+  font-style: italic;
+  line-height: 45px;
+  letter-spacing: 2%;
+  font-size: 20px;
+  font-family: 'ptserif', serif;
+}
+
 
 
 /* TEXT SIZE */
@@ -136,12 +144,16 @@ body {
   font-size: 32px;
   text-transform: uppercase;
   padding: 20px 0px;
+  line-height: 72px;
+  letter-spacing: 2%;
 }
 
 .text-size-title {
   font-size: 20px;
   font-weight: bold;
   font-family: 'roboto', sans-serif;
+  letter-spacing: 2%;
+  line-height: 50px;
 }
 
 .text-size-subtitle {
@@ -152,6 +164,13 @@ body {
 
 .text-size-footer {
   font-size: 14px;
+}
+
+.text-size-sub-footer {
+  font-size: 12px;
+  font-family: 'Roboto+Flex', sans-serif;
+  line-height: 25px;
+  letter-spacing: 2%;
 }
 
 .text-size-team-title {
@@ -338,6 +357,9 @@ a:hover {
 
 p {
   font-size: 18px;
+  font-family: 'Roboto+Flex', sans-serif;
+  line-height: 35px;
+  letter-spacing: 2%;
 }
 
 hr {

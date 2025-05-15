@@ -20,6 +20,6 @@ class CategoryProduct extends Model
 
     public function subcategories()
     {
-        return $this->hasMany(Subcategory::class, 'id_category_product');
+        return $this->hasMany(SubCategory::class, 'id_category_product');
     }
 }

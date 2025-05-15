@@ -30,10 +30,8 @@
             </div>
             <div class="col-md-6">
                 <div class="container">
-                    <h6 class="text-size-title text-color-purple">{{ $about->title }}</h6>
-                    <p class="text-size-subtitle text-color-black">{{ $about->subtitle }}</p>
-                    <div class="description-about"> {!! $about->description !!}
-                    </div>
+                    <h6 class="text-size-title text-color-purple">ABOUT US</h6>
+                    <p class=" text-color-black">{{ $about->subtitle }}</p>
                     </p>&nbsp;</p>
                     <a href="{{ route('about') }}" class="robotoflex link">DISCOVER MORE</a>
                 </div>
@@ -46,8 +44,8 @@
             <div class="row ">
                 <div class="col-md-12 text-center">
                     <h2 class="text-color-white text-size-heading ptserif">ENJOY AN ARRAY OF EXPERIENCES</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt magni
-                        <br>dolores eos qui ratione voluptatem sequi nesciunt ut labore
+                    <p>Discover a destination where every moment delights. Experience the perfect blend of relaxation <br>
+                        and refinement, all in one unforgettable place.
                     </p>
                     <p>&nbsp;</p>
                 </div>
@@ -74,7 +72,8 @@
                 <div class="col-md-12 text-center">
                     <h4 class="text-size-title text-color-purple">OUR PRODUCT</h4>
                     <h2 class="text-heading text-color-purple ptserif">QUALITY AND CONSISTENCY IN EVERY BOTTLE</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    <p>Discover our collection of finely crafted wines and spirits, where tradition meets innovation in
+                        every bottle.
                     </p>
                     <p>&nbsp;</p>
                 </div>
@@ -117,6 +116,11 @@
                     <p>{!! $contact->address !!}</p><br>
                     <H6 class="roboto text-bold text-color-black">OPERATING HOURS</H6><br>
                     <p>{!! $contact->operating_hours !!}</p>
+
+                    <p><b>P.</b> {{ $contact->phone }} <br>
+                        <b>F.</b> {{ $contact->fax }}<br>
+                        <b>E.</b> {{ $contact->email }}
+                    </p>
                     <a href="#">
                         <button class="btn-coklat">GET IN TOUCH</button></a>
                 </div>

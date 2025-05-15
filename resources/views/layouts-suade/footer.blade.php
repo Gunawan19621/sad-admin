@@ -6,8 +6,9 @@
             </div>
             <div class="col-lg-3">
                 <p class="text-size-footer">PT SUMBER AIR DEWA</p>
-                <p class="text-size-footer">Jl. Pajajaran Gg. Air Dewa No.89, Tabanan, Bali 82612</p>
-                <p class="text-size-footer"> 01234567890</p>
+                <p class="text-size-sub-footer">Jl. Pajajaran, Gang Air Dewa 89,
+                    Bantas, Selemadeg Timur,
+                    Tabanan - Bali 82162</p>
                 <a href="#"><img src="{{ asset('assets-web/img/icon/linkedin.png') }}" alt="Logo"></a>
                 <a href="#"><img src="{{ asset('assets-web/img/icon/ig.png') }}" alt="Logo"></a>
                 <a href="#"><img src="{{ asset('assets-web/img/icon/fb.png') }}" alt="Logo"></a>

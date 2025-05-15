@@ -28,8 +28,9 @@
                     <h2 class="text-size-heading text-color-purple ptserif">DON’T SETTLE FOR ORDINARY, IT’S TIME TO MAKE
                         BETTER
                     </h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                        <br> consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    <p>We aspire to be the premier choice for those seeking quality and innovation in alcoholic
+                        beverages<br>
+                        while evolving into a leading corporation in Indonesia.
                     </p>
                     <a href="{{ route('our_vision') }}"><button class="btn-purple">OUR VISION</button></a>
                 </div>
@@ -48,10 +49,10 @@
                 <div class="col-md-6">
                     <div class="container">
                         <h6 class="text-size-title text-color-coklat">OUR STORY</h6>
-                        <p class="text-size-subtitle text-color-white">Sed ut perspiciatis unde omnis dolores</p>
-                        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
-                            sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
-                            Neque porro quisquam est, qui dolorem.</p>
+                        <p>Established in Bali since 2022, we specialize in the production of premium wines, spirits, and
+                            liqueurs, with beer soon to be introduced. Our mission is to elevate the drinking experience
+                            through..
+                        </p>
                         <a href="#" class="robotoflex link-coklat">DISCOVER MORE</a>
                     </div>
                 </div>
@@ -66,8 +67,8 @@
                 <div class="col-md-12 text-center">
                     <h6 class="text-size-title text-color-purple">OUR TEAM</h6>
                     <h2 class="text-size-heading text-color-purple ptserif">Sed ut perspiciatis unde omnis</h2>
-                    <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur
-                        <br>magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem.
+                    <p>Suade is powered by a team of dedicated professionals who bring expertise, vision, and passion to
+                        <br> everything we do. Meet the people behind our craft:
                     </p>
                     <p>&nbsp;</p>
                 </div>
@@ -150,6 +151,11 @@
                     <p>{!! $contact->address !!}</p><br>
                     <H6 class="roboto text-bold text-color-black">OPERATING HOURS</H6><br>
                     <p>{!! $contact->operating_hours !!}</p>
+
+                    <p><b>P.</b> {{ $contact->phone }} <br>
+                        <b>F.</b> {{ $contact->fax }}<br>
+                        <b>E.</b> {{ $contact->email }}
+                    </p>
                     <a href="#">
                         <button class="btn-coklat">GET IN TOUCH</button></a>
                 </div>

@@ -22,8 +22,8 @@
             <div class="row">
                 <div class="col-md-12 text-center">
                     <h2 class="text-size-heading text-color-purple ptserif">Our Team</h2>
-                    <p>Suade is powered by a team of dedicated professionals who bring expertise, <br>
-                        vision, and passion to everything we do. Meet the people behind our craft:
+                    <p>Suade is powered by a team of dedicated professionals who bring expertise, vision, and passion <br>
+                        to everything we do. Meet the people behind our craft:
                     </p>
                 </div>
             </div>
