@@ -2,17 +2,17 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\web_shopcontroller;
 use App\Http\Controllers\web_aboutcontroller;
-use App\Http\Controllers\Web_activitiescontroller;
-use App\Http\Controllers\web_distributorscontroller;
-use App\Http\Controllers\web_experiencecontroller;
-use App\Http\Controllers\web_newseventcontroller;
+use App\Http\Controllers\web_startcontroller;
+use App\Http\Controllers\web_resortcontroller;
 use App\Http\Controllers\web_partnerscontroller;
 use App\Http\Controllers\web_productscontroller;
-use App\Http\Controllers\web_resortcontroller;
-use App\Http\Controllers\web_shopcontroller;
-use App\Http\Controllers\web_startcontroller;
+use App\Http\Controllers\web_newseventcontroller;
+use App\Http\Controllers\Web_activitiescontroller;
+use App\Http\Controllers\web_experiencecontroller;
 use App\Http\Controllers\web_workwithuscontroller;
+use App\Http\Controllers\web_distributorscontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -337,6 +337,73 @@ Route::prefix('dashboard')->name('dashboard.')->middleware('auth')->group(functi
         Route::delete('gallery/delete/{id}', 'destroy')->name('gallery.destroy');
     });
 
+    //Suade Experience
+    //Menu Category Experience
+    Route::controller(App\Http\Controllers\ExperienceCategoryController::class)->group(function () {
+    Route::get('experience-category', 'index')->name('experience-category.index');
+    Route::post('experience-category/store', 'store')->name('experience-category.store');
+    Route::put('experience-category/{id}', 'update')->name('experience-category.update');
+    Route::delete('experience-category/delete/{id}', 'destroy')->name('experience-category.destroy');
+});
+
+//Menu Experience
+Route::controller(App\Http\Controllers\SuadeExperienceController::class)->group(function () {
+    Route::get('suade-experience', 'index')->name('suade-experience.index');
+    Route::get('suade-experience/create', 'create')->name('suade-experience.create');
+    Route::post('suade-experience/store', 'store')->name('suade-experience.store');
+    Route::post('suade-experience/storeImage', 'storeImage')->name('suade-experience.storeImage');
+    Route::get('suade-experience/{id}', 'show')->name('suade-experience.show');
+    Route::get('suade-experience/{id}/edit', 'edit')->name('suade-experience.edit');
+    Route::put('suade-experience/{id}', 'update')->name('suade-experience.update');
+    Route::delete('suade-experience/delete/{id}', 'destroy')->name('suade-experience.destroy');
+    Route::delete('suade-experience/delete-image/{id}', 'destroyImage')->name('suade-experience.destroyImage');
+});
+
+    // Suade Product
+    //Menu Category Product
+    Route::controller(App\Http\Controllers\SuadeProductCategoryController::class)->group(function () {
+    Route::get('product-category', 'index')->name('product-category.index');
+    Route::post('product-category/store', 'store')->name('product-category.store');
+    Route::put('product-category/{id}', 'update')->name('product-category.update');
+    Route::delete('product-category/delete/{id}', 'destroy')->name('product-category.destroy');
+});
+
+//Menu Product Type
+Route::controller(App\Http\Controllers\SuadeProductTypeController::class)->group(function () {
+    Route::get('product-type', 'index')->name('product-type.index');
+    Route::post('product-type/store', 'store')->name('product-type.store');
+    Route::put('product-type/{id}', 'update')->name('product-type.update');
+    Route::delete('product-type/delete/{id}', 'destroy')->name('product-type.destroy');
+
+    Route::get('product-type/{id}/gallery', 'gallery')->name('product-type.gallery');
+    Route::post('product-type/gallery/store', 'galleryStore')->name('product-type.galleryStore');
+    Route::delete('product-type/delete/gallery/{id}', 'galleryDestroy')->name('product-type.galleryDestroy');
+
+    Route::get('product-type/{id}/collection', 'collection')->name('product-type.collection');
+    Route::post('product-type/collection/store', 'collectionStore')->name('product-type.collectionStore');
+    Route::put('product-type/collection/{collectionId}', 'collectionUpdate')->name('product-type.collectionUpdate');
+    Route::delete('product-type/delete/collection/{id}', 'collectionDestroy')->name('product-type.collectionDestroy');
+
+    Route::get('product-type/{id}/tour', 'tour')->name('product-type.tour');
+    Route::get('product-type/tour/{id}/create', 'tourCreate')->name('product-type.tourCreate');
+    Route::post('product-type/tour/store', 'tourStore')->name('product-type.tourStore');
+    Route::get('product-type/{id}/tour/{tourId}/edit', 'tourEdit')->name('suade-product.tourEdit');
+
+    Route::get('product-type/{id}/story', 'story')->name('product-type.story');
+
+});
+
+    //Menu Product
+    Route::controller(App\Http\Controllers\SuadeProductController::class)->group(function () {
+    Route::get('suade-product', 'index')->name('suade-product.index');
+    Route::get('suade-product/create', 'create')->name('suade-product.create');
+    Route::post('suade-product/store', 'store')->name('suade-product.store');
+    Route::get('suade-product/{id}/edit', 'edit')->name('suade-product.edit');
+    Route::put('suade-product/{id}', 'update')->name('suade-product.update');
+    Route::delete('suade-product/delete/{id}', 'destroy')->name('suade-product.destroy');
+});
+
+
     //System
     //Menu User Management
     Route::controller(App\Http\Controllers\UserManagementController::class)->group(function () {
@@ -348,6 +415,15 @@ Route::prefix('dashboard')->name('dashboard.')->middleware('auth')->group(functi
         Route::put('user-management/{id}', 'update')->name('user-management.update');
         Route::delete('user-management/delete/{id}', 'destroy')->name('user-management.destroy');
     });
+
+    // Menu User Visitor
+    Route::controller(App\Http\Controllers\UserVisitorController::class)->group(function () {
+    Route::get('user-visitor', 'index')->name('user-visitor.index');
+    Route::get('user-visitor/{id}/edit', 'edit')->name('user-visitor.edit');
+    Route::put('user-visitor/{id}', 'update')->name('user-visitor.update');
+    Route::delete('user-visitor/delete/{id}', 'destroy')->name('user-visitor.destroy');
+});
+
 
 
     //Function CKEditor
